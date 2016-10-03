@@ -33,7 +33,7 @@ export class MyApp {
         }).then(() => {
               db.executeSql("CREATE TABLE IF NOT EXISTS current_user (id INTEGER PRIMARY KEY AUTOINCREMENT, name text)", [])
                 .then((data) => {
-                  console.log("Table has been created : "+data);
+                  console.log("Table has been created : "+JSON.stringify(data));
                 }, (error) => {
                   console.error("Unable to open database", error);
                 });
@@ -41,7 +41,7 @@ export class MyApp {
       }else{
         console.log("You are running your device on a Web Application");
         let storage = new Storage(SqlStorage);
-        storage.query('CREATE TABLE IF NOT EXISTS current_user (id INTEGER PRIMARY KEY AUTOINCREMENT, food_id text, food_name text, is_saved text, is_recent text, is_scanned text)').then(
+        storage.query('CREATE TABLE IF NOT EXISTS current_user (id INTEGER PRIMARY KEY AUTOINCREMENT, name text)').then(
           result => {
             console.log(result);
             console.log("Created Table Successfully");
