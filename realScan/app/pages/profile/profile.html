@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button icon-only>
+        <ion-icon name="contact"></ion-icon>
+      </button>
+    </ion-buttons>
+
+
+    <ion-title>Profile</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="profile">
+
+  <ion-card class="top-card">
+    <ion-grid>
+      <ion-row>
+        <ion-col #contact width-25>
+          <span padding class="top-span contact-span">Contact</span>
+        </ion-col>
+        <ion-col #portfolio width-25>
+          <span padding class="top-span portfolio-span">Portfolio</span>
+        </ion-col>
+        <ion-col #work width-25>
+          <span padding class="top-span work-span">Work</span>
+        </ion-col>
+        <ion-col #social width-25>
+          <span padding class="social-span">Social</span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+  <ion-card class="bottom-card">
+    <ion-slides #mySlider (ionDrag)="testDrag()" (ionDidChange)="onSlidedChanged()" [options]="options">
+
+      <ion-slide>
+
+        <h2>Picture page with self bio</h2>
+      </ion-slide>
+
+
+      <ion-slide>
+        <h2>Portfolio</h2>
+      </ion-slide>
+
+      <ion-slide>
+        <h2>Experiencs</h2>
+      </ion-slide>
+
+      <ion-slide>
+        <h2>Social Media</h2>
+      </ion-slide>
+
+
+    </ion-slides>
+
+  </ion-card>
+
+
+</ion-content>

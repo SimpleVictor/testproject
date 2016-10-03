@@ -1,0 +1,74 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Shared Imports
+// --------------------------------------------------
+// These are the imports which make up the design of this app.
+// By default each design mode includes these shared imports.
+// App Shared Sass variables belong in app.variables.scss.
+
+@import "../pages/home/home";
+@import "../pages/scan/scan.scss";
+@import "../pages/setting/setting.scss";
+@import "../pages/barcode/barcode.scss";
+@import "../pages/profile/profile.scss";
+@import "../pages/login/login.scss";
+
+
+
+*{
+}
+
+ion-card{
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5) !important;
+}
+
+
+.tab-button-icon{
+  color: #FFF;
+}
+
+.tab-button-text{
+  color: #fff;
+}
+
+ion-tabbar{
+  background-color: #0177B5;
+}
+
+ion-content{
+  background-color: #E9EBEE;
+}
+
+.toolbar-background{
+  backgrond-color: #0177B5;
+}
+
+
+ion-header, .toolbar:first-child, .toolbar-background{
+  background-color: #0177B5;
+  color: white;
+}
+
+.toolbar-title{
+  color: #fff;
+  letter-spacing: 5px;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+span.button-inner{
+  color: #fff;
+}
+
+
+
+
+.platform-ios{
+
+  //.swiper-container{
+  //  position:inherit;
+  //  height: 400px;
+  //}
+
+}

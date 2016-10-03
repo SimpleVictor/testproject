@@ -1,0 +1,52 @@
+.profile {
+  .swiper-container{
+    position: inherit;
+    height: 400px;
+  }
+
+  ion-grid{
+    padding: 0;
+  }
+
+  ion-col{
+    //padding: 0;
+    text-align: center;
+    padding: 10px;
+    border-right: 1px solid #ccc;
+  }
+
+  .bottom-card{
+    height: 400px !important;
+  }
+
+  .top-card{
+    margin-top: 0;
+    //padding: 20px 0;
+    margin-bottom: 20px;
+  }
+  .top-span{
+
+  }
+  .contact-span{
+    //padding-left: 0;
+    padding: 0;
+  }
+  .portfolio-span{
+    //padding-left: 0;
+    padding: 0;
+  }
+  .work-span{
+    //padding-left: 6px;
+    padding: 0;
+  }
+  .social-span{
+    //padding-left: 0;
+    padding: 0;
+  }
+  .top-span > .ion-grid > .ion-row >.ion-col > span{
+    padding: 0 !important;
+  }
+
+}
+
+

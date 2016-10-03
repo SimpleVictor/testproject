@@ -1,0 +1,57 @@
+<!--<ion-header>-->
+  <!--<ion-navbar>-->
+    <!--<ion-title>Home</ion-title>-->
+  <!--</ion-navbar>-->
+<!--</ion-header>-->
+
+
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button icon-only (tap)="testData()">
+        <ion-icon name="contact"></ion-icon>
+      </button>
+    </ion-buttons>
+
+
+    <ion-title>Home</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (tap)="activateScan()">
+        <!--<ion-icon name="search"></ion-icon>-->
+        <!--<i class="fa-stack fa-circle fa-qrcode "></i>-->
+      <span class="fa-stack fa-lg">
+  <i class="fa fa-square-o fa-stack-2x"></i>
+  <i class="fa fa-qrcode fa-stack-3x"></i>
+</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="home">
+  <ion-card>
+    <!--<img src="img/barcode.png"/>-->
+    <img src="https://echoserver162.herokuapp.com/mycode.png"/>
+    <ion-card-content>
+      <ion-card-title>
+        Let someone scan this to get information on you.
+      </ion-card-title>
+      <p>
+        Set up your profile to generate a barcode if you like
+      </p>
+    </ion-card-content>
+
+
+
+
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header style="text-align: center">
+      <span text-left> You connected with <strong><span style="color: red;">23</span></strong> people!</span>
+    </ion-card-header>
+  </ion-card>
+
+</ion-content>
