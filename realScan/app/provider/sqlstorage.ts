@@ -4,7 +4,6 @@ import { Injectable } from '@angular/core';
 export class SQLStorage{
 
     constructor() {
-      console.log("I hate everyone");
     }
 
 }
