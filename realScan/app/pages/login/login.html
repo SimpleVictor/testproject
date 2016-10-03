@@ -4,22 +4,7 @@
   <!--<button ion-button full (click)="auth.login()">Full Button</button>-->
 <div class="login-container">
 
-  <ion-card class="my-card">
-    <ion-list>
-
-      <ion-item>
-        <ion-label stacked>Username</ion-label>
-        <ion-input [(ngModel)]="credentials.username" name="username" type="text"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label stacked>Password</ion-label>
-        <ion-input [(ngModel)]="credentials.password" name="password" type="password"></ion-input>
-      </ion-item>
-
-    </ion-list>
-  </ion-card>
-  <button ion-button block (click)="loginUser()">Login</button>
+  <button block (click)="auth.login()" style="background-color: #DD4B39">  <ion-icon name="logo-googleplus"></ion-icon>Sign In with Google</button>
 
 </div>
 

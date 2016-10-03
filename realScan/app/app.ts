@@ -1,10 +1,13 @@
-import { Component } from '@angular/core';
+import {Component, provide} from '@angular/core';
 import {Platform, ionicBootstrap, SqlStorage, Storage} from 'ionic-angular';
 import {StatusBar, SQLite} from 'ionic-native';
 import {LoginPage} from "./pages/login/login";
 import {FirebaseService} from "./provider/firebase";
 import {QrService} from "./provider/qrservice";
 import {SQLStorage} from "./provider/sqlstorage";
+import {AuthService} from "./provider/auth";
+import {Http} from "@angular/http";
+import {AuthConfig, AuthHttp} from "angular2-jwt";
 
 
 @Component({
@@ -58,4 +61,12 @@ export class MyApp {
   }
 }
 
-ionicBootstrap(MyApp);
+ionicBootstrap(MyApp, [
+  provide(AuthHttp, {
+    useFactory: (http) => {
+      return new AuthHttp(new AuthConfig({noJwtError: true}), http);
+    },
+    deps: [Http]
+  }),
+  AuthService
+]);

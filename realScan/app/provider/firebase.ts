@@ -19,14 +19,14 @@ export class FirebaseService {
 
 
 
-      let valueChanged = firebase.database().ref('users/');
-      valueChanged.on('value', (snapshot) => {
-        this.zone.run(() => {
-          this.users = snapshot.val();
-          console.log("bang bang");
-          console.log(this.users);
-        })
-      });
+      // let valueChanged = firebase.database().ref('users/');
+      // valueChanged.on('value', (snapshot) => {
+      //   this.zone.run(() => {
+      //     this.users = snapshot.val();
+      //     console.log("bang bang");
+      //     console.log(this.users);
+      //   })
+      // });
     }
 
     public authenticateUser(credentials, callback) {

@@ -10,6 +10,8 @@
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 
+
+
   <!-- un-comment this code to enable service worker
   <script>
     if ('serviceWorker' in navigator) {
@@ -21,6 +23,13 @@
   <link ios-href="build/css/app.ios.css" rel="stylesheet">
   <link md-href="build/css/app.md.css" rel="stylesheet">
   <link wp-href="build/css/app.wp.css" rel="stylesheet">
+
+
+  <!-- Auth0.js script -->
+  <script src="https://cdn.auth0.com/w2/auth0-7.0.3.min.js"></script>
+
+  <!-- Auth0 Lock script -->
+  <script src="http://cdn.auth0.com/js/lock/10.0.0/lock.min.js"></script>
 </head>
 <body>
 
@@ -32,15 +41,14 @@
   <script>
     // Initialize Firebase
     var config = {
-      apiKey: "AIzaSyBAwNepOH81RUYpwu_jbW5btXsDIeCjX5A",
-      authDomain: "cokecola-1c235.firebaseapp.com",
-      databaseURL: "https://cokecola-1c235.firebaseio.com",
-      storageBucket: "cokecola-1c235.appspot.com",
-      messagingSenderId: "853266077848"
+      apiKey: "AIzaSyCAUbMOPjE5DtvPAKsSdRrseVlEjSzisGg",
+      authDomain: "wowme-3c87e.firebaseapp.com",
+      databaseURL: "https://wowme-3c87e.firebaseio.com",
+      storageBucket: "wowme-3c87e.appspot.com",
+      messagingSenderId: "69179495247"
     };
     firebase.initializeApp(config);
   </script>
-
 
   <!-- cordova.js required for cordova apps -->
   <script src="cordova.js"></script>
