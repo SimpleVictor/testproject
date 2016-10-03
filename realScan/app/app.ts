@@ -15,6 +15,7 @@ export class MyApp {
 
   public rootPage: any;
 
+
   constructor(private platform: Platform) {
     this.rootPage = LoginPage;
 
@@ -23,6 +24,9 @@ export class MyApp {
     platform.ready().then(() => {
       console.log("went in here");
       console.log(platform.platforms());
+
+
+
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
