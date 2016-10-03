@@ -1,4 +1,18 @@
+#profile-bar-button{
+ padding: 0 10px;
+}
+
+
 .profile {
+
+  scroll-content{
+    padding-bottom:2px;
+  }
+
+  .swiper-container-horizontal > .swiper-pagination{
+    bottom: 10px;
+  }
+
   .swiper-container{
     position: inherit;
     height: 400px;
@@ -8,19 +22,20 @@
     padding: 0;
   }
 
-  ion-col{
-    //padding: 0;
+  .top-card-col{
     text-align: center;
     padding: 10px;
     border-right: 1px solid #ccc;
   }
 
-  .bottom-card{
+  .middle-card{
+    border-top: 3px solid #0177B5;
     height: 400px !important;
   }
 
   .top-card{
     margin-top: 0;
+    border-top: 3px solid #0177B5;
     //padding: 20px 0;
     margin-bottom: 20px;
   }
@@ -46,6 +61,136 @@
   .top-span > .ion-grid > .ion-row >.ion-col > span{
     padding: 0 !important;
   }
+
+  .bottom-card{
+    margin-bottom: 0;
+    margin: auto;
+    padding: 5px;
+    border-top: 3px solid #0177B5;
+
+    .fa.fa-qrcode{
+      border: 1px solid grey;
+    }
+
+    .bot-icons{
+        display: block;
+        text-align: center;
+
+      .bot-col{
+        padding: 0;
+      }
+
+      .bot-button-icon{
+        margin: 0;
+        font-size: 1.0em;
+        color:blue !important;
+      }
+    }
+
+
+  }
+
+  /*
+
+    Profile Page
+
+  */
+
+
+  .profile-tab{
+    .slide-zoom{
+      height: 100%;
+      position: relative;
+      .profile-inner-box{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        margin-top: 50px;
+        border-top: 1px solid #0177B5;
+
+        h2{
+          font-weight: 900;
+          letter-spacing: 2px;
+        }
+        p{
+          padding-bottom: 15px;
+        }
+
+        img{
+          border: 3px solid #0177B5;
+          border-radius:50%;
+          margin: -40px auto auto auto;
+          width: auto;
+          height: auto;
+          max-width: 120px;
+          max-height: 100px
+        }
+
+
+      }
+    }
+
+  }
+
+
+
+  .portfolio-tab{
+
+    .portfolio-col{
+      border-spacing: 10px 50px;
+      border: 1px solid #0177B5;
+      height: 100px;
+      width: 100px;
+      padding: 0;
+
+      img{
+        height: 100%;
+      }
+
+    }
+
+
+
+  }
+
+
+
+  .work-tab{
+
+    img{
+      height: 100px;
+      width: 200px;
+    }
+
+    .slide-zoom{
+      height: 100%;
+
+      ion-scroll{
+        height: 100%;
+      }
+
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
 

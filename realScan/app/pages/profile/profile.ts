@@ -69,7 +69,7 @@ export class ProfilePage {
   changeTabIndex(index){
     this.currentTab.nativeElement.style.borderBottom = "";
     let newTab = this.TabArray[index];
-    this[newTab].nativeElement.style.borderBottom = "4px solid #0177B5";
+    this[newTab].nativeElement.style.borderBottom = "4px solid #B63A3A";
     this.currentTab = this[newTab];
   }
 
