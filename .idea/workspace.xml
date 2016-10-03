@@ -161,8 +161,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1468" />
-    <option name="y" value="36" />
+    <option name="x" value="2372" />
+    <option name="y" value="-1044" />
     <option name="width" value="1467" />
     <option name="height" value="1047" />
   </component>
@@ -427,15 +427,15 @@
       <workItem from="1475384444800" duration="1883000" />
       <workItem from="1475403397752" duration="3993000" />
       <workItem from="1475470155137" duration="3593000" />
-      <workItem from="1475474948520" duration="2021000" />
+      <workItem from="1475474948520" duration="2533000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17100000" />
+    <option name="totallyTimeSpent" value="17612000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1468" y="36" width="1467" height="1047" extended-state="4" />
+    <frame x="2372" y="-1044" width="1467" height="1047" extended-state="4" />
     <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
