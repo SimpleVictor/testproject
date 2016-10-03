@@ -10,6 +10,7 @@ export class SQLStorage{
     webDB;
 
     constructor(private platform: Platform) {
+      console.log("Went in here");
       this.devicePlatform = platform.platforms();
       console.log(this.devicePlatform);
     }
