@@ -23,6 +23,7 @@ export class FirebaseService {
       valueChanged.on('value', (snapshot) => {
         this.zone.run(() => {
           this.users = snapshot.val();
+          console.log("bang bang");
           console.log(this.users);
         })
       });
