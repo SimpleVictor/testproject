@@ -147,12 +147,13 @@
         <ion-scroll scrollY="true">
         <ion-list>
           <ion-item>
-            <ion-thumbnail item-left>
-              <img src="img/barcode.jpg">
-            </ion-thumbnail>
-            <h2>My Neighbor Totoro</h2>
-            <p>Hayao Miyazaki • 1988</p>
-            <button clear item-right>View</button>
+            <a tappable (click)="openWorkModal()">
+              <ion-thumbnail item-left>
+                <img src="img/barcode.jpg">
+              </ion-thumbnail>
+              <h2>My Neighbor Totoro</h2>
+              <p>Hayao Miyazaki • 988</p>
+            </a>
           </ion-item>
         </ion-list>
         <ion-list>

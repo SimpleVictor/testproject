@@ -37,4 +37,9 @@
     <plugin name="phonegap-plugin-barcodescanner" spec="~6.0.2" />
     <plugin name="cordova-sqlite-storage" spec="https://github.com/litehelpers/Cordova-sqlite-storage" />
     <plugin name="cordova-plugin-inappbrowser" spec="~1.1.0" />
+    <plugin name="cordova-plugin-geolocation" spec="~2.4.0" />
+    <plugin name="plugin.google.maps" spec="~1.3.9">
+        <variable name="API_KEY_FOR_ANDROID" value="AIzaSyBmD6EznVE42763OUvCC7n9f-B5pCA1BHY" />
+        <variable name="API_KEY_FOR_IOS" value="AIzaSyCGmkRDIFdpVMmGnUPUeVPCg3TltHXQ50U" />
+    </plugin>
 </widget>

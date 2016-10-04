@@ -2,6 +2,8 @@ import {Component, ViewChild, ElementRef} from '@angular/core';
 import {NavController, Slides, ModalController} from 'ionic-angular';
 import {PortfolioModal} from "./portfolio-modal/portfolio-modal";
 import {MapModal} from "./map-modal/map-modal";
+import {ShowBarcodeModal} from "./showbarcode-modal/showbarcode-modal";
+import {WorkModal} from "./work-modal/work-modal";
 
 
 @Component({
@@ -111,7 +113,16 @@ export class ProfilePage {
   }
 
   openBarcode(){
-    let modal = this.modalCtrl.create(MapModal);
+    let modal = this.modalCtrl.create(ShowBarcodeModal);
+    modal.onDidDismiss(() => {
+      this.BackgroundOpacity(true);
+    });
+    this.BackgroundOpacity(false);
+    modal.present();
+  }
+
+  openWorkModal(){
+    let modal = this.modalCtrl.create(WorkModal);
     modal.onDidDismiss(() => {
       this.BackgroundOpacity(true);
     });

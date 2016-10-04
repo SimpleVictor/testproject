@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {SQLStorage} from "../../provider/sqlstorage";
-import {BarcodeScanner} from "ionic-native/dist/index";
+import {BarcodeScanner, Geolocation} from "ionic-native";
 import {BarcodeData} from "../home/home";
 import {ScanPage} from "../scan/scan";
 
@@ -17,6 +17,17 @@ import {ScanPage} from "../scan/scan";
 export class SettingPage {
 
   constructor(private navCtrl: NavController, private sqlstorage: SQLStorage) {
+    let options = {timeout: 10000, enableHighAccuracy: true};
+    Geolocation.getCurrentPosition().then((resp) => {
+      console.log(resp);
+    })
+
+    let watch = Geolocation.watchPosition(options);
+    watch.subscribe((data) => {
+      // data.coords.latitude
+      // data.coords.longitude
+      console.log(data);
+    })
 
   }
 
