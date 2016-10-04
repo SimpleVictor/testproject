@@ -47,6 +47,7 @@ export class ProfilePage {
 
   ionViewDidEnter(){
     this.currentTab = this.contact;
+    console.log(this.contact);
     if(this.smallWorkAround1 < 1){
       this.contact.nativeElement.style.borderBottom = "4px solid #B63A3A";
       this.smallWorkAround1++;

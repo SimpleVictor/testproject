@@ -7,9 +7,8 @@ import {GoogleMap, GoogleMapsEvent, GoogleMapsLatLng} from 'ionic-native';
     templateUrl: 'build/pages/profile/map-modal/map-modal.html'
 })
 export class MapModal{
-  map;
   @ViewChild('map') mapElement;
-
+  map;
     constructor(private vControl: ViewController, private platform: Platform) {
       // platform.ready().then(() => {
       //   this.loadMap();
@@ -17,10 +16,11 @@ export class MapModal{
     }
 
     ionViewDidEnter(){
-        this.map = new GoogleMap(this.mapElement);
-        this.map.one(GoogleMapsEvent.MAP_READY).then(() => console.log('Map is ready!'));
-        console.log(this.mapElement);
-        console.log(this.map);
+      // console.log(JSON.stringify(this.map));
+      console.log(this.mapElement.nativeElement);
+
+      this.map = new GoogleMap(this.mapElement.nativeElement);
+      this.map.one(GoogleMapsEvent.MAP_READY).then(() => console.log('Map is ready!'));
     }
 
     loadMap(){
