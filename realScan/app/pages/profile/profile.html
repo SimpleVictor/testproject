@@ -19,7 +19,7 @@
 </ion-header>
 
 
-<ion-content padding class="profile">
+<ion-content padding class="profile" #profile>
 
   <ion-card class="top-card">
     <ion-grid>
@@ -90,28 +90,28 @@
         <ion-grid>
           <ion-row wrap>
             <ion-col class="portfolio-col" width-50>
-              <img src="img/food/applepie.jpg">
+              <img src="img/food/applepie.jpg" (click)="openPortfolio()">
             </ion-col>
             <ion-col class="portfolio-col" width-50>
-              <img src="img/food/applepie.jpg">
+              <img src="img/food/applepie.jpg" (click)="openPortfolio()">
             </ion-col>
             <ion-col class="portfolio-col" width-50>
-              <img src="img/food/applepie.jpg">
+              <img src="img/food/applepie.jpg" (click)="openPortfolio()">
             </ion-col>
             <ion-col class="portfolio-col" width-50>
-              <img src="img/food/applepie.jpg">
+              <img src="img/food/applepie.jpg" (click)="openPortfolio()">
             </ion-col>
             <ion-col class="portfolio-col" width-50>
-              <img src="img/food/applepie.jpg">
+              <img src="img/food/applepie.jpg" (click)="openPortfolio()">
             </ion-col>
             <ion-col class="portfolio-col" width-50>
-              <img src="img/food/applepie.jpg">
+              <img src="img/food/applepie.jpg" (click)="openPortfolio()">
             </ion-col>
             <ion-col class="portfolio-col" width-50>
-              <img src="img/food/applepie.jpg">
+              <img src="img/food/applepie.jpg" (click)="openPortfolio()">
             </ion-col>
             <ion-col class="portfolio-col" width-50>
-              <img src="img/food/applepie.jpg">
+              <img src="img/food/applepie.jpg" (click)="openPortfolio()">
             </ion-col>
           </ion-row>
         </ion-grid>
@@ -180,8 +180,49 @@
       SOCIAL
 
       -->
-      <ion-slide>
-        <h2>Social Media</h2>
+      <ion-slide padding class="social-tab">
+        <ion-scroll scrollY="true">
+          <button ion-button icon-left full class="facebook-button">
+            <ion-icon class="fa fa-facebook-official" aria-hidden="true"></ion-icon>
+            Facebook
+          </button>
+          <button ion-button icon-left full class="twitter-button">
+            <ion-icon class="fa fa-twitter-square"></ion-icon>
+            Twitter
+          </button>
+          <button ion-button icon-left full class="linkedin-button">
+            <ion-icon class="fa fa-linkedin-square"></ion-icon>
+            Linkedin
+          </button>
+          <button ion-button icon-left full class="youtube-button">
+            <ion-icon class="fa fa-youtube-square"></ion-icon>
+            Youtube
+          </button>
+          <button ion-button icon-left full class="github-button">
+            <ion-icon class="fa fa-github-square"></ion-icon>
+            Github
+          </button>
+          <button ion-button icon-left full class="dribble-button">
+            <ion-icon class="fa fa-dribbble"></ion-icon>
+            Dribble
+          </button>
+          <button ion-button icon-left full class="instagram-button">
+            <ion-icon class="fa fa-instagram"></ion-icon>
+            Instagram
+          </button>
+          <button ion-button icon-left full class="snapchat-button">
+            <ion-icon class="fa fa-snapchat-square"></ion-icon>
+            Snapchat
+          </button>
+          <button ion-button icon-left full class="pinterest-button">
+            <ion-icon class="fa fa-pinterest-square"></ion-icon>
+            Pinterest
+          </button>
+          <button ion-button icon-left full class="dropbox-button">
+            <ion-icon class="fa fa-dropbox"></ion-icon>
+            Dropbox
+          </button>
+          </ion-scroll>
       </ion-slide>
 
 

@@ -5,6 +5,15 @@
 
 .profile {
 
+  //opacity: 0.5;
+  //background-color: #363838;
+  //-webkit-filter: blur(5px);
+  //-moz-filter: blur(5px);
+  //-o-filter: blur(5px);
+  //-ms-filter: blur(5px);
+  //filter: blur(5px);
+
+
   scroll-content{
     padding-bottom:2px;
   }
@@ -131,6 +140,13 @@
 
   }
 
+
+  /*
+
+    Portfolio Page
+
+  */
+
   .portfolio-tab{
 
     .portfolio-col{
@@ -163,6 +179,191 @@
 
     }
   }
+
+
+  .social-tab{
+
+    .slide-zoom{
+
+      height: 100%;
+
+      ion-scroll{
+        height: 100%;
+      }
+    }
+
+
+
+    .facebook-button{
+      background-color: #39579A;
+      ion-icon{
+        position: absolute;
+        left: 10px;
+        font-size: 1.8em;
+        border-right: 1px solid #fff;
+        line-height: 130%;
+      }
+    }
+    .facebook-button:active {
+      background-color: #ccc;
+    }
+
+    .twitter-button{
+      background-color: #50ABF1;
+      ion-icon{
+        position: absolute;
+        left: 10px;
+        font-size: 1.8em;
+        border-right: 1px solid #fff;
+        line-height: 130%;
+      }
+    }
+    .twitter-button:active {
+      background-color: #ccc;
+    }
+
+    .linkedin-button{
+      background-color: #007BBB;
+      ion-icon{
+        position: absolute;
+        left: 10px;
+        font-size: 1.8em;
+        border-right: 1px solid #fff;
+        line-height: 130%;
+      }
+    }
+    .linkedin-button:active {
+      background-color: #ccc;
+    }
+
+    .youtube-button{
+      background-color: #E32A27;
+      ion-icon{
+        position: absolute;
+        left: 10px;
+        font-size: 1.8em;
+        border-right: 1px solid #fff;
+        line-height: 130%;
+      }
+    }
+    .youtube-button:active {
+      background-color: #ccc;
+    }
+
+    .github-button{
+      background-color: #444444;
+      ion-icon{
+        position: absolute;
+        left: 10px;
+        font-size: 1.8em;
+        border-right: 1px solid #fff;
+        line-height: 130%;
+      }
+    }
+    .github-button:active {
+      background-color: #ccc;
+    }
+
+    .dribble-button{
+      background-color: #EA4C89;
+      ion-icon{
+        position: absolute;
+        left: 10px;
+        font-size: 1.8em;
+        border-right: 1px solid #fff;
+        line-height: 130%;
+      }
+    }
+    .dribble-button:active {
+      background-color: #ccc;
+    }
+
+    .instagram-button{
+      background-color: #5E84AB;
+      ion-icon{
+        position: absolute;
+        left: 10px;
+        font-size: 1.8em;
+        border-right: 1px solid #fff;
+        line-height: 130%;
+      }
+    }
+    .instagram-button:active {
+      background-color: #ccc;
+    }
+
+    .snapchat-button{
+      background-color: #FFFB01;
+      color: #FFF;
+      font-weight: 800;
+      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+      ion-icon{
+        position: absolute;
+        left: 10px;
+        font-size: 1.8em;
+        border-right: 1px solid #fff;
+        line-height: 130%;
+      }
+    }
+    .snapchat-button:active {
+      background-color: #ccc;
+    }
+
+    .pinterest-button{
+      background-color: #DD0C07;
+      ion-icon{
+        position: absolute;
+        left: 10px;
+        font-size: 1.8em;
+        border-right: 1px solid #fff;
+        line-height: 130%;
+      }
+    }
+    .pinterest-button:active {
+      background-color: #ccc;
+    }
+
+    .dropbox-button{
+      background-color: #0085E0;
+      ion-icon{
+        position: absolute;
+        left: 10px;
+        font-size: 1.8em;
+        border-right: 1px solid #fff;
+        line-height: 130%;
+      }
+    }
+    .dropbox-button:active {
+      background-color: #ccc;
+    }
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }

@@ -1,5 +1,6 @@
 import {Component, ViewChild, ElementRef} from '@angular/core';
-import {NavController, Slides} from 'ionic-angular';
+import {NavController, Slides, ModalController} from 'ionic-angular';
+import {PortfolioModal} from "./portfolio-modal/portfolio-modal";
 
 
 @Component({
@@ -9,6 +10,9 @@ export class ProfilePage {
 
   @ViewChild('mySlider') slider: Slides;
   @ViewChild('mySlider') pager;
+
+
+  @ViewChild('profile') profile;
 
   @ViewChild('contact') contact;
   @ViewChild('portfolio') portfolio;
@@ -31,23 +35,29 @@ export class ProfilePage {
   extraOptions;
   currentTab;
 
-  constructor(private navCtrl: NavController) {
+  //MAKES IT SO THE COLOR OF THE BORDER-BOTOM OF THE TAB DOESN'T REPEAT WHEN THE VIEW ENTER BACK IN
+  smallWorkAround1:number = 0;
 
+
+  constructor(private navCtrl: NavController, private modalCtrl: ModalController) {
   }
 
   ionViewDidEnter(){
     this.currentTab = this.contact;
-    this.contact.nativeElement.style.borderBottom = "4px solid #0177B5";
+    if(this.smallWorkAround1 < 1){
+      this.contact.nativeElement.style.borderBottom = "4px solid #B63A3A";
+      this.smallWorkAround1++;
+    }
     this.options = {
-      pagination: '.swiper-pagination',
-      slidesPerView: 1,
-      paginationClickable: true
-      // paginationBulletRender: function (index, className) {
-        // console.log(className);
-        // console.log(this.categories);
-        // return `<span class="${className}">${this.categories[index]}</span>`;
-        // return `<!--<button class="${className}">${this.categories[index]}</button>-->`;
-      // }
+    pagination: '.swiper-pagination',
+    slidesPerView: 1,
+    paginationClickable: true
+    // paginationBulletRender: function (index, className) {
+    // console.log(className);
+    // console.log(this.categories);
+    // return `<span class="${className}">${this.categories[index]}</span>`;
+    // return `<!--<button class="${className}">${this.categories[index]}</button>-->`;
+    // }
     };
 
     let takeAwayHide = this.pager.elementRef.nativeElement.children[0].children[1];
@@ -72,5 +82,23 @@ export class ProfilePage {
     this[newTab].nativeElement.style.borderBottom = "4px solid #B63A3A";
     this.currentTab = this[newTab];
   }
+
+  openPortfolio(){
+      let modal = this.modalCtrl.create(PortfolioModal);
+      modal.onDidDismiss(() => {
+        this.BackgroundOpacity(true);
+      });
+      this.BackgroundOpacity(false);
+      modal.present();
+  }
+
+  BackgroundOpacity(value){
+    if(value){
+      this.profile.elementRef.nativeElement.setAttribute("style", "background-color: ;");
+    }else{
+      this.profile.elementRef.nativeElement.setAttribute("style", "opacity: 0.5;background-color: #363838;-webkit-filter: blur(5px);moz-filter: blur(5px);-o-filter: blur(5px);-ms-filter: blur(5px);filter: blur(5px);");
+    }
+  }
+
 
 }
