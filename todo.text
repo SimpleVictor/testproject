@@ -35,3 +35,12 @@ Hr Manager 500
 District Manager 1000
 Vice President 3000
 CEO 6000
+
+
+  <plugin source="git" spec="https://github.com/mapsplugin/cordova-plugin-googlemaps" >
+    <param name="API_KEY_FOR_ANDROID" value="AIzaSyBmD6EznVE42763OUvCC7n9f-B5pCA1BHY" />
+    <param name="API_KEY_FOR_IOS" value="AIzaSyCGmkRDIFdpVMmGnUPUeVPCg3TltHXQ50U" />
+  </plugin>
+
+
+ionic plugin add cordova-plugin-googlemaps --variable API_KEY_FOR_ANDROID="AIzaSyBmD6EznVE42763OUvCC7n9f-B5pCA1BHY" --variable API_KEY_FOR_IOS="AIzaSyCGmkRDIFdpVMmGnUPUeVPCg3TltHXQ50U"
