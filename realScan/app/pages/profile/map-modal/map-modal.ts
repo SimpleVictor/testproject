@@ -14,9 +14,13 @@ export class MapModal{
       // platform.ready().then(() => {
       //   this.loadMap();
       // });
-      this.map = new GoogleMap(this.mapElement);
-      this.map.one(GoogleMapsEvent.MAP_READY).then(() => console.log('Map is ready!'));
-      console.log(this.map);
+    }
+
+    ionViewDidEnter(){
+        this.map = new GoogleMap(this.mapElement);
+        this.map.one(GoogleMapsEvent.MAP_READY).then(() => console.log('Map is ready!'));
+        console.log(this.mapElement);
+        console.log(this.map);
     }
 
     loadMap(){
