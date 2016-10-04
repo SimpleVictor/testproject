@@ -90,16 +90,20 @@
         <ion-grid>
           <ion-row wrap>
             <ion-col class="portfolio-col" width-50>
-              <img src="img/food/applepie.jpg" (touchend)="openPortfolio()">
+              <a (click)="openPortfolio()">
+                <img src="img/food/applepie.jpg">
+              </a>
             </ion-col>
             <ion-col class="portfolio-col" width-50>
-              <img src="img/food/applepie.jpg" (touchstart)="openPortfolio()">
+              <a (tap)="openPortfolio()">
+                <img src="img/food/applepie.jpg">
+              </a>
             </ion-col>
             <ion-col class="portfolio-col" width-50>
-              <img src="img/food/applepie.jpg" (tap)="openPortfolio()">
+              <img src="img/food/applepie.jpg" tappable (tap)="openPortfolio()">
             </ion-col>
             <ion-col class="portfolio-col" width-50>
-              <img src="img/food/applepie.jpg" (click)="openPortfolio()">
+              <img src="img/food/applepie.jpg" tappable (click)="openPortfolio()">
             </ion-col>
             <ion-col class="portfolio-col" width-50>
               <img src="img/food/applepie.jpg" (click)="openPortfolio()">
