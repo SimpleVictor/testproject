@@ -1,29 +1,48 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {ViewController, Platform} from "ionic-angular";
-import {Geolocation} from 'ionic-native';
+import {Geolocation, CameraPosition, GoogleMapsMarkerOptions, GoogleMapsMarker} from 'ionic-native';
 import {GoogleMap, GoogleMapsEvent, GoogleMapsLatLng} from 'ionic-native';
 
 @Component({
     templateUrl: 'build/pages/profile/map-modal/map-modal.html'
 })
 export class MapModal{
-  @ViewChild('map') mapElement;
-  map;
+      @ViewChild('map') mapElement;
+
     constructor(private vControl: ViewController, private platform: Platform) {
-      // platform.ready().then(() => {
-      //   this.loadMap();
-      // });
+      platform.ready().then(() => {
+        this.loadMap();
+      });
     }
 
     ionViewDidEnter(){
       // console.log(JSON.stringify(this.map));
-      console.log(this.mapElement);
 
-      this.map = new GoogleMap(this.mapElement.nativeElement);
-      this.map.one(GoogleMapsEvent.MAP_READY).then(() => console.log('Map is ready!'));
     }
 
     loadMap(){
+      console.log("$$$$$");
+      console.log(document.querySelector('#map'))
+      let map = new GoogleMap(this.mapElement);
+      map.one(GoogleMapsEvent.MAP_READY).then(() => console.log('Map is ready!'));
+      let ionic: GoogleMapsLatLng = new GoogleMapsLatLng(43.0741904,-89.3809802);
+      let position: CameraPosition = {
+        target: ionic,
+        zoom: 18,
+        tilt: 30
+      };
+      map.moveCamera(position);
+
+// create new marker
+      let markerOptions: GoogleMapsMarkerOptions = {
+        position: ionic,
+        title: 'Ionic'
+      };
+      map.addMarker(markerOptions)
+        .then((marker: GoogleMapsMarker) => {
+          marker.showInfoWindow();
+        });
+
       // let options = {timeout: 10000, enableHighAccuracy: true};
       // //ENABLE THE FOLLOWING:
       //
