@@ -100,5 +100,16 @@ export class ProfilePage {
     }
   }
 
+  testTouch(){
+    console.log("touch star");
+  }
+
+  clickTouch(){
+    console.log("cklicked");
+  }
+  touchEnd(){
+    console.log("touched end")
+  }
+
 
 }
