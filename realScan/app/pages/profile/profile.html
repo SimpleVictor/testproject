@@ -52,33 +52,39 @@
       -->
 
       <ion-slide class="profile-tab">
+        <ion-scroll scrollY="true">
         <div class="profile-inner-box">
           <img src="http://semantic-ui.com/images/avatar2/large/kristy.png">
           <h2>Victor Le</h2>
           <p>Full Stack Developer</p>
           <ion-list>
             <ion-item>
-              <i class="fa fa-envelope" aria-hidden="true" item-left></i>
-              Viet.le175@gmail.com
+              <i class="fa fa-envelope fa-lg" aria-hidden="true" item-left></i>
+              <div item-right>Viet.le175@gmail.com</div>
             </ion-item>
             <ion-item>
               <i class="fa fa-mobile fa-2x" aria-hidden="true" item-left></i>
-              1+908-930-8704
+              <div item-right>1+908-930-8704</div>
             </ion-item>
             <ion-item>
-              <i class="fa fa-location-arrow" aria-hidden="true" item-left></i>
-              New Jersey, US
+              <i class="fa fa-location-arrow fa-lg" aria-hidden="true" item-left></i>
+              <div item-right>New Jersey, US</div>
             </ion-item>
             <ion-item>
-              <i class="fa fa-birthday-cake" aria-hidden="true" item-left></i>
-              June 19, 1994
+              <i class="fa fa-file-text fa-lg" aria-hidden="true" item-left></i>
+              <button tappable secondary item-right>Resume</button>
             </ion-item>
             <ion-item>
-              <i class="fa fa-university" aria-hidden="true" item-left></i>
-              Middlesex County College
+              <i class="fa fa-birthday-cake fa-lg" aria-hidden="true" item-left></i>
+              <div item-right>June 19, 1994</div>
+            </ion-item>
+            <ion-item>
+              <i class="fa fa-university fa-lg" aria-hidden="true" item-left></i>
+              <div item-right>Middlesex County College</div>
             </ion-item>
           </ion-list>
         </div>
+          </ion-scroll>
       </ion-slide>
 
       <!--
@@ -252,12 +258,12 @@
       <ion-grid>
         <ion-row>
           <ion-col class="bot-col" width-50>
-            <button class="bot-button-icon">
+            <button class="bot-button-icon" tappable (click)="openBarcode()">
               <i class="fa fa-qrcode fa-lg" aria-hidden="true"></i>
             </button>
           </ion-col>
           <ion-col class="bot-col" width-50>
-            <button class="bot-button-icon">
+            <button class="bot-button-icon" tappable (click)="openMap()">
                <i class="fa fa-map-marker fa-lg" aria-hidden="true"></i>
             </button>
           </ion-col>

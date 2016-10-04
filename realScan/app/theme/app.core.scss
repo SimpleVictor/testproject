@@ -14,6 +14,8 @@
 @import "../pages/profile/profile.scss";
 @import "../pages/login/login.scss";
 @import "../pages/profile/portfolio-modal/portfolio-modal.scss";
+@import "../pages/profile/map-modal/map-modal.scss";
+@import "../pages/profile/showbarcode-modal/showbarcode-modal.scss";
 
 
 
@@ -35,6 +37,7 @@ ion-card{
 
 ion-tabbar{
   background-color: #0177B5;
+  border-top:0;
 }
 
 ion-content{
@@ -43,6 +46,7 @@ ion-content{
 
 .toolbar-background{
   backgrond-color: #0177B5;
+  border-bottom-width: 0;
 }
 
 

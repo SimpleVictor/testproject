@@ -1,6 +1,7 @@
 import {Component, ViewChild, ElementRef} from '@angular/core';
 import {NavController, Slides, ModalController} from 'ionic-angular';
 import {PortfolioModal} from "./portfolio-modal/portfolio-modal";
+import {MapModal} from "./map-modal/map-modal";
 
 
 @Component({
@@ -100,15 +101,22 @@ export class ProfilePage {
     }
   }
 
-  testTouch(){
-    console.log("touch star");
+  openMap(){
+    let modal = this.modalCtrl.create(MapModal);
+    modal.onDidDismiss(() => {
+      this.BackgroundOpacity(true);
+    });
+    this.BackgroundOpacity(false);
+    modal.present();
   }
 
-  clickTouch(){
-    console.log("cklicked");
-  }
-  touchEnd(){
-    console.log("touched end")
+  openBarcode(){
+    let modal = this.modalCtrl.create(MapModal);
+    modal.onDidDismiss(() => {
+      this.BackgroundOpacity(true);
+    });
+    this.BackgroundOpacity(false);
+    modal.present();
   }
 
 
