@@ -11,4 +11,7 @@ export class ScanPage {
     this.barcodeData = navParams.get('details');
   }
 
+
+
+
 }
