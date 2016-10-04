@@ -17,7 +17,7 @@ export class MapModal{
 
     ionViewDidEnter(){
       // console.log(JSON.stringify(this.map));
-      console.log(this.mapElement.nativeElement);
+      console.log(this.mapElement);
 
       this.map = new GoogleMap(this.mapElement.nativeElement);
       this.map.one(GoogleMapsEvent.MAP_READY).then(() => console.log('Map is ready!'));
