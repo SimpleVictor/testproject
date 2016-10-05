@@ -25,7 +25,8 @@ ion-app._gmaps_cdv_ .nav-decor{
 }
 
 .map-home {
-  //background-color: transparent;
+  background-color: transparent;
+    z-index: 1000;
   #map {
     height: 100%;
     z-index: 50000;
