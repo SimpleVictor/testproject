@@ -75,14 +75,14 @@ var sampleData = {
 };
 
 
-var str = "one:apple;two:orange;three:bananna;four:pears";
-var obj = {};
-str.split(';').forEach(function(el) {
-  var x = el.split(':');
-  obj[x[0]] = x[1];
-});
-console.log(obj);
-console.log(str.length);
+// var str = "one:apple;two:orange;three:bananna;four:pears";
+// var obj = {};
+// str.split(';').forEach(function(el) {
+//   var x = el.split(':');
+//   obj[x[0]] = x[1];
+// });
+// console.log(obj);
+// console.log(str.length);
 
 
 /* GET users listing. */
@@ -90,29 +90,10 @@ router.post('/generate', function(req, res, next) {
 
   var data = req.body;
   console.log(data);
-  var randomNum = Math.round(Math.random()*100000000000);
-  var newUrl = ""+DBurl+randomNum+".json";
-  data.qr = "echoserver162.herokuapp.com/"+randomNum+".png";
-
-  requests({
-    url: newUrl,
-    method: "PUT",
-    body: data,
-    json: true
-  }, function(err, response){
-    if(err){
-      console.log("There was an error");
-      console.log(err);
-      res.json(err);
-    }else{
-      var code = qr.image(newUrl, { type: 'png' });
-      var output = fs.createWriteStream('img/'+randomNum+'.png');
-      code.pipe(output);
-      console.log("Successfully added into db");
-      res.json("Success");
-    };
-  });
-
+    var code = qr.image(newUrl, { type: 'png' });
+    var output = fs.createWriteStream('img/'+data+'.png');
+    code.pipe(output);
+    res.json("Success from the backend!");
 
 });
 
