@@ -1,22 +1,33 @@
+//ion-app._gmaps_cdv_ .nav-decor{
+//  background-color: transparent !important;
+//}
+//
+//.map-modal{
+//  //
+//  //background-color: transparent;
+//  //top: 5%;
+//  //margin-top:auto;
+//  //height: 100%;
+//
+//  .map-card{
+//    #map{
+//      height: 100%;
+//    }
+//    button {
+//      margin: 0;
+//    }
+//
+//  }
+//
+//}
 ion-app._gmaps_cdv_ .nav-decor{
   background-color: transparent !important;
 }
 
-.map-modal{
-  //
-  //background-color: transparent;
-  //top: 5%;
-  //margin-top:auto;
-  //height: 100%;
+.map-home {
 
-  .map-card{
-    #map{
-      height: 100%;
-    }
-    button {
-      margin: 0;
-    }
-
+  #map {
+    height: 100%;
   }
 
 }
