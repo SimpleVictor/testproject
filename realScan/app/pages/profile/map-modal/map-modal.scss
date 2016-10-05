@@ -1,13 +1,17 @@
-.map-modal{
+ion-app._gmaps_cdv_ .nav-decor{
+  background-color: transparent !important;
+}
 
-  background-color: transparent;
-  top: 5%;
-  margin-top:auto;
-  height: 100%;
+.map-modal{
+  //
+  //background-color: transparent;
+  //top: 5%;
+  //margin-top:auto;
+  //height: 100%;
 
   .map-card{
     #map{
-      height: 350px;
+      height: 100%;
     }
     button {
       margin: 0;
