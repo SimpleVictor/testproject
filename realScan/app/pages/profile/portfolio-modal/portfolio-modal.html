@@ -1,13 +1,12 @@
-<ion-content padding class="portfolio-modal">
+<ion-content padding class="portfolio-modal" *ngIf="account">
   <ion-card class="portfolio-card">
-    <img src="img/alexa.jpg"/>
+    <img src="{{account.picture_url}}"/>
     <ion-card-content>
       <ion-card-title>
-        Nine Inch Nails Live
+        {{account.title}}
       </ion-card-title>
       <p>
-        The most popular industrial group ever, and largely
-        responsible for bringing the music to a mass audience.
+        {{account.description}}
       </p>
     </ion-card-content>
     <button full danger ion-button icon-only (click)="dismissModal()">
@@ -15,4 +14,10 @@
     </button>
   </ion-card>
 
+</ion-content>
+
+<ion-content padding class="portfolio-modal" *ngIf="!account">
+  <ion-card class="portfolio-card">
+    Please wait..
+  </ion-card>
 </ion-content>

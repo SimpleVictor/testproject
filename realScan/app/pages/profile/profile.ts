@@ -49,6 +49,7 @@ export class ProfilePage {
 
 
   constructor(private navCtrl: NavController, private modalCtrl: ModalController, private loadingCtrl : LoadingController, private auth: AuthService) {
+    // event.preventDefault();
   }
 
 
@@ -75,6 +76,7 @@ export class ProfilePage {
 
     let takeAwayHide = this.pager.elementRef.nativeElement.children[0].children[1];
     takeAwayHide.className = "swiper-pagination";
+    this.slider.getSlider().update()
   }
 
   ionViewLoaded(){
@@ -114,8 +116,9 @@ export class ProfilePage {
     this.currentTab = this[newTab];
   }
 
-  openPortfolio(){
-      let modal = this.modalCtrl.create(PortfolioModal);
+  openPortfolio(obj){
+      console.log(obj);
+      let modal = this.modalCtrl.create(PortfolioModal, {profile: obj});
       modal.onDidDismiss(() => {
         this.BackgroundOpacity(true);
       });
@@ -152,8 +155,8 @@ export class ProfilePage {
     modal.present();
   }
 
-  openWorkModal(){
-    let modal = this.modalCtrl.create(WorkModal);
+  openWorkModal(obj){
+    let modal = this.modalCtrl.create(WorkModal, {profile: obj});
     modal.onDidDismiss(() => {
       this.BackgroundOpacity(true);
     });

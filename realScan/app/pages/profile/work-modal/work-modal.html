@@ -1,18 +1,36 @@
-<ion-content padding class="work-modal">
+<ion-content padding class="work-modal" *ngIf="account">
   <ion-card class="work-card">
-    <img src="img/alexa.jpg"/>
+    <img src="{{account.picture}}"/>
     <ion-card-content>
       <ion-card-title>
-        Nine Inch Nails Live
+        {{account.company}}
       </ion-card-title>
-      <p>
-        The most popular industrial group ever, and largely
-        responsible for bringing the music to a mass audience.
-      </p>
+      <ion-list>
+        <ion-list-header>
+          Action
+        </ion-list-header>
+        <ion-item>{{account.job_title}}</ion-item>
+        <ion-item>{{account.company_phone_number}}</ion-item>
+        <ion-item>{{account.end_date}} - {{account.start_date}}</ion-item>
+        <ion-item>{{account.description}}</ion-item>
+      </ion-list>
+
     </ion-card-content>
     <button full danger ion-button icon-only (click)="dismissModal()">
       <ion-icon name="close"></ion-icon>
     </button>
   </ion-card>
 
+</ion-content>
+
+
+<ion-content padding class="work-modal" *ngIf="!account">
+  <ion-card class="work-card">
+    <ion-card-content>
+      Please wait...
+    </ion-card-content>
+    <button full danger ion-button icon-only (click)="dismissModal()">
+      <ion-icon name="close"></ion-icon>
+    </button>
+  </ion-card>
 </ion-content>

@@ -9,11 +9,12 @@ import {AuthService} from "./provider/auth";
 import {Http} from "@angular/http";
 import {AuthConfig, AuthHttp} from "angular2-jwt";
 import {TabsPage} from "./pages/tabs/tabs";
+import {MeetupService} from "./provider/meetup";
 
 
 @Component({
   template: '<ion-nav [root]="rootPage"></ion-nav>',
-  providers: [FirebaseService, QrService, SQLStorage, AuthService]
+  providers: [FirebaseService, QrService, SQLStorage, AuthService, MeetupService]
 })
 export class MyApp {
 

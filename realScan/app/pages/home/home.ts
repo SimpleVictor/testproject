@@ -30,19 +30,20 @@ export class HomePage{
   }
 
   ionViewLoaded(){
-    setTimeout(() => {
-      this.CheckLoader = this.loadingCtrl.create(
-        { content: "Please wait..." }
-      );
-      this.CheckLoader.present();
-    }, 0);
+    // setTimeout(() => {
+    //   this.CheckLoader = this.loadingCtrl.create(
+    //     { content: "Please wait..." }
+    //   );
+    //   this.CheckLoader.present();
+    // }, 0);
 
     let profile = JSON.parse(localStorage.getItem("profile"));
     console.log(profile);
+    let mainID = profile.identities[0].user_id;
 
-    this.firebase_.CheckForFirstTimeLogin(profile.clientID).subscribe(
+    this.firebase_.CheckForFirstTimeLogin(mainID).subscribe(
       (data) => {
-        this.CheckLoader.dismiss();
+        // this.CheckLoader.dismiss();
         console.log(data);
         this.profile = data;
         this.auth.setAccounts(data);
@@ -55,13 +56,12 @@ export class HomePage{
           }, 0);
           let obj = {
             email: profile.email,
-            clientID: profile.clientID,
-            barcode_id: profile.clientID,
-            barcode_url: `https://suitup1.herokuapp.com/${profile.clientID}.png`,
+            clientID: mainID,
+            barcode_id: mainID,
+            barcode_url: `https://suitup1.herokuapp.com/${mainID}.png`,
             total_connections: "",
             scanned: {
               recent: [""],
-              scanned: [""],
               favorite: [""]
             },
             contact: {
@@ -72,7 +72,14 @@ export class HomePage{
               resume_pdf_url: "",
               birthday: "",
               university: "",
-              map_connections: [""]
+              map_connections: [
+                {
+                  long: "",
+                  lat: "",
+                  date: "",
+                  id: ""
+                }
+              ]
             },
             portfolio: [
               {
@@ -83,8 +90,9 @@ export class HomePage{
             ],
             work: [
               {
-                company: "",
+                picture: "",
                 description: "",
+                company: "",
                 job_title: "",
                 start_date: "",
                 end_date: "",

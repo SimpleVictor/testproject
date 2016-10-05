@@ -9,6 +9,8 @@ import {ScanPage} from "../scan/scan";
 })
 export class BarcodePage {
 
+  whichtab:string = "recent";
+
   constructor(private navCtrl: NavController) {
 
   }

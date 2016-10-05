@@ -93,6 +93,25 @@ router.use(function(req, res, next) {
 });
 
 
+router.get("/meetup", function(req, res, next){
+
+  requests({
+    url: "https://api.meetup.com/2/groups.json?key=643e6d4c1554f483922e72b5a6a1b&sign=true&lat=40.5792700&lon=-74.4115400&category_id=34&page=20",
+    method: "GET",
+    json: true
+  }, function(err, response){
+    if(err){
+      console.log("There was an error");
+      console.log(err);
+      res.json(err);
+    }else{
+      console.log(response);
+      res.json(response);
+    };
+  });
+
+});
+
 /* GET users listing. */
 router.post('/generate', function(req, res, next) {
   console.log("made it here");

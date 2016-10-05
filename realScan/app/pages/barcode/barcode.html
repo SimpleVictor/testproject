@@ -1,27 +1,18 @@
-<!--<ion-header>-->
+<ion-header class="barcode-headers">
+
   <!--<ion-navbar>-->
-    <!--<ion-buttons start>-->
-      <!--<button ion-button icon-only>-->
-        <!--<ion-icon name="contact"></ion-icon>-->
-      <!--</button>-->
-    <!--</ion-buttons>-->
-
-
-    <!--<ion-title>Recent Scans</ion-title>-->
-
-    <!--<ion-buttons end>-->
-      <!--<button ion-button icon-only (tap)="activateScan()">-->
-        <!--&lt;!&ndash;<ion-icon name="search"></ion-icon>&ndash;&gt;-->
-        <!--&lt;!&ndash;<i class="fa-stack fa-circle fa-qrcode "></i>&ndash;&gt;-->
-        <!--<span class="fa-stack fa-lg">-->
-  <!--<i class="fa fa-square-o fa-stack-2x"></i>-->
-  <!--<i class="fa fa-qrcode fa-stack-3x"></i>-->
-<!--</span>-->
-      <!--</button>-->
-    <!--</ion-buttons>-->
+    <!--<ion-title>Barcode</ion-title>-->
   <!--</ion-navbar>-->
-<!--</ion-header>-->
 
+  <ion-toolbar [attr.primary]="isAndroid ? '' : null" no-border-top>
+    <ion-segment [(ngModel)]="whichtab" [attr.light]="isAndroid ? '' : null">
+      <ion-segment-button class="segment-activated" value="recent">Recent</ion-segment-button>
+      <ion-segment-button value="saved">Saved</ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+
+</ion-header>
 
 <ion-content padding>
   <ion-searchbar
@@ -30,4 +21,47 @@
     (ionInput)="onInput($event)"
     (ionCancel)="onCancel($event)">
   </ion-searchbar>
+
+
+  <div [ngSwitch]="whichtab">
+
+    <div *ngSwitchCase="'recent'">
+      <ion-list-header>
+        Recent
+      </ion-list-header>
+      <ion-list>
+        <ion-item-sliding>
+          <ion-item>
+            <ion-avatar item-left>
+              <!--<img src="img/slimer.png">-->
+            </ion-avatar>
+            <h2>Slimer</h2>
+          </ion-item>
+          <ion-item-options side="left">
+            <button primary>
+              <ion-icon name="text"></ion-icon>
+              Text
+            </button>
+            <button secondary>
+              <ion-icon name="call"></ion-icon>
+              Call
+            </button>
+          </ion-item-options>
+          <ion-item-options side="right">
+            <button primary>
+              <ion-icon name="mail"></ion-icon>
+              Email
+            </button>
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
+    </div>
+
+    <div *ngSwitchCase="'saved'">
+
+
+    </div>
+
+  </div>
+
 </ion-content>

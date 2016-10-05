@@ -19,7 +19,7 @@
 <!--</ion-header>-->
 
 
-<ion-content class="profile" #profile>
+<ion-content class="profile" #profile *ngIf="account">
 
   <ion-card class="top-card">
     <ion-grid>
@@ -55,20 +55,20 @@
         <ion-scroll scrollY="true">
         <div class="profile-inner-box">
           <img src="http://semantic-ui.com/images/avatar2/large/kristy.png">
-          <h2>Victor Le</h2>
-          <p>Full Stack Developer</p>
+          <h2>{{account.contact.name}}</h2>
+          <p>{{account.contact.main_title}}</p>
           <ion-list>
             <ion-item>
               <i class="fa fa-envelope fa-lg" aria-hidden="true" item-left></i>
-              <div item-right>Viet.le175@gmail.com</div>
+              <div item-right>{{account.email}}</div>
             </ion-item>
             <ion-item>
               <i class="fa fa-mobile fa-2x" aria-hidden="true" item-left></i>
-              <div item-right>1+908-930-8704</div>
+              <div item-right>{{account.contact.phone}}</div>
             </ion-item>
             <ion-item>
               <i class="fa fa-location-arrow fa-lg" aria-hidden="true" item-left></i>
-              <div item-right>New Jersey, US</div>
+              <div item-right>{{account.contact.location}}</div>
             </ion-item>
             <ion-item>
               <i class="fa fa-file-text fa-lg" aria-hidden="true" item-left></i>
@@ -76,11 +76,11 @@
             </ion-item>
             <ion-item>
               <i class="fa fa-birthday-cake fa-lg" aria-hidden="true" item-left></i>
-              <div item-right>June 19, 1994</div>
+              <div item-right>{{account.contact.birthday}}</div>
             </ion-item>
             <ion-item>
               <i class="fa fa-university fa-lg" aria-hidden="true" item-left></i>
-              <div item-right>Middlesex County College</div>
+              <div item-right>{{account.contact.university}}</div>
             </ion-item>
           </ion-list>
         </div>
@@ -95,44 +95,9 @@
       <ion-slide class="portfolio-tab">
         <ion-grid>
           <ion-row wrap>
-            <ion-col class="portfolio-col" width-50>
-              <a tappable (click)="openPortfolio()">
-                <img src="img/food/applepie.jpg">
-              </a>
-            </ion-col>
-            <ion-col class="portfolio-col" width-50>
-              <a tappable (click)="openPortfolio()">
-                <img src="img/food/applepie.jpg">
-              </a>
-            </ion-col>
-            <ion-col class="portfolio-col" width-50>
-              <a tappable (click)="openPortfolio()">
-                <img src="img/food/applepie.jpg">
-              </a>
-            </ion-col>
-            <ion-col class="portfolio-col" width-50>
-              <a tappable (click)="openPortfolio()">
-                <img src="img/food/applepie.jpg">
-              </a>
-            </ion-col>
-            <ion-col class="portfolio-col" width-50>
-              <a tappable (click)="openPortfolio()">
-                <img src="img/food/applepie.jpg">
-              </a>
-            </ion-col>
-            <ion-col class="portfolio-col" width-50>
-              <a tappable (click)="openPortfolio()">
-                <img src="img/food/applepie.jpg">
-              </a>
-            </ion-col>
-            <ion-col class="portfolio-col" width-50>
-              <a tappable (click)="openPortfolio()">
-                <img src="img/food/applepie.jpg">
-              </a>
-            </ion-col>
-            <ion-col class="portfolio-col" width-50>
-              <a tappable (click)="openPortfolio()">
-                <img src="img/food/applepie.jpg">
+            <ion-col class="portfolio-col" width-50 *ngFor="let singleport of account.portfolio">
+              <a tappable (click)="openPortfolio(singleport)">
+                <img src="{{singleport.picture_url}}">
               </a>
             </ion-col>
           </ion-row>
@@ -146,54 +111,14 @@
       <ion-slide class="work-tab">
         <ion-scroll scrollY="true">
         <ion-list>
-          <ion-item>
-            <a tappable (click)="openWorkModal()">
+          <ion-item *ngFor="let singlework of account.work">
+            <a tappable (click)="openWorkModal(singlework)">
               <ion-thumbnail item-left>
-                <img src="img/barcode.jpg">
+                <img src="{{singlework.picture}}">
               </ion-thumbnail>
-              <h2>My Neighbor Totoro</h2>
-              <p>Hayao Miyazaki • 988</p>
+              <h2>{{singlework.company}}</h2>
+              <p>{{singlework.job_title}}</p>
             </a>
-          </ion-item>
-        </ion-list>
-        <ion-list>
-          <ion-item>
-            <ion-thumbnail item-left>
-              <img src="img/barcode.jpg">
-            </ion-thumbnail>
-            <h2>My Neighbor Totoro</h2>
-            <p>Hayao Miyazaki • 1988</p>
-            <button clear item-right>View</button>
-          </ion-item>
-        </ion-list>
-        <ion-list>
-          <ion-item>
-            <ion-thumbnail item-left>
-              <img src="img/barcode.jpg">
-            </ion-thumbnail>
-            <h2>My Neighbor Totoro</h2>
-            <p>Hayao Miyazaki • 1988</p>
-            <button clear item-right>View</button>
-          </ion-item>
-        </ion-list>
-        <ion-list>
-          <ion-item>
-            <ion-thumbnail item-left>
-              <img src="img/barcode.jpg">
-            </ion-thumbnail>
-            <h2>My Neighbor Totoro</h2>
-            <p>Hayao Miyazaki • 1988</p>
-            <button clear item-right>View</button>
-          </ion-item>
-        </ion-list>
-        <ion-list>
-          <ion-item>
-            <ion-thumbnail item-left>
-              <img src="img/barcode.jpg">
-            </ion-thumbnail>
-            <h2>My Neighbor Totoro</h2>
-            <p>Hayao Miyazaki • 1988</p>
-            <button clear item-right>View</button>
           </ion-item>
         </ion-list>
         </ion-scroll>
