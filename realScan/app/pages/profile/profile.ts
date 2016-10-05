@@ -100,17 +100,18 @@ export class ProfilePage {
     if(value){
       this.profile.elementRef.nativeElement.setAttribute("style", "background-color: ;");
     }else{
-      // this.profile.elementRef.nativeElement.setAttribute("style", "opacity: 0.5;background-color: #363838;-webkit-filter: blur(5px);moz-filter: blur(5px);-o-filter: blur(5px);-ms-filter: blur(5px);filter: blur(5px);");
+      this.profile.elementRef.nativeElement.setAttribute("style", "opacity: 0.5;background-color: #363838;-webkit-filter: blur(5px);moz-filter: blur(5px);-o-filter: blur(5px);-ms-filter: blur(5px);filter: blur(5px);");
     }
   }
 
   openMap(){
-    let modal = this.modalCtrl.create(MapModal);
-    modal.onDidDismiss(() => {
-      this.BackgroundOpacity(true);
-    });
-    this.BackgroundOpacity(false);
-    modal.present();
+    // let modal = this.modalCtrl.create(MapModal);
+    // modal.onDidDismiss(() => {
+    //   this.BackgroundOpacity(true);
+    // });
+    // this.BackgroundOpacity(false);
+    // modal.present();
+    this.navCtrl.push(MapModal);
   }
 
   openBarcode(){
