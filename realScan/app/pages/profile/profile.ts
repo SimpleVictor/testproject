@@ -111,8 +111,8 @@ export class ProfilePage {
     // });
     // this.BackgroundOpacity(false);
     // modal.present();
-    let popover = this.popoverCtrl.create(MapModal);
-    popover.present();
+
+    this.navCtrl.push(MapModal);
 
   }
 
