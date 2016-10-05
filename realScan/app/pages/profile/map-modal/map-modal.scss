@@ -4,7 +4,7 @@
 //
 //.map-modal{
 //  //
-//  //background-color: transparent;
+//  background-color: transparent;
 //  //top: 5%;
 //  //margin-top:auto;
 //  //height: 100%;
@@ -21,13 +21,14 @@
 //
 //}
 ion-app._gmaps_cdv_ .nav-decor{
-  //background-color: transparent !important;
+  background-color: transparent !important;
 }
 
 .map-home {
-
+  //background-color: transparent;
   #map {
     height: 100%;
+    z-index: 50000;
   }
 
 }
