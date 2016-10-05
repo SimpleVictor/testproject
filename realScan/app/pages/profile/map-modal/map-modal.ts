@@ -10,7 +10,7 @@ declare var google;
 export class MapModal{
     map: GoogleMap;
 
-    constructor(private vControl: ViewController, private platform: Platform) {
+    constructor(private platform: Platform) {
       platform.ready().then(() => {
         this.loadMap();
       });
@@ -64,10 +64,6 @@ export class MapModal{
           console.log('Map is ready!');
         });
 
-      }
-
-      dismissModal(){
-        this.vControl.dismiss();
       }
 
 }

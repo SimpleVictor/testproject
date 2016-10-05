@@ -1,5 +1,5 @@
 import {Component, ViewChild, ElementRef} from '@angular/core';
-import {NavController, Slides, ModalController} from 'ionic-angular';
+import {NavController, Slides, ModalController, PopoverController} from 'ionic-angular';
 import {PortfolioModal} from "./portfolio-modal/portfolio-modal";
 import {MapModal} from "./map-modal/map-modal";
 import {ShowBarcodeModal} from "./showbarcode-modal/showbarcode-modal";
@@ -42,7 +42,7 @@ export class ProfilePage {
   smallWorkAround1:number = 0;
 
 
-  constructor(private navCtrl: NavController, private modalCtrl: ModalController) {
+  constructor(private navCtrl: NavController, private modalCtrl: ModalController, public popoverCtrl: PopoverController) {
   }
 
   ionViewDidEnter(){
@@ -111,7 +111,9 @@ export class ProfilePage {
     // });
     // this.BackgroundOpacity(false);
     // modal.present();
-    this.navCtrl.push(MapModal);
+    let popover = this.popoverCtrl.create(MapModal);
+    popover.present();
+
   }
 
   openBarcode(){
