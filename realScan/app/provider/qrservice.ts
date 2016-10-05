@@ -1,33 +1,25 @@
 import { Injectable } from '@angular/core';
 import 'rxjs/operator/map';
-import {Http} from "@angular/http";
+import {Http, Headers, RequestOptions, Response} from "@angular/http";
 
-declare var firebase;
+
 
 @Injectable()
 export class QrService{
 
-    url = "123";
-    mainId;
-    userData;
-
-    constructor(private http : Http) {
+    constructor(private http_ : Http) {
 
     }
 
-    sendData(obj){
-      console.log(obj);
-    }
-
-    getUserData(id, callback){
-      this.mainId = id;
-      let myValue = firebase.database().ref(`${this.mainId}/`);
-      myValue.on("value", (snap) => {
-        this.userData = snap.val();
-        callback(this.userData);
-        console.log(this.userData);
-      })
-
+    GenerateBarCodeForNewUser(id){
+      console.log(id);
+      let obj ={
+        id : id
+      };
+      let body = JSON.stringify(obj);
+      let headers = new Headers({ 'Content-Type': 'application/json' });
+      let options = new RequestOptions({ headers: headers });
+      return this.http_.post(`https://suitup1.herokuapp.com/users/generate`, body, options).map((res: Response) => res.json());
     }
 
 }

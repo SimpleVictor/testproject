@@ -13,7 +13,7 @@ import {TabsPage} from "./pages/tabs/tabs";
 
 @Component({
   template: '<ion-nav [root]="rootPage"></ion-nav>',
-  providers: [FirebaseService, QrService, SQLStorage]
+  providers: [FirebaseService, QrService, SQLStorage, AuthService]
 })
 export class MyApp {
 
@@ -68,6 +68,5 @@ ionicBootstrap(MyApp, [
       return new AuthHttp(new AuthConfig({noJwtError: true}), http);
     },
     deps: [Http]
-  }),
-  AuthService
+  })
 ]);

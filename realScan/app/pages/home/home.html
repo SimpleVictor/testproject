@@ -1,6 +1,6 @@
 
 
-<ion-content padding class="login-page" *ngIf="!auth.authenticated()">
+<ion-content class="login-page" *ngIf="!auth.authenticated()">
 
 
   <!--<button ion-button full (click)="auth.login()">Full Button</button>-->
@@ -15,42 +15,43 @@
 
 
 
-<ion-header>
-  <ion-navbar>
-    <ion-buttons start>
-      <button ion-button icon-only (tap)="testData()">
-        <i class="fa fa-calendar fa-2x"></i>
-      </button>
-    </ion-buttons>
+<!--<ion-header>-->
+  <!--<ion-navbar>-->
+    <!--<ion-buttons start>-->
+      <!--<button ion-button icon-only (tap)="testData()">-->
+        <!--<i class="fa fa-calendar fa-2x"></i>-->
+      <!--</button>-->
+    <!--</ion-buttons>-->
 
 
-    <ion-title>Home</ion-title>
+    <!--<ion-title>Home</ion-title>-->
 
-    <ion-buttons end>
-      <button ion-button icon-only (tap)="activateScan()">
-        <!--<ion-icon name="search"></ion-icon>-->
-        <!--<i class="fa-stack fa-circle fa-qrcode "></i>-->
-      <span class="fa-stack fa-lg">
-  <i class="fa fa-square-o fa-stack-2x"></i>
-  <i class="fa fa-qrcode fa-stack-3x"></i>
-</span>
-      </button>
-    </ion-buttons>
-  </ion-navbar>
-</ion-header>
+    <!--<ion-buttons end>-->
+      <!--<button ion-button icon-only (tap)="activateScan()">-->
+        <!--&lt;!&ndash;<ion-icon name="search"></ion-icon>&ndash;&gt;-->
+        <!--&lt;!&ndash;<i class="fa-stack fa-circle fa-qrcode "></i>&ndash;&gt;-->
+      <!--<span class="fa-stack fa-lg">-->
+  <!--<i class="fa fa-square-o fa-stack-2x"></i>-->
+  <!--<i class="fa fa-qrcode fa-stack-3x"></i>-->
+<!--</span>-->
+      <!--</button>-->
+    <!--</ion-buttons>-->
+  <!--</ion-navbar>-->
+<!--</ion-header>-->
 
 
 <ion-content padding class="home" *ngIf="auth.authenticated()">
-  <ion-card>
+  <ion-card *ngIf="profile">
     <!--<img src="img/barcode.png"/>-->
-    <img src="https://echoserver162.herokuapp.com/mycode.png"/>
+    <img src="{{ profile.barcode_url }}"/>
     <ion-card-content>
-      <ion-card-title>
-        Let someone scan this to get information on you.
-      </ion-card-title>
-      <p>
-        Set up your profile to generate a barcode if you like
-      </p>
+      <ion-item>
+        <ion-avatar item-left>
+          <img src="{{ profile.contact.picture }}">
+        </ion-avatar>
+        <h2>{{ profile.contact.name }}</h2>
+        <p>{{ profile.email }}</p>
+      </ion-item>
     </ion-card-content>
 
 

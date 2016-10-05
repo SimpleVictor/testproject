@@ -1,8 +1,7 @@
 import {Injectable, NgZone} from '@angular/core';
 import {Events, NavController} from "ionic-angular";
-
-import { tokenNotExpired } from 'angular2-jwt';
-import {TabsPage} from "../pages/tabs/tabs";
+import {Http, Response, Headers, RequestOptions} from "@angular/http";
+import 'rxjs/Rx';
 
 declare var firebase;
 
@@ -13,11 +12,8 @@ export class FirebaseService {
 
   zone;
 
-    constructor(private events: Events) {
+    constructor(private events: Events, private http_ : Http) {
       this.zone = new NgZone({enableLongStackTrace: false});
-
-
-
 
       // let valueChanged = firebase.database().ref('users/');
       // valueChanged.on('value', (snapshot) => {
@@ -29,36 +25,18 @@ export class FirebaseService {
       // });
     }
 
-    public authenticateUser(credentials, callback) {
-      console.log(this.users);
-      if (this.users) {
-        Object.keys(this.users).forEach((myKey) => {
-          console.log(this.users[myKey]);
-          console.log(credentials);
-          if (this.users[myKey].username === credentials.username && this.users[myKey].password === credentials.password) {
-            localStorage.setItem('id_tokens', myKey);
-            console.log("Password is correct");
-            callback(true);
-          } else {
-            console.log("Password is INCORRECT");
-            callback(false);
-            return false;
-          }
-        });
-      }
+    CheckForFirstTimeLogin(id){
+      console.log(id);
+      return this.http_.get(`https://wowme-3c87e.firebaseio.com/users/${id}/.json`).map((res: Response) => res.json());
     }
 
-  public logout() {
-    // Remove token from localStorage
-    localStorage.removeItem('id_tokens');
-  };
+    CreateUserAccount(obj){
+      let body = JSON.stringify(obj);
+      let headers = new Headers({ 'Content-Type': 'application/json' });
+      let options = new RequestOptions({ headers: headers });
+      return this.http_.put(`https://wowme-3c87e.firebaseio.com/users/${obj.clientID}/.json`, body, options).map((res: Response) => res.json());
 
-  public checkAuth(callback){
-    if(localStorage.getItem("id_tokens")){
-      callback(true, localStorage.getItem("id_tokens"));
-    }else{
-      callback(false);
     }
-  }
+
 
 }

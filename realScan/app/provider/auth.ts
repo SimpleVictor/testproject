@@ -24,6 +24,7 @@ export class AuthService {
   refreshSubscription: any;
   user: Object;
   zoneImpl: NgZone;
+  accounts;
 
   constructor(private authHttp: AuthHttp, zone: NgZone) {
     this.zoneImpl = zone;
@@ -58,6 +59,15 @@ export class AuthService {
       this.scheduleRefresh();
     });
 
+  }
+
+  public setAccounts(obj){
+    this.accounts = obj;
+  }
+
+  getAccounts(callback){
+    console.log(this.accounts);
+    callback(this.accounts);
   }
 
   public authenticated() {

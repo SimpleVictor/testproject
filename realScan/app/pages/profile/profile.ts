@@ -1,9 +1,10 @@
 import {Component, ViewChild, ElementRef} from '@angular/core';
-import {NavController, Slides, ModalController, PopoverController} from 'ionic-angular';
+import {NavController, Slides, ModalController, PopoverController, LoadingController} from 'ionic-angular';
 import {PortfolioModal} from "./portfolio-modal/portfolio-modal";
 import {MapModal} from "./map-modal/map-modal";
 import {ShowBarcodeModal} from "./showbarcode-modal/showbarcode-modal";
 import {WorkModal} from "./work-modal/work-modal";
+import {AuthService} from "../../provider/auth";
 
 
 @Component({
@@ -38,14 +39,22 @@ export class ProfilePage {
   extraOptions;
   currentTab;
 
+  loader;
+
+  account;
+
+
   //MAKES IT SO THE COLOR OF THE BORDER-BOTOM OF THE TAB DOESN'T REPEAT WHEN THE VIEW ENTER BACK IN
   smallWorkAround1:number = 0;
 
 
-  constructor(private navCtrl: NavController, private modalCtrl: ModalController, public popoverCtrl: PopoverController) {
+  constructor(private navCtrl: NavController, private modalCtrl: ModalController, private loadingCtrl : LoadingController, private auth: AuthService) {
   }
 
+
   ionViewDidEnter(){
+
+
     this.currentTab = this.contact;
     console.log(this.contact);
     if(this.smallWorkAround1 < 1){
@@ -66,6 +75,24 @@ export class ProfilePage {
 
     let takeAwayHide = this.pager.elementRef.nativeElement.children[0].children[1];
     takeAwayHide.className = "swiper-pagination";
+  }
+
+  ionViewLoaded(){
+    setTimeout(() => {
+      this.loader = this.loadingCtrl.create(
+        { content: "Please wait..." }
+      );
+      this.loader.present();
+    }, 0);
+
+
+    this.auth.getAccounts((data) => {
+      setTimeout(() => {
+        this.loader.dismiss();
+      },0);
+      this.account = data;
+      console.log(this.account);
+    });
   }
 
   onSlidedChanged() {
