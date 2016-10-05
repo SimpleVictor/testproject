@@ -8,6 +8,7 @@ import {SQLStorage} from "./provider/sqlstorage";
 import {AuthService} from "./provider/auth";
 import {Http} from "@angular/http";
 import {AuthConfig, AuthHttp} from "angular2-jwt";
+import {TabsPage} from "./pages/tabs/tabs";
 
 
 @Component({
@@ -20,7 +21,7 @@ export class MyApp {
 
 
   constructor(private platform: Platform) {
-    this.rootPage = LoginPage;
+    this.rootPage = TabsPage;
 
 
 

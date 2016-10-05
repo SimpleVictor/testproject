@@ -1,8 +1,18 @@
-<!--<ion-header>-->
-  <!--<ion-navbar>-->
-    <!--<ion-title>Home</ion-title>-->
-  <!--</ion-navbar>-->
-<!--</ion-header>-->
+
+
+<ion-content padding class="login-page" *ngIf="!auth.authenticated()">
+
+
+  <!--<button ion-button full (click)="auth.login()">Full Button</button>-->
+  <div class="login-container">
+
+    <button block (click)="auth.login()" style="background-color: #DD4B39">  <ion-icon name="logo-googleplus"></ion-icon>Sign In with Google</button>
+
+  </div>
+
+</ion-content>
+
+
 
 
 <ion-header>
@@ -30,7 +40,7 @@
 </ion-header>
 
 
-<ion-content padding class="home">
+<ion-content padding class="home" *ngIf="auth.authenticated()">
   <ion-card>
     <!--<img src="img/barcode.png"/>-->
     <img src="https://echoserver162.herokuapp.com/mycode.png"/>

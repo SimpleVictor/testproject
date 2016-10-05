@@ -3,6 +3,7 @@ import {NavController, LoadingController} from 'ionic-angular';
 import {BarcodeScanner} from 'ionic-native';
 import {ScanPage} from "../scan/scan";
 import {QrService} from "../../provider/qrservice";
+import {AuthService} from "../../provider/auth";
 
 export class BarcodeData {
   constructor(
@@ -19,7 +20,7 @@ export class HomePage{
   user;
   loader;
 
-  constructor(public navCtrl: NavController, private qr : QrService, private loadingCtrl: LoadingController) {
+  constructor(public navCtrl: NavController, private qr : QrService, private loadingCtrl: LoadingController, private auth: AuthService) {
   }
 
   ionViewLoaded(){

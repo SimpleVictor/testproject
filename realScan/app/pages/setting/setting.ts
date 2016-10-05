@@ -4,6 +4,7 @@ import {SQLStorage} from "../../provider/sqlstorage";
 import {BarcodeScanner, Geolocation} from "ionic-native";
 import {BarcodeData} from "../home/home";
 import {ScanPage} from "../scan/scan";
+import {AuthService} from "../../provider/auth";
 
 /*
   Generated class for the SettingPage page.
@@ -16,7 +17,7 @@ import {ScanPage} from "../scan/scan";
 })
 export class SettingPage {
 
-  constructor(private navCtrl: NavController, private sqlstorage: SQLStorage) {
+  constructor(private navCtrl: NavController, private sqlstorage: SQLStorage, private auth: AuthService) {
     let options = {timeout: 10000, enableHighAccuracy: true};
     Geolocation.getCurrentPosition().then((resp) => {
       console.log(resp);
