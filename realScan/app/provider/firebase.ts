@@ -41,7 +41,7 @@ export class FirebaseService {
       return this.http_.get(`https://wowme-3c87e.firebaseio.com/users/${id}/.json`).map((res:Response) => res.json());
     }
 
-    AddScanIDIntoRecent(currentID, newID, currentTotalConnections, currentRecents, lat, long){
+    AddScanIDIntoRecent(currentID, newID, currentTotalConnections, currentRecents, currentFavorites,lat, long){
       let newRecents = currentRecents;
 
       let recentObj = {
@@ -51,12 +51,21 @@ export class FirebaseService {
         long: lat
       };
 
+      if(newRecents[0] === 'bruh'){
+        newRecents.splice(0,1);
+        newRecents.push(recentObj);
+      }else{
+        newRecents.push(recentObj);
+      }
+
       let obj = {
-        total_connection: currentTotalConnections + 1,
+        total_connections: currentTotalConnections + 1,
         scanned: {
-          recent: newRecents.push(recentObj)
+          favorite: currentFavorites,
+          recent: newRecents
         }
       };
+
       let body = JSON.stringify(obj);
       let headers = new Headers({ 'Content-Type': 'application/json' });
       let options = new RequestOptions({ headers: headers });
