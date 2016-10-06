@@ -5,6 +5,7 @@ import {BarcodeScanner, Geolocation} from "ionic-native";
 import {BarcodeData} from "../home/home";
 import {ScanPage} from "../scan/scan";
 import {AuthService} from "../../provider/auth";
+import {MeetUpCategories} from "../../shared/meetup-categories";
 
 /*
   Generated class for the SettingPage page.
@@ -17,18 +18,23 @@ import {AuthService} from "../../provider/auth";
 })
 export class SettingPage {
 
-  constructor(private navCtrl: NavController, private sqlstorage: SQLStorage, private auth: AuthService) {
-    let options = {timeout: 10000, enableHighAccuracy: true};
-    Geolocation.getCurrentPosition().then((resp) => {
-      console.log(resp);
-    })
+  constructor(private navCtrl: NavController, private sqlstorage: SQLStorage, private auth: AuthService, private meetup_category: MeetUpCategories) {
+    // let options = {timeout: 10000, enableHighAccuracy: true};
+    // Geolocation.getCurrentPosition().then((resp) => {
+    //   console.log(resp);
+    // })
+    //
+    // let watch = Geolocation.watchPosition(options);
+    // watch.subscribe((data) => {
+    //   // data.coords.latitude
+    //   // data.coords.longitude
+    //   console.log(data);
+    // })
 
-    let watch = Geolocation.watchPosition(options);
-    watch.subscribe((data) => {
-      // data.coords.latitude
-      // data.coords.longitude
-      console.log(data);
-    })
+
+    console.log(this.meetup_category.myCat);
+    console.log(this.meetup_category.myCat.length);
+
 
   }
 

@@ -10,10 +10,11 @@ import {Http} from "@angular/http";
 import {AuthConfig, AuthHttp} from "angular2-jwt";
 import {TabsPage} from "./pages/tabs/tabs";
 import {MeetupService} from "./provider/meetup";
+import {MeetUpCategories} from "./shared/meetup-categories";
 
 
 @Component({
-  providers: [FirebaseService, QrService, SQLStorage, AuthService, MeetupService],
+  providers: [FirebaseService, QrService, SQLStorage, AuthService, MeetupService, MeetUpCategories],
   template: `
 <ion-menu [content]="content">
   <ion-toolbar>
