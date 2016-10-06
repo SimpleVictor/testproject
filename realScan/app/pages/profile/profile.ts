@@ -5,7 +5,10 @@ import {MapModal} from "./map-modal/map-modal";
 import {ShowBarcodeModal} from "./showbarcode-modal/showbarcode-modal";
 import {WorkModal} from "./work-modal/work-modal";
 import {AuthService} from "../../provider/auth";
-import {GoogleMap, GoogleMapsEvent, GoogleMapsLatLng, GoogleMapsMarkerOptions, GoogleMapsMarker} from 'ionic-native';
+import {
+  GoogleMap, GoogleMapsEvent, GoogleMapsLatLng, GoogleMapsMarkerOptions, GoogleMapsMarker,
+  GoogleMapsAnimation
+} from 'ionic-native';
 
 declare var firebase;
 
@@ -188,7 +191,7 @@ export class ProfilePage {
   }
 
   loadMap(){
-    console.log(this.account.scann);
+    console.log(this.account.scanned.recent);
     let allUser = this.account.scanned.recent;
 
     let StartingLocation = new GoogleMapsLatLng(39.0119020 , -98.4842460);
@@ -229,17 +232,21 @@ export class ProfilePage {
     //
 
 
+
+
     for(let i = 0; i < allUser.length; i++){
       let user = allUser[0];
+
       let IndividualCoords : GoogleMapsLatLng = new GoogleMapsLatLng(user.lat, user.long);
       let markerOptions: GoogleMapsMarkerOptions = {
         position: IndividualCoords,
-        title: user.name
+        title: `<h4>${user.name}</h4></br><img src="${user.picture}"/>`
       };
       this.map.addMarker(markerOptions).then((marker: GoogleMapsMarker) => {
         console.log(marker);
         marker.showInfoWindow();
       });
+
     }
 
     this.map.on(GoogleMapsEvent.MAP_READY).subscribe(() => {
