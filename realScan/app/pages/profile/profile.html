@@ -1,4 +1,4 @@
-<ion-header style="z-index: -1">
+<ion-header style="z-index: -1" [hidden]="hiddenMap">
   <ion-item-divider style="background-color: #0177B5"></ion-item-divider>
 </ion-header>
 
@@ -22,15 +22,17 @@
         </ion-buttons>
       </ion-navbar>
     </ion-header>
-    <ion-fab left bottom>
-      <button ion-fab color="dark"><ion-icon name="arrow-dropup"></ion-icon></button>
-      <ion-fab-list side="top">
-        <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
-        <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
-        <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
-        <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
-      </ion-fab-list>
-    </ion-fab>
+    <ion-content>
+      <ion-fab left bottom>
+        <button ion-fab color="dark"><ion-icon name="arrow-dropup"></ion-icon></button>
+        <ion-fab-list side="top">
+          <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+          <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+          <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+          <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+        </ion-fab-list>
+      </ion-fab>
+    </ion-content>
   </div>
 </ion-content>
 
