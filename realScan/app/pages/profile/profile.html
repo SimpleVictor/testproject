@@ -16,21 +16,15 @@
 
         <ion-buttons end>
           <!--<button id="profile-bar-button" ion-button>-->
-          <button menuToggle ion-button icon-only tappable (click)="openMapList()">
-            <i class="fa fa-bars fx-4x" aria-hidden="true"></i>
+          <button menuToggle ion-button icon-only tappable>
+            <i class="menu" aria-hidden="true"></i>
           </button>
         </ion-buttons>
       </ion-navbar>
     </ion-header>
-      <ion-fab left bottom style="z-index: 1">
-        <button ion-fab color="dark"><ion-icon name="arrow-dropup"></ion-icon></button>
-        <ion-fab-list side="top">
-          <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
-          <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
-          <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
-          <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
-        </ion-fab-list>
-      </ion-fab>
+    <button menuToggle ion-button icon-only tappable style="border-radius: 100%; box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5) !important">
+      <ion-icon name="menu" color="primary"></ion-icon>
+    </button>
   </div>
 </ion-content>
 
