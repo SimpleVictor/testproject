@@ -41,6 +41,28 @@ export class FirebaseService {
       return this.http_.get(`https://wowme-3c87e.firebaseio.com/users/${id}/.json`).map((res:Response) => res.json());
     }
 
+    AddScanIDIntoRecent(currentID, newID, currentTotalConnections, currentRecents, lat, long){
+      let newRecents = currentRecents;
+
+      let recentObj = {
+        id: newID,
+        date_scanned: Date.now(),
+        lat: long,
+        long: lat
+      };
+
+      let obj = {
+        total_connection: currentTotalConnections + 1,
+        scanned: {
+          recent: newRecents.push(recentObj)
+        }
+      };
+      let body = JSON.stringify(obj);
+      let headers = new Headers({ 'Content-Type': 'application/json' });
+      let options = new RequestOptions({ headers: headers });
+      return this.http_.put(`https://wowme-3c87e.firebaseio.com/users/${currentID}/.json`, body, options).map((res:Response) => res.json());
+    }
+
 
 
 

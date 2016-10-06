@@ -37,6 +37,9 @@ export class MapModal{
         //   var x = document.querySelector('#map');
         //   console.log(x);
 
+
+
+
         let location = new GoogleMapsLatLng(-34.9290,138.6010);
 
         this.map = new GoogleMap('map', {

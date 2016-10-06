@@ -6,6 +6,7 @@ import {QrService} from "../../provider/qrservice";
 import {AuthService} from "../../provider/auth";
 import {FirebaseService} from "../../provider/firebase";
 import {ProfilePage} from "../profile/profile";
+import {Geolocation} from 'ionic-native';
 
 export class BarcodeData {
   constructor(
@@ -28,6 +29,7 @@ export class HomePage{
   profile;
 
   constructor(public navCtrl: NavController, private qr : QrService, private loadingCtrl: LoadingController, private auth: AuthService, private firebase_ : FirebaseService) {
+
   }
 
   ionViewLoaded(){
@@ -37,6 +39,8 @@ export class HomePage{
     //   );
     //   this.CheckLoader.present();
     // }, 0);
+
+
 
     let profile = JSON.parse(localStorage.getItem("profile"));
     console.log(profile);
@@ -60,7 +64,7 @@ export class HomePage{
             clientID: mainID,
             barcode_id: mainID,
             barcode_url: `https://suitup1.herokuapp.com/${mainID}.png`,
-            total_connections: "",
+            total_connections: 0,
             scanned: {
               recent: [""],
               favorite: [""]
@@ -170,7 +174,10 @@ export class HomePage{
       .then((result) => {
         if (!result.cancelled) {
           const barcodeData = new BarcodeData(result.text, result.format);
-          this.scanDetails(barcodeData);
+          let options = {timeout: 10000, enableHighAccuracy: true};
+          Geolocation.getCurrentPosition(options).then((position) => {
+            this.scanDetails(barcodeData,position.coords.latitude, position.coords.longitude);
+          });
         }
       })
       .catch((err) => {
@@ -178,7 +185,7 @@ export class HomePage{
       })
   }
 
-  scanDetails(details) {
+  scanDetails(details, lat, long) {
     setTimeout(() => {
       this.BarCodeLoader = this.loadingCtrl.create(
         { content: "Retreiving User's Profile..." }
@@ -187,14 +194,26 @@ export class HomePage{
     }, 0);
 
     this.firebase_.FindIDWithScan(details.text).subscribe(
-      (data) => {
+      (data1) => {
         console.log("Sucessss getting individual ID from firebase");
-        console.log(data);
-        this.navCtrl.push(ProfilePage, {ScannedUser: data});
-        this.BarCodeLoader.dismiss();
-      }, (err) => {
+        console.log(data1);
+        let NewUserID = data1.barcode_id;
+        let CurrentUserID = this.profile.barcode_id;
+        let totalConnections = this.profile.total_connection;
+        let ScannedRecentAmount = this.profile.scanned.recent;
+        this.firebase_.AddScanIDIntoRecent(CurrentUserID, NewUserID, totalConnections, ScannedRecentAmount, lat, long).subscribe(
+          (data2) => {
+            this.navCtrl.push(ProfilePage, {ScannedUser: data2});
+            this.BarCodeLoader.dismiss();
+          }, (err2) => {
+            console.log("Oh NO there was an error");
+            console.log(err2);
+            this.BarCodeLoader.dismiss();
+          }
+        )
+      }, (err1) => {
         console.log('OH NO THERE WAS AN ERROR RETREIVING THE ID FROM FIREBASE');
-        console.log(err);
+        console.log(err1);
         this.BarCodeLoader.dismiss();
       }
     )
