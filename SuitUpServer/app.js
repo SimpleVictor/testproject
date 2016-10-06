@@ -29,7 +29,7 @@ app.use('/users', users);
 var counter;
 
 setInterval(function() {
-  http.get("https://www.suitup1.herokuapp.com");
+  http.get("http://www.suitup1.herokuapp.com");
   counter++;
   console.log("Pinging now..."+counter);
 }, 300000); // every 5 minutes (300000)

@@ -1,5 +1,5 @@
 import {Component, ViewChild, ElementRef} from '@angular/core';
-import {NavController, Slides, ModalController, PopoverController, LoadingController} from 'ionic-angular';
+import {NavController, Slides, ModalController, PopoverController, LoadingController, NavParams} from 'ionic-angular';
 import {PortfolioModal} from "./portfolio-modal/portfolio-modal";
 import {MapModal} from "./map-modal/map-modal";
 import {ShowBarcodeModal} from "./showbarcode-modal/showbarcode-modal";
@@ -48,8 +48,11 @@ export class ProfilePage {
   smallWorkAround1:number = 0;
 
 
-  constructor(private navCtrl: NavController, private modalCtrl: ModalController, private loadingCtrl : LoadingController, private auth: AuthService) {
+  constructor(private navCtrl: NavController, private navParams : NavParams ,private modalCtrl: ModalController, private loadingCtrl : LoadingController, private auth: AuthService) {
     // event.preventDefault();
+
+    this.account = this.navParams.get("ScannedUser");
+
   }
 
 
@@ -80,21 +83,26 @@ export class ProfilePage {
   }
 
   ionViewLoaded(){
-    setTimeout(() => {
-      this.loader = this.loadingCtrl.create(
-        { content: "Please wait..." }
-      );
-      this.loader.present();
-    }, 0);
 
-
-    this.auth.getAccounts((data) => {
+    if(!this.account){
       setTimeout(() => {
-        this.loader.dismiss();
-      },0);
-      this.account = data;
-      console.log(this.account);
-    });
+        this.loader = this.loadingCtrl.create(
+          { content: "Please wait..." }
+        );
+        this.loader.present();
+      }, 0);
+
+
+      this.auth.getAccounts((data) => {
+        setTimeout(() => {
+          this.loader.dismiss();
+        },0);
+        this.account = data;
+        console.log(this.account);
+      });
+    }else{
+      console.log("This page was set already because it was a scanned user. Not your profile");
+    }
   }
 
   onSlidedChanged() {

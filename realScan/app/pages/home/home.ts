@@ -5,6 +5,7 @@ import {ScanPage} from "../scan/scan";
 import {QrService} from "../../provider/qrservice";
 import {AuthService} from "../../provider/auth";
 import {FirebaseService} from "../../provider/firebase";
+import {ProfilePage} from "../profile/profile";
 
 export class BarcodeData {
   constructor(
@@ -178,14 +179,26 @@ export class HomePage{
   }
 
   scanDetails(details) {
-    this.navCtrl.push(ScanPage, {details: details});
-  }
+    setTimeout(() => {
+      this.BarCodeLoader = this.loadingCtrl.create(
+        { content: "Retreiving User's Profile..." }
+      );
+      this.BarCodeLoader.present();
+    }, 0);
 
+    this.firebase_.FindIDWithScan(details.text).subscribe(
+      (data) => {
+        console.log("Sucessss getting individual ID from firebase");
+        console.log(data);
+        this.navCtrl.push(ProfilePage, {ScannedUser: data});
+        this.BarCodeLoader.dismiss();
+      }, (err) => {
+        console.log('OH NO THERE WAS AN ERROR RETREIVING THE ID FROM FIREBASE');
+        console.log(err);
+        this.BarCodeLoader.dismiss();
+      }
+    )
 
-
-
-  testData(){
-    console.log(this.user);
   }
 
 }

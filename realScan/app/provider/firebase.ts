@@ -35,8 +35,13 @@ export class FirebaseService {
       let headers = new Headers({ 'Content-Type': 'application/json' });
       let options = new RequestOptions({ headers: headers });
       return this.http_.put(`https://wowme-3c87e.firebaseio.com/users/${obj.clientID}/.json`, body, options).map((res: Response) => res.json());
-
     }
+
+    FindIDWithScan(id){
+      return this.http_.get(`https://wowme-3c87e.firebaseio.com/users/${id}/.json`).map((res:Response) => res.json());
+    }
+
+
 
 
 }
