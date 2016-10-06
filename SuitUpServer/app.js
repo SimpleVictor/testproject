@@ -2,6 +2,7 @@ var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
+var http = require('http');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
@@ -24,6 +25,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'img')));
 app.use('/', routes);
 app.use('/users', users);
+
+var counter;
+
+setInterval(function() {
+  http.get("https://www.suitup1.herokuapp.com");
+  counter++;
+  console.log("Pinging now..."+counter);
+}, 300000); // every 5 minutes (300000)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
