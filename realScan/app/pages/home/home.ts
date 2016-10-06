@@ -40,8 +40,6 @@ export class HomePage{
     //   this.CheckLoader.present();
     // }, 0);
 
-
-
     let profile = JSON.parse(localStorage.getItem("profile"));
     console.log(profile);
     let mainID = profile.identities[0].user_id;
@@ -174,7 +172,7 @@ export class HomePage{
       .then((result) => {
         if (!result.cancelled) {
           const barcodeData = new BarcodeData(result.text, result.format);
-          let options = {timeout: 10000, enableHighAccuracy: true};
+          let options = {timeout: 10000,maximumAge:3000,enableHighAccuracy: true};
           Geolocation.getCurrentPosition(options).then((position) => {
             this.scanDetails(barcodeData,position.coords.latitude, position.coords.longitude);
           });
