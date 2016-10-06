@@ -1,4 +1,6 @@
-
+<ion-header *ngIf="auth.authenticated()">
+  <ion-item-divider style="background-color: #0177B5"></ion-item-divider>
+</ion-header>
 
 <ion-content class="login-page" *ngIf="!auth.authenticated()">
 
@@ -40,21 +42,7 @@
 <!--</ion-header>-->
 
 
-
-
-
-<ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle icon-only>
-      <ion-icon name='menu'></ion-icon>
-    </button>
-    <ion-title>
-      Menus
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding class="home" *ngIf="auth.authenticated()">
+<ion-content class="home" *ngIf="auth.authenticated()">
   <ion-card *ngIf="profile">
     <!--<img src="img/barcode.png"/>-->
     <img src="{{ profile.barcode_url }}"/>

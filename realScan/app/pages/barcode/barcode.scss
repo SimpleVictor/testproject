@@ -1,7 +1,21 @@
 .barcode {
 
+  ion-searchbar{
+    background: #0177B5 !important;
+  }
+
 }
 
 .barcode-headers{
+  .segment-button{
+    border: 1px solid #fff !important;
+    font-weight: bolder;
+    //border-color: #fff !important;
+    color: white;
+    max-width: 150px;
+  }
 
+  .segment-button.segment-activated{
+    background-color: #A41320;
+  }
 }
