@@ -188,8 +188,10 @@ export class ProfilePage {
   }
 
   loadMap(){
+    console.log(this.account.scann);
+    let allUser = this.account.scanned.recent;
 
-    let location = new GoogleMapsLatLng(39.0119020 , -98.4842460);
+    let StartingLocation = new GoogleMapsLatLng(39.0119020 , -98.4842460);
 
     this.map = new GoogleMap('map', {
       'backgroundColor': 'white',
@@ -206,28 +208,44 @@ export class ProfilePage {
         'zoom': true
       },
       'camera': {
-        'latLng': location,
-        'tilt': 130,
+        'latLng': StartingLocation,
+        'tilt': -45,
         'zoom': 3,
         'bearing': 50
       }
     });
 
-    let myHome: GoogleMapsLatLng = new GoogleMapsLatLng(40.5888237,-74.4378557);
 
-    let markerOptions: GoogleMapsMarkerOptions = {
-      position: myHome,
-      title: 'Test Home'
-    };
+    // let myHome: GoogleMapsLatLng = new GoogleMapsLatLng(40.5888237,-74.4378557);
+    //
+    // let markerOptions: GoogleMapsMarkerOptions = {
+    //   position: myHome,
+    //   title: 'Test Home'
+    // };
+    //
+    // this.map.addMarker(markerOptions).then((marker: GoogleMapsMarker) => {
+    //   console.log(marker);
+    // });
+    //
 
-    this.map.addMarker(markerOptions).then((marker: GoogleMapsMarker) => {
-      console.log(marker);
-      marker.showInfoWindow();
-    })
+
+    for(let i = 0; i < allUser.length; i++){
+      let user = allUser[0];
+      let IndividualCoords : GoogleMapsLatLng = new GoogleMapsLatLng(user.lat, user.long);
+      let markerOptions: GoogleMapsMarkerOptions = {
+        position: IndividualCoords,
+        title: user.name
+      };
+      this.map.addMarker(markerOptions).then((marker: GoogleMapsMarker) => {
+        console.log(marker);
+        marker.showInfoWindow();
+      });
+    }
 
     this.map.on(GoogleMapsEvent.MAP_READY).subscribe(() => {
       console.log('Map is ready!');
     });
+
   }
 
   openMapList(){

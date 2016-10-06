@@ -4,10 +4,9 @@
 
 <ion-content class="calendar">
 
-  <ion-card>
-
-    <ion-item>
-      This is the Calender Page
+  <ion-card *ngIf="myCat">
+    <ion-item *ngFor="let i of myCat">
+      {{i.name}}
     </ion-item>
   </ion-card>
 

@@ -9,12 +9,13 @@ import {MeetUpCategories} from "../../shared/meetup-categories";
 export class CalendarPage{
 
     CheckLoader;
-
+    myCat;
 
     constructor(private meetupservice_:MeetupService, private loadingCtrl: LoadingController, public meet_cate : MeetUpCategories) {
 
       console.log(this.meet_cate.myCat);
       console.log(this.meet_cate.myCat.length);
+      this.myCat = this.meet_cate.myCat;
 
     }
 
