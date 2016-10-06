@@ -191,9 +191,7 @@ export class ProfilePage {
   }
 
   loadMap(){
-    console.log(this.account.scanned.recent);
     let allUser = this.account.scanned.recent;
-
     let StartingLocation = new GoogleMapsLatLng(39.0119020 , -98.4842460);
 
     this.map = new GoogleMap('map', {
@@ -240,7 +238,8 @@ export class ProfilePage {
       let IndividualCoords : GoogleMapsLatLng = new GoogleMapsLatLng(user.lat, user.long);
       let markerOptions: GoogleMapsMarkerOptions = {
         position: IndividualCoords,
-        title: `<h4>${user.name}</h4></br><img src="${user.picture}"/>`
+        // title: `<h4>${user.name}</h4></br><img src="${user.picture}"/>`
+        title: user.name
       };
       this.map.addMarker(markerOptions).then((marker: GoogleMapsMarker) => {
         console.log(marker);
