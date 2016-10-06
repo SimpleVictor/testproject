@@ -155,12 +155,14 @@ export class ProfilePage {
     // this.BackgroundOpacity(false);
     // modal.present();
     this.hiddenMap = !this.hiddenMap;
+    document.getElementsByClassName("show-tabbar")[0].className = "hide-tabbar";
     console.log("OPen Map");
     this.loadMap();
     // this.navCtrl.push(MapModal);
   }
 
   closeMap(){
+    document.getElementsByClassName("hide-tabbar")[0].className = "hide-tabbar";
     console.log("close Map");
     this.hiddenMap = !this.hiddenMap;
   }
@@ -184,6 +186,7 @@ export class ProfilePage {
   }
 
   loadMap(){
+
     let location = new GoogleMapsLatLng(-34.9290,138.6010);
 
     this.map = new GoogleMap('map', {

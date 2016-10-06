@@ -231,5 +231,18 @@ export class HomePage{
   }
 
 
+  hideToolBar(){
+    console.log(document.getElementsByClassName("show-tabbar")[0].className);
+    // document.getElementsByClassName("show-tabbar")[0].className = "";
+    document.getElementsByClassName("show-tabbar")[0].className = "hide-tabbar";
+  }
+
+  showToolBar(){
+    // document.getElementsByClassName("show-tabbar")[0].className = "";
+    document.getElementsByClassName("hide-tabbar")[0].className = "show-tabbar";
+  }
+
+
+
 
 }
