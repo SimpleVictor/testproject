@@ -9,6 +9,7 @@ export class CalendarPage{
 
     CheckLoader;
 
+
     constructor(private meetupservice_:MeetupService, private loadingCtrl: LoadingController) { }
 
     ionViewLoaded(){

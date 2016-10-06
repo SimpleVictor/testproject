@@ -162,7 +162,7 @@ export class ProfilePage {
   }
 
   closeMap(){
-    document.getElementsByClassName("hide-tabbar")[0].className = "hide-tabbar";
+    document.getElementsByClassName("hide-tabbar")[0].className = "show-tabbar";
     console.log("close Map");
     this.hiddenMap = !this.hiddenMap;
   }
