@@ -22,9 +22,18 @@
         </ion-buttons>
       </ion-navbar>
     </ion-header>
-    <button menuToggle ion-button icon-only tappable style="border-radius: 100%; box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5) !important">
-      <ion-icon name="menu" color="primary"></ion-icon>
+    <button menuToggle color="primary" ion-button icon-only tappable style="border-radius: 100%; box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5) !important; z-index: 1">
+      <ion-icon name="menu"></ion-icon>
     </button>
+      <ion-fab left bottom style="z-index: 1">
+        <button ion-fab color="dark"><ion-icon name="arrow-dropup"></ion-icon></button>
+        <ion-fab-list side="top">
+          <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+          <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+          <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+          <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+        </ion-fab-list>
+      </ion-fab>
   </div>
 </ion-content>
 
