@@ -7,6 +7,8 @@ import {WorkModal} from "./work-modal/work-modal";
 import {AuthService} from "../../provider/auth";
 import {GoogleMap, GoogleMapsEvent, GoogleMapsLatLng} from 'ionic-native';
 
+declare var firebase;
+
 @Component({
   templateUrl: 'build/pages/profile/profile.html',
 })
@@ -213,6 +215,10 @@ export class ProfilePage {
     this.map.on(GoogleMapsEvent.MAP_READY).subscribe(() => {
       console.log('Map is ready!');
     });
+  }
+
+  openMapList(){
+    
   }
 
 

@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NavController, LoadingController} from 'ionic-angular';
+import {NavController, LoadingController, MenuController} from 'ionic-angular';
 import {BarcodeScanner} from 'ionic-native';
 import {ScanPage} from "../scan/scan";
 import {QrService} from "../../provider/qrservice";
@@ -21,15 +21,14 @@ export class BarcodeData {
 export class HomePage{
 
   user;
-
   CheckLoader;
   FirstTimeLoader;
   BarCodeLoader;
-
   profile;
 
 
-  constructor(public navCtrl: NavController, private qr : QrService, private loadingCtrl: LoadingController, private auth: AuthService, private firebase_ : FirebaseService) {
+
+  constructor(public navCtrl: NavController, private qr : QrService, private loadingCtrl: LoadingController, private auth: AuthService, private firebase_ : FirebaseService){
 
   }
 

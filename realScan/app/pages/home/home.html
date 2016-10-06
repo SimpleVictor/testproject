@@ -40,6 +40,20 @@
 <!--</ion-header>-->
 
 
+
+
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle icon-only>
+      <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title>
+      Menus
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
 <ion-content padding class="home" *ngIf="auth.authenticated()">
   <ion-card *ngIf="profile">
     <!--<img src="img/barcode.png"/>-->
@@ -53,6 +67,7 @@
         <p>{{ profile.email }}</p>
       </ion-item>
       <button tappable (click)="activateScan()">Scan</button>
+      <button tappable ion-button menuToggle>Toggle Menu</button>
       <button tappable (click)="hideToolBar()">Hide</button>
       <button tappable (click)="showToolBar()">show</button>
     </ion-card-content>
@@ -69,3 +84,4 @@
   </ion-card>
 
 </ion-content>
+

@@ -1,5 +1,5 @@
 import {Component, provide} from '@angular/core';
-import {Platform, ionicBootstrap, SqlStorage, Storage} from 'ionic-angular';
+import {Platform, ionicBootstrap, SqlStorage, Storage, MenuController} from 'ionic-angular';
 import {StatusBar, SQLite} from 'ionic-native';
 import {LoginPage} from "./pages/login/login";
 import {FirebaseService} from "./provider/firebase";
@@ -13,18 +13,36 @@ import {MeetupService} from "./provider/meetup";
 
 
 @Component({
-  template: '<ion-nav [root]="rootPage"></ion-nav>',
-  providers: [FirebaseService, QrService, SQLStorage, AuthService, MeetupService]
+  providers: [FirebaseService, QrService, SQLStorage, AuthService, MeetupService],
+  template: `
+<ion-menu [content]="content">
+  <ion-toolbar>
+    <ion-title>Pages</ion-title>
+  </ion-toolbar>
+  <ion-content>
+    <ion-list>
+      <button ion-item (click)="openPage(loginPage)">
+        Login
+      </button>
+      <button ion-item (click)="openPage(signupPage)">
+        Signup
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+
+<ion-nav #content [root]="rootPage"></ion-nav>
+`
 })
 export class MyApp {
 
   public rootPage: any;
 
 
-  constructor(private platform: Platform) {
+  constructor(private platform: Platform, private menu: MenuController) {
     this.rootPage = TabsPage;
-
-
+    menu.enable(true);
 
     platform.ready().then(() => {
       console.log(platform.platforms());
