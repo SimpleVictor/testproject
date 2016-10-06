@@ -164,6 +164,10 @@ export class HomePage{
   }
 
   activateScan(){
+    let obj = {
+      text: "106086755566889548274"
+    };
+    this.scanDetails(obj, "73.286731","-34.32423");
     BarcodeScanner.scan({
       "preferFrontCamera": false,
       "showFlipCameraButton" : true
@@ -195,7 +199,7 @@ export class HomePage{
         console.log("Sucessss getting individual ID from firebase");
         console.log(data1);
         let NewUserID = data1.barcode_id;
-        let NewUserName = data1.conatct.name;
+        let NewUserName = data1.contact.name;
         let NewUserPicture = data1.contact.picture;
 
         let NewUser ={
