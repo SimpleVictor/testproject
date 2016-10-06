@@ -1,10 +1,10 @@
-<ion-header style="z-index: -12">
+<ion-header style="z-index: -1">
   <ion-item-divider style="background-color: #0177B5"></ion-item-divider>
 </ion-header>
 
 <ion-content class="map-page" [hidden]="!hiddenMap">
   <div id="map">
-    <ion-header>
+    <ion-header style="padding-top: 10px">
       <ion-navbar>
         <ion-buttons start>
           <button ion-button icon-only tappable (click)="closeMap()">
@@ -12,7 +12,7 @@
           </button>
         </ion-buttons>
 
-        <ion-title>Google Map</ion-title>
+        <ion-title>People's Location</ion-title>
 
         <ion-buttons end>
           <!--<button id="profile-bar-button" ion-button>-->

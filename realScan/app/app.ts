@@ -16,7 +16,7 @@ import {MeetUpCategories} from "./shared/meetup-categories";
 @Component({
   providers: [FirebaseService, QrService, SQLStorage, AuthService, MeetupService, MeetUpCategories],
   template: `
-<ion-menu [content]="content">
+<ion-menu side="right" [content]="content">
   <ion-toolbar>
     <ion-title>Pages</ion-title>
   </ion-toolbar>

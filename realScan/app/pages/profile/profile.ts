@@ -207,8 +207,8 @@ export class ProfilePage {
       },
       'camera': {
         'latLng': location,
-        'tilt': 180,
-        'zoom': 5,
+        'tilt': 130,
+        'zoom': 3,
         'bearing': 50
       }
     });
