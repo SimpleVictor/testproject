@@ -164,10 +164,6 @@ export class HomePage{
   }
 
   activateScan(){
-    let obj = {
-      text: "106086755566889548274"
-    };
-    this.scanDetails(obj, "73.286731","-34.32423");
     BarcodeScanner.scan({
       "preferFrontCamera": false,
       "showFlipCameraButton" : true

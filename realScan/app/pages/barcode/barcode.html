@@ -33,9 +33,9 @@
         <ion-item-sliding *ngFor="let recent of recentList">
           <ion-item>
             <ion-avatar item-left>
-              <!--<img src="img/slimer.png">-->
+              <img src="{{recent.picture}}">
             </ion-avatar>
-            <h2>Slimer</h2>
+            <h2>{{recent.name}}</h2>
           </ion-item>
           <ion-item-options side="right" (click)="favoriteRecent()">
             <button secondary>
