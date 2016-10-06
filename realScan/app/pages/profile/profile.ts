@@ -5,7 +5,7 @@ import {MapModal} from "./map-modal/map-modal";
 import {ShowBarcodeModal} from "./showbarcode-modal/showbarcode-modal";
 import {WorkModal} from "./work-modal/work-modal";
 import {AuthService} from "../../provider/auth";
-import {GoogleMap, GoogleMapsEvent, GoogleMapsLatLng} from 'ionic-native';
+import {GoogleMap, GoogleMapsEvent, GoogleMapsLatLng, GoogleMapsMarkerOptions, GoogleMapsMarker} from 'ionic-native';
 
 declare var firebase;
 
@@ -189,7 +189,7 @@ export class ProfilePage {
 
   loadMap(){
 
-    let location = new GoogleMapsLatLng(-34.9290,138.6010);
+    let location = new GoogleMapsLatLng(37.0902 , 95.7129);
 
     this.map = new GoogleMap('map', {
       'backgroundColor': 'white',
@@ -207,18 +207,31 @@ export class ProfilePage {
       },
       'camera': {
         'latLng': location,
-        'tilt': 30,
-        'zoom': 15,
+        'tilt': 90,
+        'zoom': 5,
         'bearing': 50
       }
     });
+
+    let myHome: GoogleMapsLatLng = new GoogleMapsLatLng(40.5888237,-74.4378557);
+
+    let markerOptions: GoogleMapsMarkerOptions = {
+      position: myHome,
+      title: 'Test Home'
+    };
+
+    this.map.addMarker(markerOptions).then((marker: GoogleMapsMarker) => {
+      console.log(marker);
+      marker.showInfoWindow();
+    })
+
     this.map.on(GoogleMapsEvent.MAP_READY).subscribe(() => {
       console.log('Map is ready!');
     });
   }
 
   openMapList(){
-    
+
   }
 
 
