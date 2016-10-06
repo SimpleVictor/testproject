@@ -5,7 +5,7 @@ import {MapModal} from "./map-modal/map-modal";
 import {ShowBarcodeModal} from "./showbarcode-modal/showbarcode-modal";
 import {WorkModal} from "./work-modal/work-modal";
 import {AuthService} from "../../provider/auth";
-
+import {GoogleMap, GoogleMapsEvent, GoogleMapsLatLng} from 'ionic-native';
 
 @Component({
   templateUrl: 'build/pages/profile/profile.html',
@@ -47,6 +47,9 @@ export class ProfilePage {
   //MAKES IT SO THE COLOR OF THE BORDER-BOTOM OF THE TAB DOESN'T REPEAT WHEN THE VIEW ENTER BACK IN
   smallWorkAround1:number = 0;
 
+
+  hiddenMap:boolean = false;
+  map: GoogleMap;
 
   constructor(private navCtrl: NavController, private navParams : NavParams ,private modalCtrl: ModalController, private loadingCtrl : LoadingController, private auth: AuthService) {
     // event.preventDefault();
@@ -151,9 +154,15 @@ export class ProfilePage {
     // });
     // this.BackgroundOpacity(false);
     // modal.present();
+    this.hiddenMap = !this.hiddenMap;
+    console.log("OPen Map");
+    this.loadMap();
+    // this.navCtrl.push(MapModal);
+  }
 
-    this.navCtrl.push(MapModal);
-
+  closeMap(){
+    console.log("close Map");
+    this.hiddenMap = !this.hiddenMap;
   }
 
   openBarcode(){
@@ -172,6 +181,35 @@ export class ProfilePage {
     });
     this.BackgroundOpacity(false);
     modal.present();
+  }
+
+  loadMap(){
+    let location = new GoogleMapsLatLng(-34.9290,138.6010);
+
+    this.map = new GoogleMap('map', {
+      'backgroundColor': 'white',
+      'controls': {
+        'compass': true,
+        'myLocationButton': true,
+        'indoorPicker': true,
+        'zoom': true
+      },
+      'gestures': {
+        'scroll': true,
+        'tilt': true,
+        'rotate': true,
+        'zoom': true
+      },
+      'camera': {
+        'latLng': location,
+        'tilt': 30,
+        'zoom': 15,
+        'bearing': 50
+      }
+    });
+    this.map.on(GoogleMapsEvent.MAP_READY).subscribe(() => {
+      console.log('Map is ready!');
+    });
   }
 
 

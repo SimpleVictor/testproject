@@ -28,6 +28,7 @@ export class HomePage{
 
   profile;
 
+
   constructor(public navCtrl: NavController, private qr : QrService, private loadingCtrl: LoadingController, private auth: AuthService, private firebase_ : FirebaseService) {
 
   }
@@ -228,5 +229,7 @@ export class HomePage{
     )
 
   }
+
+
 
 }

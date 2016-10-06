@@ -1,25 +1,29 @@
-<!--<ion-header>-->
-  <!--<ion-navbar>-->
-    <!--<ion-buttons start>-->
-      <!--<button ion-button icon-only>-->
-        <!--<ion-icon name="contact"></ion-icon>-->
-      <!--</button>-->
-    <!--</ion-buttons>-->
+<ion-header [hidden]="!hiddenMap">
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button icon-only tappable (click)="closeMap()">
+        <ion-icon name="contact"></ion-icon>
+      </button>
+    </ion-buttons>
 
 
-    <!--<ion-title>Profile</ion-title>-->
+    <ion-title>Profile</ion-title>
 
-    <!--<ion-buttons end>-->
-      <!--<button id="profile-bar-button" ion-button style="background-color: green">-->
-        <!--Edit-->
-        <!--&lt;!&ndash;<ion-icon name="search"></ion-icon>&ndash;&gt;-->
-      <!--</button>-->
-    <!--</ion-buttons>-->
-  <!--</ion-navbar>-->
-<!--</ion-header>-->
+    <ion-buttons end>
+      <button id="profile-bar-button" ion-button style="background-color: green">
+        Edit
+        <!--<ion-icon name="search"></ion-icon>-->
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
 
 
-<ion-content class="profile" #profile *ngIf="account">
+<ion-content class="map-page" [hidden]="!hiddenMap">
+  <div id="map"></div>
+</ion-content>
+
+<ion-content class="profile" #profile *ngIf="account" [hidden]="hiddenMap">
 
   <ion-card class="top-card">
     <ion-grid>
