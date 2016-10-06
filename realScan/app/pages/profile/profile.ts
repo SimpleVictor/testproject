@@ -101,6 +101,8 @@ export class ProfilePage {
         console.log(this.account);
       });
     }else{
+      console.log("************************************************************************************************************************");
+      console.log(this.account);
       console.log("This page was set already because it was a scanned user. Not your profile");
     }
   }

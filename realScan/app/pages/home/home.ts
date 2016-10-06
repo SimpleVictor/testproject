@@ -164,7 +164,6 @@ export class HomePage{
   }
 
   activateScan(){
-    console.log("works");
     BarcodeScanner.scan({
       "preferFrontCamera": false,
       "showFlipCameraButton" : true
@@ -197,12 +196,14 @@ export class HomePage{
         console.log(data1);
         let NewUserID = data1.barcode_id;
         let CurrentUserID = this.profile.barcode_id;
-        let totalConnections = this.profile.total_connection;
+        let totalConnections = this.profile.total_connections;
         let ScannedRecentAmount = this.profile.scanned.recent;
         this.firebase_.AddScanIDIntoRecent(CurrentUserID, NewUserID, totalConnections, ScannedRecentAmount, lat, long).subscribe(
           (data2) => {
-            this.navCtrl.push(ProfilePage, {ScannedUser: data2});
             this.BarCodeLoader.dismiss();
+
+            console.log(data2);
+            this.navCtrl.push(ProfilePage, {ScannedUser: data2});
           }, (err2) => {
             console.log("Oh NO there was an error");
             console.log(err2);
