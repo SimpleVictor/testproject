@@ -5,20 +5,16 @@ import {BarcodeScanner, Geolocation} from "ionic-native";
 import {BarcodeData} from "../home/home";
 import {ScanPage} from "../scan/scan";
 import {AuthService} from "../../provider/auth";
-import {MeetUpCategories} from "../../shared/meetup-categories";
 
-/*
-  Generated class for the SettingPage page.
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   templateUrl: 'build/pages/setting/setting.html',
 })
 export class SettingPage {
 
-  constructor(private navCtrl: NavController, private sqlstorage: SQLStorage, private auth: AuthService, private meetup_category: MeetUpCategories) {
+  constructor(private navCtrl: NavController, private sqlstorage: SQLStorage, private auth: AuthService) {
+
+
     // let options = {timeout: 10000, enableHighAccuracy: true};
     // Geolocation.getCurrentPosition().then((resp) => {
     //   console.log(resp);
@@ -31,9 +27,6 @@ export class SettingPage {
     //   console.log(data);
     // })
 
-
-    console.log(this.meetup_category.myCat);
-    console.log(this.meetup_category.myCat.length);
 
 
   }

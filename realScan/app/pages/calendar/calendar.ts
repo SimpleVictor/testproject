@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MeetupService} from "../../provider/meetup";
 import {LoadingController} from "ionic-angular/index";
+import {MeetUpCategories} from "../../shared/meetup-categories";
 
 @Component({
     templateUrl: 'build/pages/calendar/calendar.html'
@@ -10,7 +11,12 @@ export class CalendarPage{
     CheckLoader;
 
 
-    constructor(private meetupservice_:MeetupService, private loadingCtrl: LoadingController) { }
+    constructor(private meetupservice_:MeetupService, private loadingCtrl: LoadingController, public meet_cate : MeetUpCategories) {
+
+      console.log(this.meet_cate.myCat);
+      console.log(this.meet_cate.myCat.length);
+
+    }
 
     ionViewLoaded(){
       setTimeout(() => {

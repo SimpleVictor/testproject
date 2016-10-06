@@ -189,7 +189,7 @@ export class ProfilePage {
 
   loadMap(){
 
-    let location = new GoogleMapsLatLng(37.0902 , 95.7129);
+    let location = new GoogleMapsLatLng(39.0119020 , -98.4842460);
 
     this.map = new GoogleMap('map', {
       'backgroundColor': 'white',
@@ -207,7 +207,7 @@ export class ProfilePage {
       },
       'camera': {
         'latLng': location,
-        'tilt': 90,
+        'tilt': 180,
         'zoom': 5,
         'bearing': 50
       }
