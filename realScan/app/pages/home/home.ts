@@ -64,8 +64,8 @@ export class HomePage{
             barcode_url: `https://suitup1.herokuapp.com/${mainID}.png`,
             total_connections: 0,
             scanned: {
-              recent: [""],
-              favorite: [""]
+              recent: ["bruh"],
+              favorite: ["bruh"]
             },
             contact: {
               name: profile.name,
@@ -195,11 +195,20 @@ export class HomePage{
         console.log("Sucessss getting individual ID from firebase");
         console.log(data1);
         let NewUserID = data1.barcode_id;
+        let NewUserName = data1.conatct.name;
+        let NewUserPicture = data1.contact.picture;
+
+        let NewUser ={
+          name: NewUserName,
+          picture: NewUserPicture,
+          id: NewUserID
+        };
+
         let CurrentUserID = this.profile.barcode_id;
         let totalConnections = this.profile.total_connections;
         let ScannedRecentAmount = this.profile.scanned.recent;
         let ScannedFavoriteAmount = this.profile.scanned.favorite;
-        this.firebase_.AddScanIDIntoRecent(CurrentUserID, NewUserID, totalConnections, ScannedRecentAmount,ScannedFavoriteAmount, lat, long).subscribe(
+        this.firebase_.AddScanIDIntoRecent(CurrentUserID, NewUser, totalConnections, ScannedRecentAmount,ScannedFavoriteAmount, lat, long).subscribe(
           (data2) => {
             this.BarCodeLoader.dismiss();
 
