@@ -47,8 +47,8 @@ export class FirebaseService {
       let recentObj = {
         id: newUser.id,
         date_scanned: Date.now(),
-        lat: long,
-        long: lat,
+        lat: lat,
+        long: long,
         name: newUser.name,
         picture: newUser.picture
       };
