@@ -1,4 +1,5 @@
-<ion-header style="z-index: -1" [hidden]="hiddenMap">
+<!--<ion-header style="z-index: -1" [hidden]="hiddenMap">-->
+<ion-header style="z-index: -1">
   <ion-item-divider style="background-color: #0177B5"></ion-item-divider>
 </ion-header>
 
@@ -21,7 +22,6 @@
           </button>
         </ion-buttons>
       </ion-navbar>
-    </ion-header>
       <ion-fab left bottom>
         <button ion-fab color="dark"><ion-icon name="arrow-dropup"></ion-icon></button>
         <ion-fab-list side="top">
@@ -31,7 +31,11 @@
           <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
         </ion-fab-list>
       </ion-fab>
+    </ion-header>
   </div>
+  <button menuToggle color="primary" ion-button icon-only tappable style="border-radius: 100%; box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5) !important; z-index: 1">
+    <ion-icon name="menu"></ion-icon>
+  </button>
 </ion-content>
 
 <ion-content class="profile" #profile *ngIf="account" [hidden]="hiddenMap">
