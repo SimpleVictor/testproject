@@ -13,7 +13,7 @@ export class MeetupService {
     webDB;
 
     constructor(private http_ : Http, private platform: Platform) {
-      let whichPlat = platform.platforms;
+      let whichPlat = platform.platforms();
       if(whichPlat[0] === 'cordova'){
         this.isMobile = true;
         console.log("You're on the iphone");
