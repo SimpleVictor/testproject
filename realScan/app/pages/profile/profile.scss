@@ -29,6 +29,91 @@ ion-app._gmaps_cdv_ .nav-decor{
 
 .profile {
 
+
+  .main-tab{
+    margin: 0 12px 12px 12px;
+    border-top: 3px solid #0177B5;
+    .profile-img{
+      border: 3px solid #0177B5;
+      border-radius:50%;
+      margin: -20px auto auto auto;
+      width: auto;
+      height: auto;
+      max-width: 80px;
+      max-height: 60px
+    }
+    .google-img{
+      position: relative;
+      top: 0;
+      border-radius:50%;
+      margin: auto auto auto auto;
+      width: auto;
+      height: auto;
+      max-width: 50px;
+      max-height: 50px
+    }
+
+    .google-img:focus, .google-img:active{
+      border: 4px solid green;
+    }
+
+
+    .profile-inner-box {
+
+      position: relative;
+      width: 100%;
+      height: 100%;
+      margin-top: 30px;
+      border-top: 1px solid #0177B5;
+
+      p{
+        letter-spacing: 3px;
+      }
+
+      .scanned-user{
+        display: inline-block !important;
+        h2{
+          font-size: 1.8em;
+        }
+        p{
+          padding-bottom: 0;
+          color: darkgrey;
+          letter-spacing: 3px;
+        }
+        top: 14px;
+        position: absolute;
+        left: 20px;
+      }
+      .requested-user{
+        display: inline-block !important;
+        h2{
+          font-size: 1.8em;
+        }
+        p{
+          padding-bottom: 0;
+          color: darkgrey;
+          letter-spacing: 3px;
+        }
+        top: 14px;
+        position: absolute;
+        right: 20px;
+      }
+
+
+      h2{
+        font-weight: 900;
+        letter-spacing: 2px;
+        text-align: center;
+      }
+      p{
+        font-size:10px;
+        padding-bottom: 15px;
+        text-align: center;
+      }
+    }
+
+  }
+
   //opacity: 0.5;
   //background-color: #363838;
   //-webkit-filter: blur(5px);
@@ -63,14 +148,15 @@ ion-app._gmaps_cdv_ .nav-decor{
 
   .middle-card{
     border-top: 3px solid #0177B5;
-    height: 400px !important;
+    height: 405px !important;
+    margin: 12px 12px 0 12px;
   }
 
   .top-card{
     margin-top: 5px;
     border-top: 3px solid #0177B5;
     //padding: 20px 0;
-    margin-bottom: 20px;
+    margin-bottom: 7px;
   }
   .top-span{
 
@@ -131,6 +217,63 @@ ion-app._gmaps_cdv_ .nav-decor{
 
   .profile-tab{
 
+    img{
+      //border: 3px solid #0177B5;
+      //border-radius:50%;
+      //margin: -40px auto auto auto;
+      //width: auto;
+      //height: auto;
+      //max-width: 120px;
+      //max-height: 100px
+    }
+
+    .google-img{
+      position: relative;
+      top: 0;
+      border-radius:50%;
+      margin: 5px auto auto auto;
+      width: auto;
+      height: auto;
+      max-width: 50px;
+      max-height: 50px
+    }
+
+    .google-img:focus, .google-img:active{
+      border: 3px solid #0177B5;
+    }
+
+    .qr-img{
+      position: relative;
+      top: 0;
+      border-radius:50%;
+      margin: 5px auto auto auto;
+      width: auto;
+      height: auto;
+      max-width: 50px;
+      max-height: 50px
+    }
+
+    .qr-img:focus, .qr-img:active{
+      border: 3px solid #0177B5;
+    }
+
+    .regular-circle{
+      border-radius: 50% !important;
+      position: relative;
+      top: 0;
+      border-radius:50%;
+      margin: 5px auto auto auto;
+      height: 50px;
+      width: 50px;
+      max-width: 50px;
+      max-height: 50px
+    }
+
+    .regular-circle:active{
+      border: 3px solid #0177B5;
+    }
+
+
     .slide-zoom{
       height: 100%;
       position: relative;
@@ -143,6 +286,7 @@ ion-app._gmaps_cdv_ .nav-decor{
         height: 100%;
         margin-top: 50px;
         border-top: 1px solid #0177B5;
+
 
 
         ion-list{
@@ -160,15 +304,6 @@ ion-app._gmaps_cdv_ .nav-decor{
           padding-bottom: 15px;
         }
 
-        img{
-          border: 3px solid #0177B5;
-          border-radius:50%;
-          margin: -40px auto auto auto;
-          width: auto;
-          height: auto;
-          max-width: 120px;
-          max-height: 100px
-        }
 
 
       }
