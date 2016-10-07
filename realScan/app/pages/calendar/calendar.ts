@@ -13,7 +13,7 @@ export class CalendarPage{
     CheckLoader;
     myCat;
 
-    constructor(private meetupservice_:MeetupService, private loadingCtrl: LoadingController, public meet_cate : MeetUpCategories, private navCtrl: NavController) {
+    constructor(private meetupservice_:MeetupService, private loadingCtrl: LoadingController, public meet_cate : MeetUpCategories, public navCtrl: NavController) {
 
     }
 
