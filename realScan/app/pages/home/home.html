@@ -43,37 +43,84 @@
 
 
 <ion-content class="home" *ngIf="auth.authenticated()">
-  <ion-card *ngIf="profile">
-    <!--<img src="img/barcode.png"/>-->
-    <img src="{{ profile.barcode_url }}"/>
-    <ion-card-content>
-      <ion-item>
-        <ion-avatar item-left>
-          <img src="{{ profile.contact.picture }}">
-        </ion-avatar>
-        <h2>{{ profile.contact.name }}</h2>
-        <p>{{ profile.email }}</p>
+  <!--<ion-card *ngIf="profile">-->
+    <!--&lt;!&ndash;<img src="img/barcode.png"/>&ndash;&gt;-->
+    <!--<img src="{{ profile.barcode_url }}"/>-->
+    <!--<ion-card-content>-->
+      <!--<ion-item>-->
+        <!--<ion-avatar item-left>-->
+          <!--<img src="{{ profile.contact.picture }}">-->
+        <!--</ion-avatar>-->
+        <!--<h2>{{ profile.contact.name }}</h2>-->
+        <!--<p>{{ profile.email }}</p>-->
 
 
 
-      </ion-item>
-      <button tappable (click)="activateScan()">Scan</button>
-      <button tappable ion-button menuToggle>Toggle Menu</button>
-      <button tappable (click)="hideToolBar()">Hide</button>
-      <button tappable (click)="showToolBar()">show</button>
-      <button menuToggle color="primary" ion-button icon-only tappable style="border-radius: 100%; box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5) !important; z-index: 1">
-        <ion-icon name="menu"></ion-icon>
-      </button>
-    </ion-card-content>
+      <!--</ion-item>-->
+      <!--<button tappable (click)="activateScan()">Scan</button>-->
+      <!--<button tappable ion-button menuToggle>Toggle Menu</button>-->
+      <!--<button tappable (click)="hideToolBar()">Hide</button>-->
+      <!--<button tappable (click)="showToolBar()">show</button>-->
+      <!--<button menuToggle color="primary" ion-button icon-only tappable style="border-radius: 100%; box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5) !important; z-index: 1">-->
+        <!--<ion-icon name="menu"></ion-icon>-->
+      <!--</button>-->
+    <!--</ion-card-content>-->
 
 
-  </ion-card>
+  <!--</ion-card>-->
+
+  <!--<ion-card>-->
+    <!--<ion-card-header style="text-align: center">-->
+      <!--<span text-left> You connected with <strong><span style="color: red;">23</span></strong> people!</span>-->
+    <!--</ion-card-header>-->
+  <!--</ion-card>-->
+
+  <ion-row>
 
   <ion-card>
-    <ion-card-header style="text-align: center">
-      <span text-left> You connected with <strong><span style="color: red;">23</span></strong> people!</span>
-    </ion-card-header>
+          <div class="svg">
+            <svg width="200" height="200" classpadding="chart" data-percent="90">
+              <circle id="bgcircle" class="bgcircle" cx="95" cy="95" r="85" transform="rotate(-90, 95, 95)"/>
+              <circle id="circle1" class="circle" cx="95" cy="95" r="85" transform="rotate(-90, 95, 95)"/>
+              <text class="text" id="text1" text-anchor="middle" x="95" y="113"></text>
+            </svg>
+          </div>
+
   </ion-card>
+  <ion-card>
+    <div class="svg">
+      <svg width="200" height="200" class="chart" data-percent="90">
+        <circle id="bgcircle" class="bgcircle" cx="95" cy="95" r="85" transform="rotate(-90, 95, 95)"/>
+        <circle id="circle2" class="circle" cx="95" cy="95" r="85" transform="rotate(-90, 95, 95)"/>
+        <text class="text" id="text2" text-anchor="middle" x="95" y="113"></text>
+      </svg>
+    </div>
+  </ion-card>
+  </ion-row>
+
+
 
 </ion-content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -1,5 +1,41 @@
 .home {
 
+
+  .circle {
+    fill: transparent;
+    stroke: #ff4c4c;
+    stroke-width: 20;
+    stroke-dasharray: 534;
+    stroke-linecap: round;
+    -webkit-transition: stroke-dashoffset 5s;
+  }
+  .bgcircle {
+    fill: transparent;
+    stroke: black;
+    stroke-width: 20;
+  }
+  .svg{
+    -webkit-transform:translate(10px, 10px)scale(0.4); /* change the size by adjusting scale, move by adjusting translate. Moves everything including font */
+  }
+  .text{
+    font-size: 50px;
+    font-family: 'helvetica';
+    fill:#ff4c4c;
+  }
+
+  #enter{
+    background-color: #ff4c4c;
+    padding: 5px;
+    width:180px;
+    font-family:'helvetica';
+    margin-left:10px;
+    margin-top:10px;
+    text-align:center;
+    color:white;
+  }
+
+
+
   img{
   }
 

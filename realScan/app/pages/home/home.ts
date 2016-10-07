@@ -161,6 +161,32 @@ export class HomePage{
 
   ionViewDidEnter(){
       // this.loader.dismiss();
+    this.animateSVG(23, true);
+    this.animateSVG(67, false);
+  }
+
+  animateSVG(battery, whichOne){
+    let circle;
+    if(whichOne){
+      circle = document.getElementById('circle1');
+    }else{
+      circle = document.getElementById('circle2');
+    }
+    var radius:any = circle.getAttribute('r');
+    var cc = Math.PI*(radius*2);
+    circle.style.strokeDashoffset = (""+cc+"");
+    function ani(val){
+      if (val < 0) { val = 0;}
+      if (val > 100) { val = 100;}
+      var points = (( 100 - val ) / 100) * cc;
+      circle.style.strokeDashoffset = (""+points+"");
+    }
+    setTimeout(function(){ ani(battery); },0);
+    if(whichOne){
+      document.getElementById('text1').textContent = battery + '%';
+    }else{
+      document.getElementById('text2').textContent = battery + '%';
+    }
   }
 
   activateScan(){
