@@ -19,6 +19,7 @@ export class BarcodePage {
   BarcodeLoader;
   recentList;
   favoriteList;
+  DeleteLoader;
 
   constructor(private navCtrl: NavController, private auth: AuthService, private loadingCtrl : LoadingController, private firebase_: FirebaseService) {
     let profile = this.auth.accounts;
@@ -94,7 +95,9 @@ export class BarcodePage {
         (data) => {
           console.log("**************************************************");
           console.log(data);
+          this.favoriteList = data.scanned.favorite;
         }, (err) => {
+          console.log("There was an error getting a recent favorited...")
           console.log(err);
         }
       );
@@ -102,6 +105,40 @@ export class BarcodePage {
   }
 
   deleteRecent(){
+
+  }
+
+  deleteFavorite(id){
+    setTimeout(() => {
+      this.DeleteLoader = this.loadingCtrl.create(
+        { content: "Deleteing this scan...Please wait.." }
+      );
+      this.DeleteLoader.present();
+    }, 0);
+
+
+    for(let i = 0; i < this.favoriteList.length; i++){
+      if(this.favoriteList[i].id === id){
+        this.favoriteList.splice(i, 1);
+        console.log(this.favoriteList);
+        console.log("Current User ID: " +this.profileID);
+        this.firebase_.DeleteFromFavorite(this.favoriteList, this.profileID, this.recentList).subscribe(
+          (data) => {
+            this.DeleteLoader.dismiss();
+            console.log("Deleted Sucessfully");
+
+            console.log(data);
+          }, (err) => {
+            this.DeleteLoader.dismiss();
+            console.log(err);
+            console.log("failed to delete!");
+          }
+        )
+      };
+      if(this.favoriteList.length - 1 === i){
+        console.log("Either this was the last iteraiton or the method didn't find anything with that number");
+      };
+    };
 
   }
 

@@ -22,10 +22,10 @@ export class MeetupService {
       }
     }
 
-    testService(){
+    getGroupsById(id, lat, long){
 
       if(this.isMobile){
-        let url =`https://api.meetup.com/2/groups.json?key=${this.apiKey}&sign=true&lat=40.5792700&lon=-74.4115400&category_id=34&page=20`;
+        let url =`https://api.meetup.com/2/groups.json?key=${this.apiKey}&sign=true&lat=${lat}&lon=${long}&category_id=${id}&page=20`;
         console.log(url);
         let headers = new Headers({ 'Content-Type': 'application/json' });
         headers.append('Allow-Access-Control-Origin', '*');

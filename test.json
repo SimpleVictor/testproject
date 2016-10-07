@@ -1,0 +1,148 @@
+{
+  "users": {
+    "106086755566889548274": {
+      "barcode_id": "106086755566889548274",
+      "barcode_url": "https://suitup1.herokuapp.com/106086755566889548274.png",
+      "clientID": "106086755566889548274",
+      "contact": {
+        "birthday": "",
+        "location": "",
+        "map_connections": [
+          {
+            "date": "",
+            "id": "",
+            "lat": "",
+            "long": ""
+          }
+        ],
+        "name": "Ash Poke",
+        "phone": "",
+        "picture": "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg",
+        "resume_pdf_url": "",
+        "university": ""
+      },
+      "email": "greatpokemaster1@gmail.com",
+      "portfolio": [
+        {
+          "description": "",
+          "picture_url": "",
+          "title": ""
+        }
+      ],
+      "scanned": {
+        "recent": [
+          "bruh"
+        ]
+      },
+      "social": {
+        "dropbox": "",
+        "facebook": "",
+        "github": "",
+        "instagram": "",
+        "linkedin": "",
+        "pinterest": "",
+        "snapchat": "",
+        "twitter": "",
+        "youtube": ""
+      },
+      "total_connections": 0,
+      "work": [
+        {
+          "company": "",
+          "company_phone_number": "",
+          "description": "",
+          "end_date": "",
+          "is_current": "",
+          "job_title": "",
+          "picture": "",
+          "start_date": ""
+        }
+      ]
+    },
+    "115422977447322444784": {
+      "barcode_id": "115422977447322444784",
+      "barcode_url": "https://suitup1.herokuapp.com/115422977447322444784.png",
+      "clientID": "115422977447322444784",
+      "contact": {
+        "birthday": "12-12-12",
+        "location": "New Jersey",
+        "map_connections": [
+          {
+            "date": "",
+            "id": "",
+            "lat": "",
+            "long": ""
+          }
+        ],
+        "name": "Victor Le",
+        "phone": "+1908-234-2342",
+        "picture": "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg",
+        "resume_pdf_url": "",
+        "university": "MCC"
+      },
+      "email": "viet.le175@gmail.com",
+      "main_title": "Full Stack Developer",
+      "portfolio": [
+        {
+          "description": "",
+          "picture_url": "",
+          "title": ""
+        }
+      ],
+      "scanned": {
+        "favorite": [
+          {
+            "date_scanned": 1475749648504,
+            "id": "106086755566889548274",
+            "lat": 40.4477884713937,
+            "long": -74.49765851728105,
+            "name": "Ash Poke",
+            "picture": "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg"
+          },
+          {
+            "date_scanned": 1475749648504,
+            "id": "106086755566889548274",
+            "lat": 40.4477884713937,
+            "long": -74.49765851728105,
+            "name": "Ash Poke",
+            "picture": "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg"
+          }
+        ],
+        "recent": [
+          {
+            "date_scanned": 1475749648504,
+            "id": "106086755566889548274",
+            "lat": 40.4477884713937,
+            "long": -74.49765851728105,
+            "name": "Ash Poke",
+            "picture": "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg"
+          }
+        ]
+      },
+      "social": {
+        "dropbox": "",
+        "facebook": "",
+        "github": "",
+        "instagram": "",
+        "linkedin": "",
+        "pinterest": "",
+        "snapchat": "",
+        "twitter": "",
+        "youtube": ""
+      },
+      "total_connections": 2,
+      "work": [
+        {
+          "company": "",
+          "company_phone_number": "",
+          "description": "",
+          "end_date": "",
+          "is_current": "",
+          "job_title": "",
+          "picture": "",
+          "start_date": ""
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-item-divider style="background-color: #0177B5"></ion-item-divider>
+</ion-header>
+
+<ion-content class="groups">
+  <h2 text-center>Here are your groups</h2>
+  <ion-card *ngIf="groups">
+    <ion-list *ngFor="let i of groups">
+      <ion-item>{{i.name}}</ion-item>
+    </ion-list>
+  </ion-card>
+
+</ion-content>

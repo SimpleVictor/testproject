@@ -55,22 +55,18 @@
 
     <div *ngSwitchCase="'saved'">
       <ion-list-header>
-        Recent
+        Favorites
       </ion-list-header>
-      <ion-list *ngIf="recentList">
-        <ion-item-sliding *ngFor="let recent of recentList">
+      <ion-list *ngIf="favoriteList">
+        <ion-item-sliding *ngFor="let favorite of favoriteList; let i = index">
           <ion-item>
             <ion-avatar item-left>
-              <img src="{{recent.picture}}">
+              <img src="{{favorite.picture}}">
             </ion-avatar>
-            <h2>{{recent.name}}</h2>
+            <h2>{{favorite.name}}</h2>
           </ion-item>
           <ion-item-options side="right">
-            <button secondary tappable (click)="favoriteRecent(recent)">
-              <ion-icon name="heart"></ion-icon>
-              Favorite
-            </button>
-            <button danger tappable (click)="deleteRecent()">
+            <button danger tappable (click)="deleteFavorite(favorite.id)">
               <ion-icon name="trash"></ion-icon>
               Delete
             </button>

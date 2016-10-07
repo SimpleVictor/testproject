@@ -96,6 +96,19 @@ export class FirebaseService {
       return this.http_.patch(`https://wowme-3c87e.firebaseio.com/users/${id}/.json`, body, options).map((res:Response) => res.json());
     }
 
+    DeleteFromFavorite(newFac, id, oldFav){
+
+      let obj = {
+        favorite: newFac,
+        recent: oldFav
+      };
+
+      let body = JSON.stringify(obj);
+      let headers = new Headers({ 'Content-Type': 'application/json' });
+      let options = new RequestOptions({ headers: headers });
+      return this.http_.patch(`https://wowme-3c87e.firebaseio.com/users/${id}/scanned/.json`, body, options).map((res:Response) => res.json());
+    }
+
 
 
 

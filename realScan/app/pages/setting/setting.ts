@@ -15,10 +15,10 @@ export class SettingPage {
   constructor(private navCtrl: NavController, private sqlstorage: SQLStorage, private auth: AuthService) {
 
 
-    // let options = {timeout: 10000, enableHighAccuracy: true};
-    // Geolocation.getCurrentPosition().then((resp) => {
-    //   console.log(resp);
-    // })
+    let options = {timeout: 10000, enableHighAccuracy: true};
+    Geolocation.getCurrentPosition().then((resp) => {
+      console.log(resp);
+    })
     //
     // let watch = Geolocation.watchPosition(options);
     // watch.subscribe((data) => {
