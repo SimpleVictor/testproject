@@ -70,7 +70,7 @@ export class ProfilePage {
     this.currentTab = this.contact;
     console.log(this.contact);
     if(this.smallWorkAround1 < 1){
-      this.contact.nativeElement.style.borderBottom = "4px solid #B63A3A";
+      this.contact.nativeElement.style.borderBottom = "4px solid #387EF5";
       this.smallWorkAround1++;
     }
     this.options = {
@@ -130,7 +130,8 @@ export class ProfilePage {
   changeTabIndex(index){
     this.currentTab.nativeElement.style.borderBottom = "";
     let newTab = this.TabArray[index];
-    this[newTab].nativeElement.style.borderBottom = "4px solid #B63A3A";
+    // this[newTab].nativeElement.style.borderBottom = "4px solid #B63A3A";
+    this[newTab].nativeElement.style.borderBottom = "4px solid #387EF5";
     this.currentTab = this[newTab];
   }
 

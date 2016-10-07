@@ -25,6 +25,16 @@
   <button menuToggle color="primary" ion-button icon-only tappable style="border-radius: 100%; box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5) !important; z-index: 100 ; background: transparent">
     <ion-icon name="menu"></ion-icon>
   </button>
+
+      <div class="hamBurger" style="background:transparent">
+        <input menuToggle type="checkbox" id="hamburger" hidden="hidden" />
+        <label for="hamburger" class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+
     </ion-header>
   </div>
 </ion-content>
@@ -50,17 +60,17 @@
           <p style="padding-bottom:0">{{account.main_title}}</p>
           <div class="scanned-user" item-left>
             <p>Scanned</p>
-            <h2 style="color: darkred">34</h2>
+            <h2 style="color: #4B91BD">34</h2>
           </div>
           <div class="requested-user" item-right>
             <p>Requests</p>
-            <h2 style="color: darkred">10</h2>
+            <h2 style="color: #4B91BD">10</h2>
           </div>
         </div>
   </ion-card>
 
 
-  <ion-card class="top-card">
+  <ion-card class="top-card" center>
     <ion-grid>
       <ion-row>
         <ion-col class="top-card-col" #contact width-25>
@@ -100,9 +110,9 @@
       <ion-slide class="profile-tab">
         <ion-row>
           <ion-col width-25>
-            <a ion-button tappable (click)="openMap()">
-              <img class="google-img" src="img/google-logo.png">
-            </a>
+            <button class="regular-circle">
+              <ion-icon name="md-person-add"></ion-icon>
+            </button>
           </ion-col>
           <ion-col width-25 >
             <a ion-button tappable (click)="openBarcode()">
@@ -110,9 +120,9 @@
             </a>
           </ion-col>
           <ion-col width-25>
-            <button class="regular-circle" secondary>
-              <ion-icon name="md-person-add"></ion-icon>
-            </button>
+            <a ion-button tappable (click)="openMap()">
+              <img class="google-img" src="img/google-logo.png">
+            </a>
           </ion-col>
           <ion-col width-25>
             <button class="regular-circle">
@@ -124,27 +134,27 @@
         <ion-list padding>
           <ion-item>
             <i class="fa fa-envelope fa-lg" aria-hidden="true" item-left></i>
-            <div item-right>{{account.email}}</div>
+            <div text-left>{{account.email}}</div>
           </ion-item>
           <ion-item>
             <i class="fa fa-mobile fa-2x" aria-hidden="true" item-left></i>
-            <div item-right>{{account.contact.phone}}</div>
+            <div text-left>{{account.contact.phone}}</div>
           </ion-item>
           <ion-item>
             <i class="fa fa-location-arrow fa-lg" aria-hidden="true" item-left></i>
-            <div item-right>{{account.contact.location}}</div>
+            <div text-left>{{account.contact.location}}</div>
           </ion-item>
           <ion-item>
             <i class="fa fa-file-text fa-lg" aria-hidden="true" item-left></i>
-            <button tappable secondary item-right>Resume</button>
+            <button tappable text-left="">Resume</button>
           </ion-item>
           <ion-item>
             <i class="fa fa-birthday-cake fa-lg" aria-hidden="true" item-left></i>
-            <div item-right>{{account.contact.birthday}}</div>
+            <div text-left>{{account.contact.birthday}}</div>
           </ion-item>
           <ion-item>
             <i class="fa fa-university fa-lg" aria-hidden="true" item-left></i>
-            <div item-right>{{account.contact.university}}</div>
+            <div text-left>{{account.contact.university}}</div>
           </ion-item>
         </ion-list>
       </ion-slide>

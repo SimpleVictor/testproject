@@ -5,6 +5,8 @@ ion-app._gmaps_cdv_ .nav-decor{
   #map {
 
 
+
+
     height: 100%;
     .toolbar{
       margin-top: -12px;
@@ -14,6 +16,101 @@ ion-app._gmaps_cdv_ .nav-decor{
     }
     ion-header{
       background:transparent;
+
+      .hamBurger{
+        /* VARIABLES */
+
+        $background:         darken(desaturate(#FF3300,40%), 10%);
+
+        $burgerwidth:        50px;
+        $burgercolor:        #fff;
+        $transition:         all .25s ease-in-out 0.2s;
+        $centerdelay:        0s;
+
+        // Do not adjust variables below
+        $burgerheight:       $burgerwidth - $burgerwidth/5;
+        $burgerline:         $burgerwidth/5;
+        $burgerchecktop:     $burgerwidth/3.3;
+        $burgercheckbottom:  -$burgerwidth/3.3;
+        $burgermargin:       $burgerline/2 0;
+
+        /* END OF VARIABLES */
+
+        $break:         300px;
+
+        * {
+          box-sizing: border-box;
+        }
+
+
+        input:checked {
+          ~ label {
+            span {
+
+              &:nth-child(2) {
+                opacity: 0;
+                //height: 0;
+                //width: 0;
+                margin-left:-100vw;
+                //background-color: red;
+                transition-delay: $centerdelay;
+                transition-speed: 0.5s;
+              }
+              &:nth-child(1) {
+                transform: rotate(405deg);
+                top: $burgerchecktop;
+              }
+              &:nth-child(3) {
+                transform: rotate(-405deg);
+                top: $burgercheckbottom;
+              }
+
+            }
+          }
+          ~ ul {
+            //display: table;
+          }
+        }
+
+        label.hamburger {
+          display: inline-block;
+          padding: 0;
+          height: $burgerheight;
+          cursor: pointer;
+          position: absolute;
+          z-index: 10;
+          transform: translate(-50%,-50%);
+          top: 50%;
+          left: 50%;
+
+          @media screen and (min-width: $break) {
+            //display: none;
+          }
+
+          span {
+            content: "";
+            width: $burgerwidth;
+            height: $burgerline;
+            background-color: $burgercolor;
+            display: block;
+            margin: 0;
+            transition: $transition;
+            opacity: 1;
+            position: relative;
+            top: 0;
+
+            &:nth-of-type(2) {
+              margin: $burgermargin;
+              //transition: none;
+            }
+
+            &:last-of-type {
+              margin: 0;
+            }
+          }
+        }
+      }
+
     }
     .button-icon-only{
       background: #387ef5 !important;
@@ -31,7 +128,7 @@ ion-app._gmaps_cdv_ .nav-decor{
 
 
   .main-tab{
-    margin: 0 12px 12px 12px;
+    margin: 1px 12px 12px 12px;
     border-top: 3px solid #0177B5;
     .profile-img{
       border: 3px solid #0177B5;
@@ -140,15 +237,10 @@ ion-app._gmaps_cdv_ .nav-decor{
     padding: 0;
   }
 
-  .top-card-col{
-    text-align: center;
-    padding: 10px;
-    border-right: 1px solid #ccc;
-  }
 
   .middle-card{
     border-top: 3px solid #0177B5;
-    height: 405px !important;
+    height: 415px !important;
     margin: 12px 12px 0 12px;
   }
 
@@ -157,6 +249,22 @@ ion-app._gmaps_cdv_ .nav-decor{
     border-top: 3px solid #0177B5;
     //padding: 20px 0;
     margin-bottom: 7px;
+
+    ion-grid{
+      ion-row{
+        ion-col{
+          text-align: center;
+        }
+      }
+    }
+
+    .top-card-col{
+      text-align: center;
+      padding: 1px;
+      padding-top: 5px;
+      border-right: 1px solid #ccc;
+    }
+
   }
   .top-span{
 
