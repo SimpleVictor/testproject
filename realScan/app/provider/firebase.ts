@@ -74,6 +74,28 @@ export class FirebaseService {
       return this.http_.patch(`https://wowme-3c87e.firebaseio.com/users/${currentID}/.json`, body, options).map((res:Response) => res.json());
     }
 
+    AddRecentObjToFavorite(obj, id ,OriginalFavorite , oldRecent){
+      console.log(obj);
+      if(OriginalFavorite[0] === ''){
+        OriginalFavorite.splice(0,1);
+        OriginalFavorite.push(obj);
+      }else{
+        OriginalFavorite.push(obj);
+      }
+
+      let mainObj = {
+        scanned: {
+          favorite: OriginalFavorite,
+          recent: oldRecent
+        }
+      };
+
+      let body = JSON.stringify(mainObj);
+      let headers = new Headers({ 'Content-Type': 'application/json' });
+      let options = new RequestOptions({ headers: headers });
+      return this.http_.patch(`https://wowme-3c87e.firebaseio.com/users/${id}/.json`, body, options).map((res:Response) => res.json());
+    }
+
 
 
 

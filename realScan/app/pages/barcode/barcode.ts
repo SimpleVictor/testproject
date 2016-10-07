@@ -88,8 +88,17 @@ export class BarcodePage {
     this.navCtrl.push(ScanPage, {details: details});
   }
 
-  favoriteRecent(){
-
+  favoriteRecent(obj){
+    this.auth.getAccounts((account) => {
+      this.firebase_.AddRecentObjToFavorite(obj, account.clientID, account.scanned.favorite, account.scanned.recent).subscribe(
+        (data) => {
+          console.log("**************************************************");
+          console.log(data);
+        }, (err) => {
+          console.log(err);
+        }
+      );
+    })
   }
 
   deleteRecent(){
