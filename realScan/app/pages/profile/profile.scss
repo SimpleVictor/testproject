@@ -3,7 +3,21 @@ ion-app._gmaps_cdv_ .nav-decor{
 }
 .map-page{
   #map {
+
+
     height: 100%;
+    .toolbar{
+      margin-top: -12px;
+    }
+    .toolbar-background{
+      background-color: #0177B5
+    }
+    ion-header{
+      background:transparent;
+    }
+    .button-icon-only{
+      background: #387ef5 !important;
+    }
   }
 }
 
