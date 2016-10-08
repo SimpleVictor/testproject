@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-item-divider style="background-color: #0177B5"></ion-item-divider>
+</ion-header>
+<ion-content>
+
+  <ion-card>
+    <h1 style="text-align:center">Import a piicture of him!!</h1>
+  </ion-card>
+
+  <ion-card>
+    <button ion-button tappable (click="openPhoto()">Choose a Photo</button>
+  </ion-card>
+
+
+  <ion-card *ngIf="foundHim">
+    <img src="{{foundHim.imageUrl}}">
+    <button tappable (click)="goToProfilePage()" ion-button></button>
+  </ion-card>
+
+
+
+
+
+
+</ion-content>

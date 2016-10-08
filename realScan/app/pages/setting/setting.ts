@@ -5,6 +5,7 @@ import {BarcodeScanner, Geolocation} from "ionic-native";
 import {BarcodeData} from "../home/home";
 import {ScanPage} from "../scan/scan";
 import {AuthService} from "../../provider/auth";
+import {ConnectionFinderPage} from "./connection-finder/connection-finder";
 
 
 @Component({
@@ -62,5 +63,10 @@ export class SettingPage {
   scanDetails(details) {
     this.navCtrl.push(ScanPage, {details: details});
   }
+
+  goToFindAConnection(){
+    this.navCtrl.push(ConnectionFinderPage);
+  }
+
 
 }

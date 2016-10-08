@@ -7,14 +7,14 @@
   <meta name="format-detection" content="telephone=no">
   <meta name="msapplication-tap-highlight" content="no">
 
-  <!--<link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">-->
-  <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+  <!--<link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet">-->
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 
   <style>
     *{
-      font-family: 'Architects Daughter', cursive;
+      font-family: 'Cabin', cursive;
       font-weight: 900;
     }
   </style>
@@ -55,6 +55,15 @@
       messagingSenderId: "69179495247"
     };
     firebase.initializeApp(config);
+  </script>
+
+  <script type="text/javascript" src="https://sdk.clarifai.com/js/clarifai-2.0.9.js"></script>
+  <script>
+    var clarifaiApp = new Clarifai.App(
+      '2VKY3tvh4qp2Wwp0DZ9p9h7jRNJoLjfToavg1rMR',
+      'BCyRTryFowHvVp4waw-o7LGXEvGAG9k7QpUMF4g3'
+    );
+//    console.log(clarifaiApp.getToken());
   </script>
 
   <!-- cordova.js required for cordova apps -->

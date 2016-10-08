@@ -18,11 +18,7 @@ export class CalendarPage{
     }
 
     ionViewLoaded(){
-
-
       this.myCat = this.meet_cate.myCat;
-
-
     }
 
   getEvent(id){
