@@ -77,7 +77,7 @@ export class FindPicturePage{
 
       },
       (err) => {
-        console.log(err);
+        console.log(JSON.stringify(err));
       }
     );
   }
@@ -112,7 +112,7 @@ export class FindPicturePage{
         this.searchImageByGivenUrl(testFile);
       }
     }, (err) => {
-      console.log(err);
+      console.log(JSON.stringify(err));
     });
   }
 
