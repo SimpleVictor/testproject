@@ -21,7 +21,6 @@ export class FindPicturePage{
   constructor(private events: Events, private firebase: FirebaseService, private navCtrl: NavController) {
 
 
-
     this.zone = new NgZone({enableLongStackTrace: false});
 
 
@@ -108,24 +107,24 @@ export class FindPicturePage{
 
 
   openPhoto(){
-    ImagePicker.getPictures(this.options).then((results) => {
-      for (var i = 0; i < results.length; i++) {
-        console.log('Image URI: ' + results[i]);
-        let testFile = results[i];
-        // console.log(testFile);
-
-        let myBase64 = this.encodeImageUri(testFile);
-        console.log(myBase64);
-        firebase.storage().ref("images/check2.jpeg").putString("ZmlsZTovLy92YXIvbW9iaWxlL0NvbnRhaW5lcnMvRGF0YS9BcHBsaWNhdGlvbi8yMjQ1MzQ2OS1GMTRBLTRGM0QtOEZBRi01RUI4NDY4M0ZFRkEvdG1wL2Nkdl9waG90b18wMDUuanBn", 'base64url').then(function(snapshot) {
-          console.log('Uploaded a base64 string!');
-          console.log(snapshot);
-        });
-
-        // this.searchImageByGivenUrl(myBase64);
-      }
-    }, (err) => {
-      console.log(JSON.stringify(err));
-    });
+    // ImagePicker.getPictures(this.options).then((results) => {
+    //   for (var i = 0; i < results.length; i++) {
+    //     console.log('Image URI: ' + results[i]);
+    //     let testFile = results[i];
+    //     // console.log(testFile);
+    //
+    //     let myBase64 = this.encodeImageUri(testFile);
+    //     console.log(myBase64);
+    //     firebase.storage().ref("images/check2.jpeg").putString("ZmlsZTovLy92YXIvbW9iaWxlL0NvbnRhaW5lcnMvRGF0YS9BcHBsaWNhdGlvbi8yMjQ1MzQ2OS1GMTRBLTRGM0QtOEZBRi01RUI4NDY4M0ZFRkEvdG1wL2Nkdl9waG90b18wMDUuanBn", 'base64url').then(function(snapshot) {
+    //       console.log('Uploaded a base64 string!');
+    //       console.log(snapshot);
+    //     });
+    //
+    //     // this.searchImageByGivenUrl(myBase64);
+    //   }
+    // }, (err) => {
+    //   console.log(JSON.stringify(err));
+    // });
 
 
     var options = {
@@ -138,19 +137,20 @@ export class FindPicturePage{
       targetHeight: 100,
       saveToPhotoAlbum: false
     };
-    // Camera.getPicture(options).then((imageData) => {
-    //   // imageData is either a base64 encoded string or a file URI
-    //   // If it's base64:
-    //   let base64Image = 'data:image/jpeg;base64,' + imageData;
-    //   console.log(base64Image);
-    //     this.searchImageByGivenUrl(base64Image);
-    // }, (err) => {
-    //   console.log("FAILED");
-    //   console.log(err);
-    //   // Handle error
-    // });
+    Camera.getPicture(options).then((imageData) => {
+    this.searchImageByGivenUrl('http://static.economic.bg/news/6/58031/item_item7.jpg');
+      // imageData is either a base64 encoded string or a file URI
+      // If it's base64:
+      // let base64Image = 'data:image/jpeg;base64,' + imageData;
+      // console.log(base64Image);
+      //   this.searchImageByGivenUrl(base64Image);
+    }, (err) => {
+      console.log("FAILED");
+      console.log(JSON.stringify(err));
+      // Handle error
+    });
 
-
+window.resolveLocalFileSystemUrl;
   }
 
   encodeImageUri(imageUri) {

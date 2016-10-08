@@ -1,0 +1,21 @@
+.find-picture{
+  .small-text{
+    font-size: 1.5rem;
+    top:56%;
+    left:36%;
+    position:absolute;
+  }
+
+  .camera-button{
+    border-radius: 100%;
+    top: 40%;
+    position:absolute;
+    left:40%;
+    height: 90px;
+    width: 90px;
+    .ion-camera-icon{
+      color: darkgrey;
+      font-size: 3.9em;
+    }
+  }
+}

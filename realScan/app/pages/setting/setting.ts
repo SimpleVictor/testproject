@@ -7,7 +7,6 @@ import {ScanPage} from "../scan/scan";
 import {AuthService} from "../../provider/auth";
 import {ConnectionFinderPage} from "./connection-finder/connection-finder";
 
-
 @Component({
   templateUrl: 'build/pages/setting/setting.html',
 })

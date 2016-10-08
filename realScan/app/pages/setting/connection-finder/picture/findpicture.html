@@ -1,15 +1,15 @@
 <ion-header>
   <ion-item-divider style="background-color: #0177B5"></ion-item-divider>
 </ion-header>
-<ion-content>
+<ion-content class="find-picture">
 
-  <ion-card>
-    <h1 style="text-align:center">Import sa picture of him!!</h1>
-  </ion-card>
+  <!--<ion-card>-->
+    <!--<h1 style="text-align:center">Import sa picture of him!!</h1>-->
+  <!--</ion-card>-->
 
-  <ion-card>
-    <button ion-button tappable (click)="openPhoto()">Choose a Photo</button>
-  </ion-card>
+  <!--<ion-card>-->
+    <!--<button ion-button tappable (click)="openPhoto()">Choose a Photo</button>-->
+  <!--</ion-card>-->
 
 
   <ion-card *ngIf="foundHim">
@@ -18,8 +18,13 @@
   </ion-card>
 
 
+<div>
 
-
+<button class="camera-button" ion-button icon-only tappable (click)="openPhoto()">
+  <ion-icon class="ion-camera-icon" name="camera"></ion-icon>
+</button>
+  <h2 class="small-text">Import from gallery</h2>
+</div>
 
 
 </ion-content>

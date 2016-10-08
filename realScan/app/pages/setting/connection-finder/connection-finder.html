@@ -3,7 +3,7 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content class="connection-finder">
 
   <h1 style="text-align:center">Search by</h1>
 
@@ -11,32 +11,22 @@
   <ion-grid>
     <ion-row>
       <ion-col width-50>
-         <ion-card>
-             <img src="img/alexa.jpg"/>
+         <ion-card tappable (click)="LookByPicutre()">
+             <img src="img/facerecog.jpg"/>
              <ion-card-content>
                <ion-card-title>
-                 Phone Number
+                 Face Recognition
                </ion-card-title>
-               <p>
-                 The most popular industrial group ever, and largely
-                 responsible for bringing the music to a mass audience.
-               </p>
-               <button ion-button (click)="LookByPicutre()"></button>
-
              </ion-card-content>
          </ion-card>
       </ion-col>
       <ion-col width-50>
         <ion-card>
-          <img src="img/alexa.jpg"/>
+          <img src="img/phone.jpg" id="phonei-d"/>
           <ion-card-content>
             <ion-card-title>
-              Face Recognition
+              Phone Number
             </ion-card-title>
-            <p>
-              The most popular industrial group ever, and largely
-              responsible for bringing the music to a mass audience.
-            </p>
           </ion-card-content>
         </ion-card>
       </ion-col>
@@ -44,29 +34,21 @@
     <ion-row>
       <ion-col width-50>
         <ion-card>
-          <img src="img/alexa.jpg"/>
+          <img src="img/email.jpg"/>
           <ion-card-content>
             <ion-card-title>
-              Nine Inch Nails Live
+              Email
             </ion-card-title>
-            <p>
-              The most popular industrial group ever, and largely
-              responsible for bringing the music to a mass audience.
-            </p>
           </ion-card-content>
         </ion-card>
       </ion-col>
       <ion-col width-50>
         <ion-card>
-          <img src="img/alexa.jpg"/>
+          <img src="img/nametag-day.jpg"/>
           <ion-card-content>
             <ion-card-title>
-              Nine Inch Nails Live
+              Name
             </ion-card-title>
-            <p>
-              The most popular industrial group ever, and largely
-              responsible for bringing the music to a mass audience.
-            </p>
           </ion-card-content>
         </ion-card>
       </ion-col>
