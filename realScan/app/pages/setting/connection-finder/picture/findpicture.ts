@@ -114,19 +114,14 @@ export class FindPicturePage{
         let testFile = results[i];
         // console.log(testFile);
 
-
-        var storageRef = firebase.storage().ref();
-        console.log(storageRef);
-
-        firebase.storage().ref("bruh.jpg").put(testFile).then(function(snapshot) {
-          console.log('Uploaded a blob or file!');
+        let myBase64 = this.encodeImageUri(testFile);
+        console.log(myBase64);
+        var message = myBase64;
+        firebase.storage().ref("images/bruh.jpg").putString(message, 'base64').then(function(snapshot) {
+          console.log('Uploaded a base64 string!');
           console.log(snapshot);
         });
 
-
-
-        // let myBase64 = this.encodeImageUri(testFile);
-        // console.log(myBase64);
         // this.searchImageByGivenUrl(myBase64);
       }
     }, (err) => {
