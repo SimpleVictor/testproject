@@ -46,4 +46,6 @@
     <plugin name="cordova-plugin-image-picker" spec="~1.1.1">
         <variable name="PHOTO_LIBRARY_USAGE_DESCRIPTION" value=" " />
     </plugin>
+    <plugin name="cordova-plugin-file" spec="~4.3.0" />
+    <plugin name="com-badrit-base64" spec="https://github.com/hazemhagrass/phonegap-base64.git" />
 </widget>

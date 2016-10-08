@@ -2,9 +2,11 @@ import { Component, NgZone} from '@angular/core';
 import {Events, NavController} from "ionic-angular/index";
 import {FirebaseService} from "../../../../provider/firebase";
 import {ProfilePage} from "../../../profile/profile";
-import {ImagePicker, ImagePickerOptions} from "ionic-native/dist/index";
+import {ImagePicker, ImagePickerOptions, Camera, CameraPopoverOptions} from "ionic-native/dist/index";
 
 declare var clarifaiApp:any;
+
+declare var window;
 
 @Component({
     templateUrl: 'build/pages/setting/connection-finder/picture/findpicture.html',
@@ -17,6 +19,7 @@ export class FindPicturePage{
   options:ImagePickerOptions;
 
   constructor(private events: Events, private firebase: FirebaseService, private navCtrl: NavController) {
+
 
 
     this.zone = new NgZone({enableLongStackTrace: false});
@@ -104,16 +107,42 @@ export class FindPicturePage{
 
 
   openPhoto(){
-    ImagePicker.getPictures(this.options).then((results) => {
-      for (var i = 0; i < results.length; i++) {
-        console.log('Image URI: ' + results[i]);
-        let testFile = results[i].toString('base64');
-        console.log(testFile)
-        this.searchImageByGivenUrl(testFile);
-      }
+    // ImagePicker.getPictures(this.options).then((results) => {
+    //   for (var i = 0; i < results.length; i++) {
+    //     console.log('Image URI: ' + results[i]);
+    //     let testFile = results[i];
+    //     console.log(testFile);
+    //     // this.searchImageByGivenUrl(testFile);
+    //   }
+    // }, (err) => {
+    //   console.log(JSON.stringify(err));
+    // });
+
+
+    var options = {
+      quality: 50,
+      destinationType: Camera.DestinationType.DATA_URL,
+      sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+      allowEdit: true,
+      encodingType: Camera.EncodingType.JPEG,
+      targetWidth: 100,
+      targetHeight: 100,
+      popoverOptions: CameraPopoverOptions,
+      saveToPhotoAlbum: false
+    };
+    Camera.getPicture(options).then((imageData) => {
+      // imageData is either a base64 encoded string or a file URI
+      // If it's base64:
+      let base64Image = 'data:image/jpeg;base64,' + imageData;
+      console.log(base64Image);
     }, (err) => {
-      console.log(JSON.stringify(err));
+      console.log("FAILED");
+      console.log(err);
+      // Handle error
     });
+
+
+    //     // this.searchImageByGivenUrl(testFile);
   }
 
 
