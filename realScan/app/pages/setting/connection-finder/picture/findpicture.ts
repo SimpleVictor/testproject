@@ -45,7 +45,7 @@ export class FindPicturePage{
 
 
 
-    // this.searchImageByGivenUrl('https://lh6.googleusercontent.com/-90WQCTWl0Co/AAAAAAAAAAI/AAAAAAAAAAs/mPzUsSiQ0Mw/photo.jpg');
+    this.searchImageByGivenUrl('https://lh6.googleusercontent.com/-90WQCTWl0Co/AAAAAAAAAAI/AAAAAAAAAAs/mPzUsSiQ0Mw/photo.jpg');
 
   }
 
@@ -67,6 +67,7 @@ export class FindPicturePage{
 
 
   searchImageByGivenUrl(url){
+    console.log("went inside here");
     clarifaiApp.inputs.search({url: url}).then(
       (response) => {
         console.log(response);
@@ -107,16 +108,17 @@ export class FindPicturePage{
 
 
   openPhoto(){
-    // ImagePicker.getPictures(this.options).then((results) => {
-    //   for (var i = 0; i < results.length; i++) {
-    //     console.log('Image URI: ' + results[i]);
-    //     let testFile = results[i];
-    //     console.log(testFile);
-    //     // this.searchImageByGivenUrl(testFile);
-    //   }
-    // }, (err) => {
-    //   console.log(JSON.stringify(err));
-    // });
+    ImagePicker.getPictures(this.options).then((results) => {
+      for (var i = 0; i < results.length; i++) {
+        console.log('Image URI: ' + results[i]);
+        let testFile = results[i];
+        console.log(testFile);
+        console.log(this.encodeImageUri(testFile));
+        // this.searchImageByGivenUrl(testFile);
+      }
+    }, (err) => {
+      console.log(JSON.stringify(err));
+    });
 
 
     var options = {
@@ -129,21 +131,34 @@ export class FindPicturePage{
       targetHeight: 100,
       saveToPhotoAlbum: false
     };
-    Camera.getPicture(options).then((imageData) => {
-      // imageData is either a base64 encoded string or a file URI
-      // If it's base64:
-      let base64Image = 'data:image/jpeg;base64,' + imageData;
-      console.log(base64Image);
-        this.searchImageByGivenUrl(base64Image);
-    }, (err) => {
-      console.log("FAILED");
-      console.log(err);
-      // Handle error
-    });
+    // Camera.getPicture(options).then((imageData) => {
+    //   // imageData is either a base64 encoded string or a file URI
+    //   // If it's base64:
+    //   let base64Image = 'data:image/jpeg;base64,' + imageData;
+    //   console.log(base64Image);
+    //     this.searchImageByGivenUrl(base64Image);
+    // }, (err) => {
+    //   console.log("FAILED");
+    //   console.log(err);
+    //   // Handle error
+    // });
 
 
   }
 
+  encodeImageUri(imageUri) {
+  var c=document.createElement('canvas');
+  var ctx=c.getContext("2d");
+  var img=new Image();
+  img.onload = function(){
+    c.width=this.width;
+    c.height=this.height;
+    ctx.drawImage(img, 0,0);
+  };
+  img.src=imageUri;
+  var dataURL = c.toDataURL("image/jpeg");
+  return dataURL;
+}
 
 
 
