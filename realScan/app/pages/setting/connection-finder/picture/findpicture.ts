@@ -100,15 +100,15 @@ export class FindPicturePage{
 
 
   openPhoto(){
-    Camera.getPicture().then((imageData) => {
-      // imageData is either a base64 encoded string or a file URI
-      // If it's base64:
-      console.log(imageData);
-      let base64Image = 'data:image/jpeg;base64,' + imageData;
-    }, (err) => {
-      console.log("THERE WAS AN ERROR GETTING THE PICTURE")
-      // Handle error
-    });
+    // Camera.getPicture().then((imageData) => {
+    //   // imageData is either a base64 encoded string or a file URI
+    //   // If it's base64:
+    //   console.log(imageData);
+    //   let base64Image = 'data:image/jpeg;base64,' + imageData;
+    // }, (err) => {
+    //   console.log("THERE WAS AN ERROR GETTING THE PICTURE")
+    //   // Handle error
+    // });
   }
 
 
