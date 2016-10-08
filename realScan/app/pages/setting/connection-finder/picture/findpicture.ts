@@ -116,7 +116,7 @@ export class FindPicturePage{
 
         let myBase64 = this.encodeImageUri(testFile);
         console.log(myBase64);
-        firebase.storage().ref("images/check.jpg").putString("ZmlsZTovLy92YXIvbW9iaWxlL0NvbnRhaW5lcnMvRGF0YS9BcHBsaWNhdGlvbi8yMjQ1MzQ2OS1GMTRBLTRGM0QtOEZBRi01RUI4NDY4M0ZFRkEvdG1wL2Nkdl9waG90b18wMDUuanBn", 'base64').then(function(snapshot) {
+        firebase.storage().ref("images/check2.jpeg").putString("ZmlsZTovLy92YXIvbW9iaWxlL0NvbnRhaW5lcnMvRGF0YS9BcHBsaWNhdGlvbi8yMjQ1MzQ2OS1GMTRBLTRGM0QtOEZBRi01RUI4NDY4M0ZFRkEvdG1wL2Nkdl9waG90b18wMDUuanBn", 'base64url').then(function(snapshot) {
           console.log('Uploaded a base64 string!');
           console.log(snapshot);
         });
