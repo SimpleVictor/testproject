@@ -5,7 +5,7 @@ import {ProfilePage} from "../../../profile/profile";
 import {ImagePicker, ImagePickerOptions, Camera, CameraPopoverOptions} from "ionic-native/dist/index";
 
 declare var clarifaiApp:any;
-
+declare var firebase:any;
 declare var window;
 
 @Component({
@@ -113,9 +113,21 @@ export class FindPicturePage{
         console.log('Image URI: ' + results[i]);
         let testFile = results[i];
         // console.log(testFile);
-        let myBase64 = this.encodeImageUri(testFile);
-        console.log(myBase64);
-        this.searchImageByGivenUrl(myBase64);
+
+
+        var storageRef = firebase.storage().ref();
+        console.log(storageRef);
+
+        firebase.storage().ref("bruh.jpg").put(testFile).then(function(snapshot) {
+          console.log('Uploaded a blob or file!');
+          console.log(snapshot);
+        });
+
+
+
+        // let myBase64 = this.encodeImageUri(testFile);
+        // console.log(myBase64);
+        // this.searchImageByGivenUrl(myBase64);
       }
     }, (err) => {
       console.log(JSON.stringify(err));
