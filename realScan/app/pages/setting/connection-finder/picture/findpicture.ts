@@ -107,7 +107,9 @@ export class FindPicturePage{
     ImagePicker.getPictures(this.options).then((results) => {
       for (var i = 0; i < results.length; i++) {
         console.log('Image URI: ' + results[i]);
-        this.searchImageByGivenUrl(results[i]);
+        let testFile = results[i].toString('base64');
+        console.log(testFile)
+        this.searchImageByGivenUrl(testFile);
       }
     }, (err) => {
       console.log(err);
