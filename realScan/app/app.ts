@@ -11,6 +11,7 @@ import {AuthConfig, AuthHttp} from "angular2-jwt";
 import {TabsPage} from "./pages/tabs/tabs";
 import {MeetupService} from "./provider/meetup";
 import {MeetUpCategories} from "./shared/meetup-categories";
+import {Camera} from "ionic-native/dist/index";
 
 
 @Component({
@@ -46,6 +47,7 @@ export class MyApp {
     menu.enable(true);
 
     platform.ready().then(() => {
+      console.log(Camera);
       console.log(platform.platforms());
       let myPlat = platform.platforms();
       if(myPlat[0] === 'cordova'){

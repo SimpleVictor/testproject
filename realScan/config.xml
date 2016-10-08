@@ -43,4 +43,7 @@
         <variable name="API_KEY_FOR_IOS" value="AIzaSyCGmkRDIFdpVMmGnUPUeVPCg3TltHXQ50U" />
     </plugin>
     <plugin name="cordova-plugin-camera" spec="~2.3.0" />
+    <plugin name="cordova-plugin-image-picker" spec="~1.1.1">
+        <variable name="PHOTO_LIBRARY_USAGE_DESCRIPTION" value=" " />
+    </plugin>
 </widget>

@@ -2,7 +2,7 @@ import { Component, NgZone} from '@angular/core';
 import {Events, NavController} from "ionic-angular/index";
 import {FirebaseService} from "../../../../provider/firebase";
 import {ProfilePage} from "../../../profile/profile";
-import {Camera} from "ionic-native/dist/index";
+import {ImagePicker} from "ionic-native/dist/index";
 
 declare var clarifaiApp:any;
 
@@ -17,8 +17,9 @@ export class FindPicturePage{
 
 
   constructor(private events: Events, private firebase: FirebaseService, private navCtrl: NavController) {
+
+
     this.zone = new NgZone({enableLongStackTrace: false});
-    console.log(Camera);
 
 
   }
@@ -103,16 +104,11 @@ export class FindPicturePage{
 
 
   openPhoto(){
-    console.log(Camera);
-    // this.myCamera.getPicture().then((imageData) => {
-    //   // imageData is either a base64 encoded string or a file URI
-    //   // If it's base64:
-    //   console.log(imageData);
-    //   let base64Image = 'data:image/jpeg;base64,' + imageData;
-    // }, (err) => {
-    //   console.log("THERE WAS AN ERROR GETTING THE PICTURE")
-    //   // Handle error
-    // });
+    ImagePicker.getPictures().then((results) => {
+      for (var i = 0; i < results.length; i++) {
+        console.log('Image URI: ' + results[i]);
+      }
+    }, (err) => { });
   }
 
 
