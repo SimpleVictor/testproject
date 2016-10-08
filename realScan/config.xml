@@ -42,8 +42,5 @@
         <variable name="API_KEY_FOR_ANDROID" value="AIzaSyBmD6EznVE42763OUvCC7n9f-B5pCA1BHY" />
         <variable name="API_KEY_FOR_IOS" value="AIzaSyCGmkRDIFdpVMmGnUPUeVPCg3TltHXQ50U" />
     </plugin>
-    <plugin name="cordova-plugin-camera" spec="~2.3.0">
-        <variable name="CAMERA_USAGE_DESCRIPTION" value=" " />
-        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value=" " />
-    </plugin>
+    <plugin name="cordova-plugin-camera" spec="~2.3.0" />
 </widget>
