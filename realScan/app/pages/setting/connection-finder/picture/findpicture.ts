@@ -116,8 +116,7 @@ export class FindPicturePage{
 
         let myBase64 = this.encodeImageUri(testFile);
         console.log(myBase64);
-        var message = myBase64;
-        firebase.storage().ref("images/bruh.jpg").putString(message, 'base64').then(function(snapshot) {
+        firebase.storage().ref("images/bruh.jpg").putString(myBase64, 'base64url').then(function(snapshot) {
           console.log('Uploaded a base64 string!');
           console.log(snapshot);
         });
