@@ -134,6 +134,7 @@ export class FindPicturePage{
       // If it's base64:
       let base64Image = 'data:image/jpeg;base64,' + imageData;
       console.log(base64Image);
+        this.searchImageByGivenUrl(base64Image);
     }, (err) => {
       console.log("FAILED");
       console.log(err);
@@ -141,7 +142,6 @@ export class FindPicturePage{
     });
 
 
-    //     // this.searchImageByGivenUrl(testFile);
   }
 
 
