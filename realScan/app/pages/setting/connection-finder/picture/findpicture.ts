@@ -42,7 +42,7 @@ export class FindPicturePage{
 
 
 
-    this.searchImageByGivenUrl('https://lh6.googleusercontent.com/-90WQCTWl0Co/AAAAAAAAAAI/AAAAAAAAAAs/mPzUsSiQ0Mw/photo.jpg');
+    // this.searchImageByGivenUrl('https://lh6.googleusercontent.com/-90WQCTWl0Co/AAAAAAAAAAI/AAAAAAAAAAs/mPzUsSiQ0Mw/photo.jpg');
 
   }
 
@@ -107,8 +107,11 @@ export class FindPicturePage{
     ImagePicker.getPictures(this.options).then((results) => {
       for (var i = 0; i < results.length; i++) {
         console.log('Image URI: ' + results[i]);
+        this.searchImageByGivenUrl(results[i]);
       }
-    }, (err) => { });
+    }, (err) => {
+      console.log(err);
+    });
   }
 
 
