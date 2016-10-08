@@ -127,7 +127,6 @@ export class FindPicturePage{
       encodingType: Camera.EncodingType.JPEG,
       targetWidth: 100,
       targetHeight: 100,
-      popoverOptions: CameraPopoverOptions,
       saveToPhotoAlbum: false
     };
     Camera.getPicture(options).then((imageData) => {
