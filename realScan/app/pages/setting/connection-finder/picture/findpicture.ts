@@ -2,7 +2,7 @@ import { Component, NgZone} from '@angular/core';
 import {Events, NavController} from "ionic-angular/index";
 import {FirebaseService} from "../../../../provider/firebase";
 import {ProfilePage} from "../../../profile/profile";
-import {ImagePicker} from "ionic-native/dist/index";
+import {ImagePicker, ImagePickerOptions} from "ionic-native/dist/index";
 
 declare var clarifaiApp:any;
 
@@ -14,7 +14,7 @@ export class FindPicturePage{
   foundHim;
   FirebaseReturnedData;
   zone;
-
+  options:ImagePickerOptions;
 
   constructor(private events: Events, private firebase: FirebaseService, private navCtrl: NavController) {
 
@@ -104,7 +104,7 @@ export class FindPicturePage{
 
 
   openPhoto(){
-    ImagePicker.getPictures().then((results) => {
+    ImagePicker.getPictures(this.options).then((results) => {
       for (var i = 0; i < results.length; i++) {
         console.log('Image URI: ' + results[i]);
       }
