@@ -234,7 +234,7 @@ export class ProfilePage {
 
 
     for(let i = 0; i < allUser.length; i++){
-      let user = allUser[0];
+      let user = allUser[i];
 
       let IndividualCoords : GoogleMapsLatLng = new GoogleMapsLatLng(user.lat, user.long);
       let markerOptions: GoogleMapsMarkerOptions = {
