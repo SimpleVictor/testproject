@@ -16,7 +16,7 @@
     <img class="mainguy" src="{{foundHim.imageUrl}}">
 
       <button class="goToProfile" icon-only tappable (click)="goToProfilePage()" ion-button>
-        97%
+        {{foundHim.score}}%
       </button>
       <h3 *ngIf="FirebaseReturnedData">{{FirebaseReturnedData.contact.name}}</h3>
 
@@ -35,6 +35,56 @@
 </button>
   <h2 class="small-text">Import from gallery</h2>
 </div>
+
+
+  <row *ngIf="everyone" class="friends">
+    <ion-col>
+      <ion-card>
+        <img class="notHim" src="{{everyone[1].imageUrl}}">
+        <button class="notbutton" style="border-radius: 100%">{{everyone[1].score}}%</button>
+      </ion-card>
+    </ion-col>
+    <ion-col>
+      <ion-card>
+        <img class="notHim" src="{{everyone[2].imageUrl}}">
+        <button class="notbutton" style="border-radius: 100%">{{everyone[2].score}}%</button>
+      </ion-card>
+    </ion-col>
+  </row>
+
+  <row *ngIf="everyone" class="friends">
+    <ion-col>
+      <ion-card>
+        <img  class="notHim" class="notHim" src="{{everyone[3].imageUrl}}">
+        <button class="notbutton" style="border-radius: 100%">{{everyone[3].score}}%</button>
+      </ion-card>
+    </ion-col>
+    <ion-col>
+      <ion-card>
+        <img class="notHim" src="{{everyone[4].imageUrl}}">
+        <button class="notbutton" style="border-radius: 100%">{{everyone[4].score}}%</button>
+      </ion-card>
+    </ion-col>
+  </row>
+
+  <row *ngIf="everyone" class="friends">
+    <ion-col>
+      <ion-card>
+        <img class="notHim" src="{{everyone[5].imageUrl}}">
+        <button class="notbutton" style="border-radius: 100%">{{everyone[5].score}}%</button>
+      </ion-card>
+    </ion-col>
+    <ion-col>
+      <ion-card>
+        <img class="notHim" src="{{everyone[6].imageUrl}}">
+        <button class="notbutton" style="border-radius: 100%">{{everyone[6].score}}%</button>
+      </ion-card>
+    </ion-col>
+  </row>
+
+
+
+
 
 
 </ion-content>

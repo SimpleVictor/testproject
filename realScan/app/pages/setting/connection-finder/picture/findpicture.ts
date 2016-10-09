@@ -11,18 +11,18 @@ declare var firebase:any;
 declare var window;
 
 @Component({
-    templateUrl: 'build/pages/setting/connection-finder/picture/findpicture.html',
+  templateUrl: 'build/pages/setting/connection-finder/picture/findpicture.html',
 })
 export class FindPicturePage{
-
+  everyone;
   foundHim;
   FirebaseReturnedData;
   zone;
   options:ImagePickerOptions;
-  CheckLoader
+  CheckLoader;
+  otherPeople;
 
   constructor(private events: Events, private firebase: FirebaseService, private navCtrl: NavController, private http: Http, private loadingCtrl: LoadingController) {
-
 
     this.zone = new NgZone({enableLongStackTrace: false});
 
@@ -47,7 +47,7 @@ export class FindPicturePage{
 
 
 
-    // this.searchImageByGivenUrl('https://lh6.googleusercontent.com/-90WQCTWl0Co/AAAAAAAAAAI/AAAAAAAAAAs/mPzUsSiQ0Mw/photo.jpg');
+    this.searchImageByGivenUrl('https://lh6.googleusercontent.com/-90WQCTWl0Co/AAAAAAAAAAI/AAAAAAAAAAs/mPzUsSiQ0Mw/photo.jpg');
 
   }
 
@@ -76,10 +76,18 @@ export class FindPicturePage{
         //HERE IT WOULD GIVE US THE PROBABLITY AND WE WOULD ITERATE THROUGH THEM TO SEE WHICH WOULD HAVE THE HIGHEST NUMBER
 
         this.zone.run(() => {
-          this.CheckLoader.dismiss();
+          // this.CheckLoader.dismiss();
           this.foundHim = response[0];
           console.log(this.foundHim.imageUrl);
+
           this.GetID(this.foundHim.id);
+          this.everyone = response;
+
+          for(let i = 0; i< this.everyone.length ; i++){
+            console.log("hey");
+            this.everyone[i].score = Math.round(this.everyone[i].score * 100);
+          };
+
         });
 
       },
@@ -189,6 +197,7 @@ export class FindPicturePage{
   var dataURL = c.toDataURL("image/jpeg");
   return dataURL;
 }
+
 
 
 

@@ -1,5 +1,19 @@
 .find-picture{
 
+  .friends{
+    display: flex;
+    button{
+      margin-top:-220px;
+      position:relative;
+      background-color: red;
+    }
+  }
+
+  .notHim{
+    width:100%;
+    height:130px;
+  }
+
   .main-person{
 
     position: relative;
