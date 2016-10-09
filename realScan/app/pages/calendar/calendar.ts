@@ -36,8 +36,9 @@ export class CalendarPage{
       console.log(lat, long);
       this.meetupservice_.getGroupsById(id, lat, long).subscribe(
         (data) => {
-          this.CheckLoader.dismiss();
+          console.log("#####################################################################3");
           console.log(data);
+          this.CheckLoader.dismiss();
           this.navCtrl.push(GroupsPage, {groups: data.body.results});
         }, err => {
           this.CheckLoader.dismiss();
