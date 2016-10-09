@@ -12,13 +12,23 @@
   <!--</ion-card>-->
 
 
-  <ion-card *ngIf="foundHim">
-    <img src="{{foundHim.imageUrl}}">
-    <button tappable (click)="goToProfilePage()" ion-button></button>
+  <ion-card *ngIf="foundHim" class="main-person">
+    <img class="mainguy" src="{{foundHim.imageUrl}}">
+
+      <button class="goToProfile" icon-only tappable (click)="goToProfilePage()" ion-button>
+        97%
+      </button>
+      <h3 *ngIf="FirebaseReturnedData">{{FirebaseReturnedData.contact.name}}</h3>
+
+      <button class="profilePage" full icon-only tappable (click)="goToProfilePage()" ion-button>
+        Go To Profile
+      </button>
+
+
   </ion-card>
 
 
-<div>
+<div *ngIf="!foundHim">
 
 <button class="camera-button" ion-button icon-only tappable (click)="openPhoto()">
   <ion-icon class="ion-camera-icon" name="camera"></ion-icon>

@@ -7,10 +7,27 @@
 
 <ion-content class="groups">
   <h2 text-center>Here are your groups</h2>
-  <ion-card *ngIf="groups">
-    <ion-list *ngFor="let i of groups">
-      <ion-item>{{i.name}}</ion-item>
-    </ion-list>
-  </ion-card>
+  <div *ngIf="newGroup">
+    <!--<ion-card *ngFor="let i of groups">-->
+      <!--<ion-list>-->
+        <!--<ion-item>{{i.name}}</ion-item>-->
+        <!--<ion-item>{{i.description}}</ion-item>-->
+      <!--</ion-list>-->
+    <!--</ion-card>-->
+
+    <ion-card *ngFor="let i of newGroup">
+      <img src="{{i.group_photo.highres_link}}"/>
+      <ion-card-content>
+        <ion-card-title>
+          {{i.name}}
+        </ion-card-title>
+        <ion-list>
+          <ion-item>Location: {{i.city}}</ion-item>
+          <ion-item>Location: {{i.members}}</ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
 
 </ion-content>

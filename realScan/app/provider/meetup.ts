@@ -27,6 +27,7 @@ export class MeetupService {
       if(this.isMobile){
         let url =`https://api.meetup.com/2/groups.json?key=${this.apiKey}&sign=true&lat=${lat}&lon=${long}&category_id=${id}&page=20`;
         console.log(url);
+        console.log("Where you at");
         let headers = new Headers({ 'Content-Type': 'application/json' });
         // headers.append('Allow-Access-Control-Origin', '*');
         // headers.append('Authorization', `Bearer ${authToken}`);

@@ -120,7 +120,7 @@ ion-app._gmaps_cdv_ .nav-decor{
 
 
 #profile-bar-button{
- padding: 0 10px;
+  padding: 0 10px;
 }
 
 
@@ -225,7 +225,7 @@ ion-app._gmaps_cdv_ .nav-decor{
   }
 
   .swiper-container-horizontal > .swiper-pagination{
-    bottom: 10px;
+    bottom: 20px;
   }
 
   .swiper-container{
@@ -240,7 +240,7 @@ ion-app._gmaps_cdv_ .nav-decor{
 
   .middle-card{
     border-top: 3px solid #0177B5;
-    height: 415px !important;
+    height: 435px !important;
     margin: 12px 12px 0 12px;
   }
 
@@ -300,8 +300,8 @@ ion-app._gmaps_cdv_ .nav-decor{
     }
 
     .bot-icons{
-        display: block;
-        text-align: center;
+      display: block;
+      text-align: center;
 
       .bot-col{
         padding: 0;
@@ -318,9 +318,7 @@ ion-app._gmaps_cdv_ .nav-decor{
   }
 
   /*
-
     Profile Page
-
   */
 
   .profile-tab{
@@ -421,16 +419,14 @@ ion-app._gmaps_cdv_ .nav-decor{
 
 
   /*
-
     Portfolio Page
-
   */
 
   .portfolio-tab{
 
     .portfolio-col{
-      border-spacing: 10px 50px;
-      border: 1px solid #0177B5;
+      //border-spacing: 10px 50px;
+      //border: 1px solid #0177B5;
       height: 100px;
       width: 100px;
       padding: 0;
@@ -449,8 +445,8 @@ ion-app._gmaps_cdv_ .nav-decor{
   .work-tab{
 
     img{
-      height: 50px;
-      width: 75px;
+      height: 100px;
+      width: 110px;
     }
 
     .slide-zoom{
@@ -657,5 +653,3 @@ ion-app._gmaps_cdv_ .nav-decor{
 
 
 }
-
-

@@ -15,106 +15,92 @@
 </ion-content>
 
 
-
-
-<!--<ion-header>-->
-  <!--<ion-navbar>-->
-    <!--<ion-buttons start>-->
-      <!--<button ion-button icon-only (tap)="testData()">-->
-        <!--<i class="fa fa-calendar fa-2x"></i>-->
-      <!--</button>-->
-    <!--</ion-buttons>-->
-
-
-    <!--<ion-title>Home</ion-title>-->
-
-    <!--<ion-buttons end>-->
-      <!--<button ion-button icon-only (tap)="activateScan()">-->
-        <!--&lt;!&ndash;<ion-icon name="search"></ion-icon>&ndash;&gt;-->
-        <!--&lt;!&ndash;<i class="fa-stack fa-circle fa-qrcode "></i>&ndash;&gt;-->
-      <!--<span class="fa-stack fa-lg">-->
-  <!--<i class="fa fa-square-o fa-stack-2x"></i>-->
-  <!--<i class="fa fa-qrcode fa-stack-3x"></i>-->
-<!--</span>-->
-      <!--</button>-->
-    <!--</ion-buttons>-->
-  <!--</ion-navbar>-->
-<!--</ion-header>-->
-
-
 <ion-content class="home" *ngIf="auth.authenticated()">
-  <ion-card *ngIf="profile">
-    <!--<img src="img/barcode.png"/>-->
-    <img src="{{ profile.barcode_url }}"/>
-    <ion-card-content>
-      <ion-item>
-        <ion-avatar item-left>
-          <img src="{{ profile.contact.picture }}">
-        </ion-avatar>
-        <h2>{{ profile.contact.name }}</h2>
-        <p>{{ profile.email }}</p>
+
+<row *ngIf="profile">
+  <ion-col>
+    <img src="img/handshake.jpg" class="main-logo">
+    <ion-card class="next-to-logo-box">
+      <img src="{{ profile.barcode_url }}"/>
+    </ion-card>
+  </ion-col>
+</row>
+
+  <row>
+    <ion-col>
+      <ion-card *ngIf="profile">
+        <ion-item>
+          <ion-avatar item-left>
+            <img src="{{ profile.contact.picture }}">
+          </ion-avatar>
+          <h2>{{ profile.contact.name }}</h2>
+          <p>{{ profile.email }}</p>
+        </ion-item>
+      </ion-card>
+    </ion-col>
+  </row>
+
+<row>
+  <ion-col>
+    <ion-card class="profile-card">
+      <ion-list>
+        <ion-item>
+          <ion-label stacked>Company Search</ion-label>
+          <ion-input placeholder="type a company in here..." type="text"></ion-input>
+        </ion-item>
+        <hr>
+        <ion-item style="text-align: center" class="fixme">aslkdaskjld</ion-item>
+      </ion-list>
+    </ion-card>
+  </ion-col>
+</row>
+
+  <row>
+    <ion-col>
+      <button class="superbutton" (click)="activateScan()" tappable ion-button full>Scan</button>
+    </ion-col>
+  </row>
+
+  <row>
+    <ion-col>
+      <ion-card>
+
+      </ion-card>
+      <ion-card>
+
+      </ion-card>
+    </ion-col>
+  </row>
 
 
 
-      </ion-item>
-      <button tappable (click)="activateScan()">Scan</button>
-      <button tappable ion-button menuToggle>Toggle Menu</button>
-      <button tappable (click)="hideToolBar()">Hide</button>
-      <button tappable (click)="showToolBar()">show</button>
-      <button menuToggle color="primary" ion-button icon-only tappable style="border-radius: 100%; box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5) !important; z-index: 1">
-        <ion-icon name="menu"></ion-icon>
-      </button>
-    </ion-card-content>
+
+  <!--<ion-card *ngIf="profile">-->
+    <!--&lt;!&ndash;<img src="img/barcode.png"/>&ndash;&gt;-->
+    <!--<img src="{{ profile.barcode_url }}"/>-->
+    <!--<ion-card-content>-->
+      <!--<ion-item>-->
+        <!--<ion-avatar item-left>-->
+          <!--<img src="{{ profile.contact.picture }}">-->
+        <!--</ion-avatar>-->
+        <!--<h2>{{ profile.contact.name }}</h2>-->
+        <!--<p>{{ profile.email }}</p>-->
 
 
-  </ion-card>
 
-  <ion-card>
-    <ion-card-header style="text-align: center">
-      <span text-left> You connected with <strong><span style="color: red;">23</span></strong> people!</span>
-    </ion-card-header>
-  </ion-card>
+      <!--</ion-item>-->
+      <!--<button tappable (click)="activateScan()">Scan</button>-->
+      <!--<button tappable ion-button menuToggle>Toggle Menu</button>-->
+      <!--<button tappable (click)="hideToolBar()">Hide</button>-->
+      <!--<button tappable (click)="showToolBar()">show</button>-->
+      <!--<button menuToggle color="primary" ion-button icon-only tappable style="border-radius: 100%; box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5) !important; z-index: 1">-->
+        <!--<ion-icon name="menu"></ion-icon>-->
+      <!--</button>-->
+    <!--</ion-card-content>-->
 
-  <!--<ion-row>-->
-
-  <!--<ion-card>-->
-          <!--<div class="svg">-->
-            <!--<svg width="200" height="200" classpadding="chart" data-percent="90">-->
-              <!--<circle id="bgcircle" class="bgcircle" cx="95" cy="95" r="85" transform="rotate(-90, 95, 95)"/>-->
-              <!--<circle id="circle1" class="circle" cx="95" cy="95" r="85" transform="rotate(-90, 95, 95)"/>-->
-              <!--<text class="text" id="text1" text-anchor="middle" x="95" y="113"></text>-->
-            <!--</svg>-->
-          <!--</div>-->
 
   <!--</ion-card>-->
-  <!--<ion-card>-->
-    <!--<div class="svg">-->
-      <!--<svg width="200" height="200" class="chart" data-percent="90">-->
-        <!--<circle id="bgcircle" class="bgcircle" cx="95" cy="95" r="85" transform="rotate(-90, 95, 95)"/>-->
-        <!--<circle id="circle2" class="circle" cx="95" cy="95" r="85" transform="rotate(-90, 95, 95)"/>-->
-        <!--<text class="text" id="text2" text-anchor="middle" x="95" y="113"></text>-->
-      <!--</svg>-->
-    <!--</div>-->
-  <!--</ion-card>-->
-  <!--</ion-row>-->
 
-
-
-  <ion-fab center middle>
-    <button ion-fab color="danger"><ion-icon name="md-share"></ion-icon></button>
-    <ion-fab-list side="top">
-      <button ion-fab color="primary"><ion-icon name="logo-vimeo"></ion-icon></button>
-    </ion-fab-list>
-    <ion-fab-list side="bottom">
-      <button ion-fab color="secondary"><ion-icon name="logo-facebook"></ion-icon></button>
-    </ion-fab-list>
-    <ion-fab-list side="left">
-      <button ion-fab color="light"><ion-icon name="logo-googleplus"></ion-icon></button>
-    </ion-fab-list>
-    <ion-fab-list side="right">
-      <button ion-fab color="dark"><ion-icon name="logo-twitter"></ion-icon></button>
-    </ion-fab-list>
-  </ion-fab>
 
 
 </ion-content>

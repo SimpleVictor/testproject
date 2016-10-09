@@ -1,8 +1,10 @@
 import { Component, NgZone} from '@angular/core';
-import {Events, NavController} from "ionic-angular/index";
+import {Events, NavController, LoadingController} from "ionic-angular/index";
 import {FirebaseService} from "../../../../provider/firebase";
 import {ProfilePage} from "../../../profile/profile";
 import {ImagePicker, ImagePickerOptions, Camera, CameraPopoverOptions} from "ionic-native/dist/index";
+import 'rxjs/operator/map';
+import {Http, Response, Headers, RequestOptions} from "@angular/http";
 
 declare var clarifaiApp:any;
 declare var firebase:any;
@@ -17,8 +19,9 @@ export class FindPicturePage{
   FirebaseReturnedData;
   zone;
   options:ImagePickerOptions;
+  CheckLoader
 
-  constructor(private events: Events, private firebase: FirebaseService, private navCtrl: NavController) {
+  constructor(private events: Events, private firebase: FirebaseService, private navCtrl: NavController, private http: Http, private loadingCtrl: LoadingController) {
 
 
     this.zone = new NgZone({enableLongStackTrace: false});
@@ -73,6 +76,7 @@ export class FindPicturePage{
         //HERE IT WOULD GIVE US THE PROBABLITY AND WE WOULD ITERATE THROUGH THEM TO SEE WHICH WOULD HAVE THE HIGHEST NUMBER
 
         this.zone.run(() => {
+          this.CheckLoader.dismiss();
           this.foundHim = response[0];
           console.log(this.foundHim.imageUrl);
           this.GetID(this.foundHim.id);
@@ -138,7 +142,26 @@ export class FindPicturePage{
       saveToPhotoAlbum: false
     };
     Camera.getPicture(options).then((imageData) => {
-    this.searchImageByGivenUrl('http://static.economic.bg/news/6/58031/item_item7.jpg');
+
+
+      setTimeout(() => {
+        this.CheckLoader = this.loadingCtrl.create(
+          { content: "Searching for the best match..." }
+        );
+        this.CheckLoader.present();
+      }, 0);
+
+
+      this.http.get(`https://wowme-3c87e.firebaseio.com/url/.json`, options).map((res:Response) => res.json()).subscribe(
+        (data) => {
+      this.searchImageByGivenUrl(data.url);
+          console.log("Sucess");
+          console.log(data);
+        }, (err) => {
+          console.log(err);
+        }
+      );
+
       // imageData is either a base64 encoded string or a file URI
       // If it's base64:
       // let base64Image = 'data:image/jpeg;base64,' + imageData;
@@ -150,7 +173,7 @@ export class FindPicturePage{
       // Handle error
     });
 
-window.resolveLocalFileSystemUrl;
+// window.resolveLocalFileSystemUrl;
   }
 
   encodeImageUri(imageUri) {

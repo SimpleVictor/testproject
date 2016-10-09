@@ -1,4 +1,54 @@
 .find-picture{
+
+  .main-person{
+
+    position: relative;
+    margin: 10px auto !important;
+
+    h3{
+      margin-top:-60px;
+      color: white;
+      letter-spacing: 5px;
+      font-size: 30px
+    }
+
+    .profile-container{
+     display: inline-flex;
+    }
+
+    text-align: center;
+    width: 75%;
+    margin: auto;
+    .mainguy{
+      height: 250px;
+    }
+
+    ion-card-title{
+      text-align:center;
+    }
+
+    .goToProfile{
+      margin: 0;
+      border-radius: 100%;
+      margin-top: -450px;
+      margin-right: 210px;
+      width: 50px;
+      height: 50px;
+      background-color:green;
+    }
+
+    .foundHim{
+      width: 75%;
+      text-align: center;
+
+    }
+    .profilePage{
+      margin: 0;
+    }
+
+
+  }
+
   .small-text{
     font-size: 1.5rem;
     top:56%;

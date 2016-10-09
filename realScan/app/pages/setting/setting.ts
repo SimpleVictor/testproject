@@ -6,6 +6,7 @@ import {BarcodeData} from "../home/home";
 import {ScanPage} from "../scan/scan";
 import {AuthService} from "../../provider/auth";
 import {ConnectionFinderPage} from "./connection-finder/connection-finder";
+import {SecretPage} from "./secret/secret";
 
 @Component({
   templateUrl: 'build/pages/setting/setting.html',
@@ -65,6 +66,10 @@ export class SettingPage {
 
   goToFindAConnection(){
     this.navCtrl.push(ConnectionFinderPage);
+  }
+
+  onChange(){
+    this.navCtrl.push(SecretPage);
   }
 
 

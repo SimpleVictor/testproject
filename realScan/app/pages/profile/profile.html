@@ -180,17 +180,18 @@
       EXPERIENCES
 
       -->
+
       <ion-slide class="work-tab">
         <ion-scroll scrollY="true">
         <ion-list>
           <ion-item *ngFor="let singlework of account.work">
-            <a tappable (click)="openWorkModal(singlework)">
-              <ion-thumbnail item-left>
+            <!--<a tappable (click)="openWorkModal(singlework)">-->
+              <ion-thumbnail item-left tappable (click)="openWorkModal(singlework)">
                 <img src="{{singlework.picture}}">
               </ion-thumbnail>
-              <h2>{{singlework.company}}</h2>
-              <p>{{singlework.job_title}}</p>
-            </a>
+              <h2 item-right>{{singlework.company}}</h2>
+              <p item-right>{{singlework.job_title}}</p>
+            <!--</a>-->
           </ion-item>
         </ion-list>
         </ion-scroll>

@@ -33,11 +33,12 @@ export class CalendarPage{
       let lat = resp.coords.latitude;
       let long = resp.coords.longitude;
       console.log(resp);
+      console.log(lat, long);
       this.meetupservice_.getGroupsById(id, lat, long).subscribe(
         (data) => {
           this.CheckLoader.dismiss();
           console.log(data);
-          this.navCtrl.push(GroupsPage, {groups: data.results});
+          this.navCtrl.push(GroupsPage, {groups: data.body.results});
         }, err => {
           this.CheckLoader.dismiss();
           console.log(err);

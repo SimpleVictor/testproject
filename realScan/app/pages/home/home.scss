@@ -1,5 +1,41 @@
 .home {
 
+  .fixme{
+    border-bottom: 0 !important;
+  }
+
+  .superbutton{
+    margin-right: 12px;
+    margin-left: 12px;
+    background-color: #0177B5;
+    .button-inner{
+      letter-spacing: 5px;
+      font-size: 30px;
+      font-weight: 700;
+    }
+    border-top: 4px solid #0177B5;
+  }
+
+  .main-logo{
+    width: 50%;
+    height: 25%;
+  }
+
+  .profile-card{
+    padding-bottom: 50px;
+  }
+
+  row{
+    ion-col{
+      display: flex;
+      .next-to-logo-box{
+        margin-bottom: 0;
+      }
+      ion-card{
+        margin: 0 12px;
+      }
+    }
+  }
 
   .circle {
     fill: transparent;
