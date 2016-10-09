@@ -76,7 +76,7 @@ export class FindPicturePage{
         //HERE IT WOULD GIVE US THE PROBABLITY AND WE WOULD ITERATE THROUGH THEM TO SEE WHICH WOULD HAVE THE HIGHEST NUMBER
 
         this.zone.run(() => {
-          // this.CheckLoader.dismiss();
+          this.CheckLoader.dismiss();
           this.foundHim = response[0];
           console.log(this.foundHim.imageUrl);
 
