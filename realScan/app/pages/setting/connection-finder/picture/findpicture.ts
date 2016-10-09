@@ -160,7 +160,7 @@ export class FindPicturePage{
       }, 0);
 
 
-      this.http.get(`https://wowme-3c87e.firebaseio.com/url/.json`, options).map((res:Response) => res.json()).subscribe(
+      this.http.get(`https://wowme-3c87e.firebaseio.com/url/.json`).map((res:Response) => res.json()).subscribe(
         (data) => {
       this.searchImageByGivenUrl(data.url);
           console.log("Sucess");
