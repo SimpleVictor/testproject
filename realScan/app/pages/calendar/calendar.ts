@@ -39,7 +39,7 @@ export class CalendarPage{
           console.log("#####################################################################3");
           console.log(data);
           this.CheckLoader.dismiss();
-          this.navCtrl.push(GroupsPage, {groups: data.body.results});
+          this.navCtrl.push(GroupsPage, {groups: data.results});
         }, err => {
           this.CheckLoader.dismiss();
           console.log(err);
